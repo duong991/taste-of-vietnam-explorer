@@ -1,14 +1,16 @@
 import { MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Props {
   image: string;
   name: string;
   tagline: string;
+  slug?: string;
 }
 
-const CityCard = ({ image, name, tagline }: Props) => (
-  <a
-    href="#"
+const CityCard = ({ image, name, tagline, slug }: Props) => (
+  <Link
+    to={`/thanh-pho/${slug ?? name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/\s+/g, "-")}`}
     className="group relative shrink-0 snap-start w-[260px] md:w-[280px] aspect-[3/4] rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-smooth"
   >
     <img
