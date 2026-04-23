@@ -27,7 +27,7 @@ const CityCard = ({ image, name, tagline, slug }: Props) => (
         {tagline}
       </p>
     </div>
-  </a>
+  </Link>
 );
 
 export default CityCard;
