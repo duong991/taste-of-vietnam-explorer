@@ -113,26 +113,7 @@ const CityPage = () => {
         </div>
       </section>
 
-      {/* Tabs */}
-      <div className="sticky top-20 z-30 bg-background/95 backdrop-blur border-b border-border">
-        <div className="container">
-          <div className="flex gap-1 overflow-x-auto scrollbar-hide">
-            {tabs.map((t) => (
-              <button
-                key={t.key}
-                onClick={() => setTab(t.key)}
-                className={`flex items-center gap-2 px-4 py-4 text-sm font-medium whitespace-nowrap border-b-2 transition-smooth ${
-                  tab === t.key
-                    ? "text-primary border-primary"
-                    : "text-muted-foreground border-transparent hover:text-foreground"
-                }`}
-              >
-                <t.icon className="h-4 w-4" /> {t.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+
 
       <main className="container py-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10">
