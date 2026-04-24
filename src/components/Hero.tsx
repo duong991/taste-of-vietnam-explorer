@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="relative container flex min-h-[760px] flex-col justify-center pt-28 pb-12">
         <div className="max-w-3xl animate-fade-up">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-accent">
-            Tinh hoa hương vị Việt
+            Dấu ấn hương vị Việt
           </p>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] text-white">
             Khám phá tinh hoa

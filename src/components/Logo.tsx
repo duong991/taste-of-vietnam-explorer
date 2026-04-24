@@ -17,7 +17,7 @@ const Logo = ({ className = "" }: { className?: string }) => (
       </svg>
     </div>
     <div className="flex flex-col leading-none">
-      <span className="font-display text-base font-semibold text-primary">Tinh hoa</span>
+      <span className="font-display text-base font-semibold text-primary">Dấu ấn</span>
       <span className="font-display text-xs text-muted-foreground">Hương vị Việt</span>
     </div>
   </div>
