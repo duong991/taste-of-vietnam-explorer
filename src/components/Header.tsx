@@ -1,6 +1,6 @@
 import { useEffect, useState, FormEvent } from "react";
 import { Search, Globe, Menu, X } from "lucide-react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 
 const NAV_ITEMS = [
@@ -14,6 +14,14 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+  // Routes có hero ảnh tối ngay đầu trang -> chữ trắng đọc tốt khi chưa scroll
+  const hasDarkHero =
+    location.pathname === "/" ||
+    location.pathname.startsWith("/thanh-pho/") ||
+    location.pathname.startsWith("/mon-an/") ||
+    location.pathname.startsWith("/tour/");
+  const onDarkHero = hasDarkHero && !scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -33,7 +41,9 @@ const Header = () => {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-smooth ${
-        scrolled ? "bg-background/95 backdrop-blur-md shadow-soft" : "bg-transparent"
+        scrolled || !hasDarkHero
+          ? "bg-background/95 backdrop-blur-md shadow-soft"
+          : "bg-transparent"
       }`}
     >
       <div className="container flex h-20 items-center justify-between gap-4">
@@ -48,7 +58,11 @@ const Header = () => {
               to={item.to}
               className={({ isActive }) =>
                 `text-sm font-medium transition-smooth hover:text-primary ${
-                  isActive ? "text-primary" : scrolled ? "text-foreground" : "text-foreground"
+                  isActive
+                    ? "text-primary"
+                    : onDarkHero
+                    ? "text-white"
+                    : "text-foreground"
                 }`
               }
             >
@@ -71,9 +85,9 @@ const Header = () => {
               placeholder="Tìm kiếm…"
               aria-label="Tìm kiếm"
               className={`w-full h-9 pl-9 pr-3 rounded-full text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-smooth ${
-                scrolled
-                  ? "bg-secondary border border-input text-foreground"
-                  : "bg-white/15 border border-white/30 text-white placeholder:text-white/60 focus:bg-background focus:text-foreground"
+                onDarkHero
+                  ? "bg-white/15 border border-white/30 text-white placeholder:text-white/60 focus:bg-background focus:text-foreground"
+                  : "bg-secondary border border-input text-foreground"
               }`}
             />
           </div>
@@ -83,7 +97,7 @@ const Header = () => {
           <button
             aria-label="Chuyển ngôn ngữ"
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-smooth hover:border-primary hover:text-primary ${
-              scrolled ? "border-input text-foreground" : "border-white/30 text-white"
+              onDarkHero ? "border-white/30 text-white" : "border-input text-foreground"
             }`}
           >
             <Globe className="h-3.5 w-3.5" />
@@ -92,7 +106,7 @@ const Header = () => {
         </div>
 
         <button
-          className={`lg:hidden p-2 transition-smooth ${scrolled ? "text-foreground" : "text-white"}`}
+          className={`lg:hidden p-2 transition-smooth ${onDarkHero ? "text-white" : "text-foreground"}`}
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Đóng menu" : "Mở menu"}
           aria-expanded={open}
