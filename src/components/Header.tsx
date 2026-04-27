@@ -1,6 +1,6 @@
-import { useEffect, useState, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import { Search, Globe, Menu, X } from "lucide-react";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 
 const NAV_ITEMS = [
@@ -10,24 +10,9 @@ const NAV_ITEMS = [
 ];
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
-  // Routes có hero ảnh tối ngay đầu trang -> chữ trắng đọc tốt khi chưa scroll
-  const hasDarkHero =
-    location.pathname === "/" ||
-    location.pathname.startsWith("/thanh-pho/") ||
-    location.pathname.startsWith("/mon-an/") ||
-    location.pathname.startsWith("/tour/");
-  const onDarkHero = hasDarkHero && !scrolled;
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const handleSearch = (e: FormEvent) => {
     e.preventDefault();
@@ -39,13 +24,7 @@ const Header = () => {
   };
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-40 transition-smooth ${
-        scrolled || !hasDarkHero
-          ? "bg-background/95 backdrop-blur-md shadow-soft"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-border/60 bg-background/95 backdrop-blur-md shadow-soft transition-smooth">
       <div className="container flex h-20 items-center justify-between gap-4">
         <Link to="/" aria-label="Tinh hoa Hương vị Việt — Trang chủ">
           <Logo />
@@ -58,11 +37,7 @@ const Header = () => {
               to={item.to}
               className={({ isActive }) =>
                 `text-sm font-medium transition-smooth hover:text-primary ${
-                  isActive
-                    ? "text-primary"
-                    : onDarkHero
-                    ? "text-white"
-                    : "text-foreground"
+                  isActive ? "text-primary" : "text-foreground"
                 }`
               }
             >
@@ -84,11 +59,7 @@ const Header = () => {
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Tìm kiếm…"
               aria-label="Tìm kiếm"
-              className={`w-full h-9 pl-9 pr-3 rounded-full text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-smooth ${
-                onDarkHero
-                  ? "bg-white/15 border border-white/30 text-white placeholder:text-white/60 focus:bg-background focus:text-foreground"
-                  : "bg-secondary border border-input text-foreground"
-              }`}
+              className="h-9 w-full rounded-full border border-input bg-secondary pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground transition-smooth focus:outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
         </form>
@@ -96,9 +67,7 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-2">
           <button
             aria-label="Chuyển ngôn ngữ"
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-smooth hover:border-primary hover:text-primary ${
-              onDarkHero ? "border-white/30 text-white" : "border-input text-foreground"
-            }`}
+            className="flex items-center gap-1.5 rounded-full border border-input px-3 py-1.5 text-xs font-medium text-foreground transition-smooth hover:border-primary hover:text-primary"
           >
             <Globe className="h-3.5 w-3.5" />
             VI
@@ -106,7 +75,7 @@ const Header = () => {
         </div>
 
         <button
-          className={`lg:hidden p-2 transition-smooth ${onDarkHero ? "text-white" : "text-foreground"}`}
+          className="p-2 text-foreground transition-smooth lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Đóng menu" : "Mở menu"}
           aria-expanded={open}
