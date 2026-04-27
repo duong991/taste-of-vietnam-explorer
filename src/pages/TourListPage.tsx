@@ -53,6 +53,8 @@ const TourListPage = () => {
   const filtered = filterTours(tours ?? [], {
     citySlug: citySlug || undefined,
     themes: filters.themes,
+    priceMin: filters.priceRange?.[0],
+    priceMax: filters.priceRange?.[1],
   });
 
   const sorted = sortTours(filtered, sort);

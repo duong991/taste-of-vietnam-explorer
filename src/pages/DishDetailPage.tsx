@@ -11,6 +11,7 @@ import { useDish } from "@/hooks/useDish";
 import { useDishes } from "@/hooks/useDishes";
 import { useCities } from "@/hooks/useCities";
 import { useTours } from "@/hooks/useTours";
+import { Markdown } from "@/lib/markdown";
 
 const REGION_LABEL: Record<string, string> = {
   bac: "Miền Bắc",
@@ -153,11 +154,7 @@ const DishDetailPage = () => {
             ))}
           </div>
 
-          <article className="prose prose-sm prose-stone max-w-none mb-8">
-            {dish.story.vi.split("\n\n").map((para, i) => (
-              <p key={i} className="text-foreground/80 leading-relaxed mb-4">{para}</p>
-            ))}
-          </article>
+          <Markdown className="mb-8">{dish.story.vi}</Markdown>
 
           <div className="p-5 rounded-2xl bg-secondary border border-border mb-10">
             <h2 className="font-display text-lg font-semibold text-foreground mb-3">Nguyên liệu chính</h2>

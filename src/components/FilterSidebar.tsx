@@ -1,5 +1,9 @@
 import { X } from "lucide-react";
 import type { Region } from "@/types/content";
+import { PriceRangeSlider } from "@/components/PriceRangeSlider";
+
+const PRICE_MIN = 0;
+const PRICE_MAX = 2_000_000;
 
 const REGIONS: { value: Region; label: string }[] = [
   { value: "bac", label: "Miền Bắc" },
@@ -80,7 +84,7 @@ export interface DishFilters {
 export interface TourFilters {
   themes: string[];
   durationMax?: number;
-  priceMax?: number;
+  priceRange?: [number, number];
 }
 
 interface DishFilterSidebarProps {
@@ -170,12 +174,27 @@ const FilterSidebar = (props: FilterSidebarProps) => {
       )}
 
       {props.mode === "tour" && (
-        <CheckboxGroup
-          label="Chủ đề"
-          options={TOUR_THEMES}
-          selected={props.filters.themes}
-          onChange={(v) => props.onChange({ ...props.filters, themes: v })}
-        />
+        <>
+          <CheckboxGroup
+            label="Chủ đề"
+            options={TOUR_THEMES}
+            selected={props.filters.themes}
+            onChange={(v) => props.onChange({ ...props.filters, themes: v })}
+          />
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2.5">
+              Ngân sách
+            </p>
+            <PriceRangeSlider
+              min={PRICE_MIN}
+              max={PRICE_MAX}
+              value={props.filters.priceRange ?? [PRICE_MIN, PRICE_MAX]}
+              step={100_000}
+              onChange={(range) => props.onChange({ ...props.filters, priceRange: range })}
+            />
+          </div>
+        </>
       )}
     </aside>
   );

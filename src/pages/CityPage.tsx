@@ -11,6 +11,7 @@ import Chatbot from "@/components/Chatbot";
 import { useCity } from "@/hooks/useCity";
 import { useDishes } from "@/hooks/useDishes";
 import { useTours } from "@/hooks/useTours";
+import { Markdown } from "@/lib/markdown";
 
 const REGION_LABEL: Record<string, string> = {
   bac: "Miền Bắc",
@@ -125,11 +126,7 @@ const CityPage = () => {
 
       <main className="pb-16">
         <div className="container max-w-4xl py-12">
-          <article className="prose prose-sm prose-stone max-w-none mb-10">
-            {city.story.vi.split("\n\n").map((para, i) => (
-              <p key={i} className="text-foreground/80 leading-relaxed mb-4">{para}</p>
-            ))}
-          </article>
+          <Markdown className="mb-10">{city.story.vi}</Markdown>
 
           <div className="mb-10">
             <ShareBar title={city.name.vi} />
