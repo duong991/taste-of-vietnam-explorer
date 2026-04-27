@@ -1,16 +1,18 @@
 import { Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Props {
   image: string;
   name: string;
   city: string;
-  rating: number;
+  rating?: number;
   michelin?: boolean;
+  slug?: string;
 }
 
-const FoodCard = ({ image, name, city, rating, michelin }: Props) => (
-  <a
-    href="#"
+const FoodCard = ({ image, name, city, rating, michelin, slug }: Props) => (
+  <Link
+    to={slug ? `/mon-an/${slug}` : "/mon-an"}
     className="group shrink-0 snap-start w-[220px] md:w-[240px] rounded-2xl bg-card overflow-hidden shadow-soft hover:shadow-card transition-smooth"
   >
     <div className="relative aspect-square overflow-hidden">
@@ -39,7 +41,7 @@ const FoodCard = ({ image, name, city, rating, michelin }: Props) => (
         </span>
       </div>
     </div>
-  </a>
+  </Link>
 );
 
 export default FoodCard;

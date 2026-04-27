@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "ha-noi",
+    "name": { "vi": "Hà Nội", "en": "Hanoi" },
+    "region": "bac",
+    "shortDescription": {
+      "vi": "Thủ đô ngàn năm văn hiến với ẩm thực tinh tế và đậm bản sắc",
+      "en": "The thousand-year-old capital with refined and distinctive cuisine"
+    },
+    "story": {
+      "vi": "Hà Nội – Thủ đô ngàn năm văn hiến – không chỉ là trung tâm chính trị mà còn là kinh đô ẩm thực của cả nước. Mỗi con phố, mỗi ngõ hẻm đều lưu giữ những hương vị đặc trưng được truyền lại qua nhiều thế hệ.\n\nTừ bát phở nóng hổi trong buổi sáng sớm se lạnh, đến những quán bún chả vỉa hè nhộn nhịp buổi trưa, hay tách cà phê trứng thơm lừng giữa chiều tà – ẩm thực Hà Nội tinh tế, khó quên và mang đậm chất 'thanh lịch' của người Tràng An.\n\nNgười Hà Nội nổi tiếng cầu kỳ trong ẩm thực – từ cách chọn nguyên liệu, chế biến đến cách thưởng thức. Một bát phở chuẩn vị phải có nước dùng trong, ngọt thanh từ xương bò hầm cả ngày, bánh phở mềm nhưng không nát, thịt bò tươi thái mỏng.",
+      "en": "Hanoi – Vietnam's thousand-year-old capital – is not just a political center but the country's culinary capital. Every street and alley preserves unique flavors passed down through generations.\n\nFrom a steaming bowl of pho on a cool morning, to lively sidewalk bun cha stalls at noon, or a fragrant egg coffee on a lazy afternoon – Hanoi's cuisine is refined, unforgettable, and carries the elegant spirit of the capital.\n\nHanoians are famously particular about food – from ingredient selection and preparation to the art of eating. A proper bowl of pho must have clear, sweet broth simmered from beef bones all day, soft but firm rice noodles, and freshly sliced beef."
+    },
+    "heroImage": "city-hanoi-hero",
+    "gallery": ["city-hanoi", "city-hanoi-hero"],
+    "featuredDishSlugs": ["pho-bo-ha-noi", "bun-cha-ha-noi", "banh-cuon", "ca-phe-trung"],
+    "featuredTourSlugs": ["kham-pha-am-thuc-ha-noi", "food-tour-ha-noi-xe-may"],
+    "geo": { "lat": 21.0285, "lng": 105.8542 }
+  },
+  {
+    "slug": "hue",
+    "name": { "vi": "Huế", "en": "Hue" },
+    "region": "trung",
+    "shortDescription": {
+      "vi": "Cố đô trầm mặc với ẩm thực cung đình tinh tế và đậm đà",
+      "en": "The ancient imperial city with refined royal and popular cuisine"
+    },
+    "story": {
+      "vi": "Huế – Cố đô của triều Nguyễn – là nơi ẩm thực đạt đến đỉnh cao của sự tinh tế. Trong hàng trăm năm dưới chế độ phong kiến, các đầu bếp cung đình phải không ngừng sáng tạo để phục vụ vua chúa, tạo nên một nền ẩm thực cung đình độc đáo không nơi nào sánh được.\n\nBên cạnh ẩm thực cung đình sang trọng, Huế còn nổi tiếng với những món ăn dân dã đậm đà: bún bò Huế cay nồng, bánh bèo thanh tao, bánh nậm mỏng mềm... Tất cả đều phản ánh tâm hồn tinh tế, cầu kỳ của người Huế.\n\nThành phố bên bờ sông Hương còn nổi tiếng với văn hóa uống trà và các quán cà phê cổ kính, tạo nên một không gian thưởng thức ẩm thực đặc biệt.",
+      "en": "Hue – the capital of the Nguyen dynasty – is where Vietnamese cuisine reached its peak of refinement. For hundreds of years under the feudal system, royal chefs continuously innovated to serve the emperors, creating a unique royal cuisine unmatched anywhere.\n\nAlongside its sophisticated imperial dishes, Hue is also famous for hearty popular food: spicy bun bo Hue, delicate banh beo, thin and soft banh nam... All reflect the refined and meticulous soul of Hue people.\n\nThis city on the Perfume River is also famous for its tea culture and charming old cafes, creating a special ambiance for culinary experiences."
+    },
+    "heroImage": "city-hue",
+    "gallery": ["city-hue"],
+    "featuredDishSlugs": ["bun-bo-hue"],
+    "featuredTourSlugs": ["trai-nghiem-nau-an-truyen-thong"],
+    "geo": { "lat": 16.4637, "lng": 107.5909 }
+  },
+  {
+    "slug": "da-nang",
+    "name": { "vi": "Đà Nẵng", "en": "Da Nang" },
+    "region": "trung",
+    "shortDescription": {
+      "vi": "Thành phố biển năng động với ẩm thực phong phú và tươi ngon",
+      "en": "A dynamic coastal city with fresh and diverse culinary offerings"
+    },
+    "story": {
+      "vi": "Đà Nẵng – Thành phố đáng sống – nằm giữa Huế cổ kính và Hội An thơ mộng, sở hữu một nền ẩm thực phong phú mang đặc trưng của miền Trung.\n\nHải sản tươi sống là niềm tự hào của Đà Nẵng. Từ những chợ hải sản sầm uất ven biển đến các nhà hàng sang trọng, thực khách có thể thưởng thức tôm, cua, mực, cá vừa đánh bắt từ biển về còn tươi nguyên.\n\nNgoài hải sản, bánh xèo miền Trung với vỏ giòn mỏng, nhân phong phú; mì Quảng sợi vàng óng ăn kèm bánh đa giòn; hay bún mắm nêm đặc trưng... tất cả tạo nên bản sắc ẩm thực riêng của Đà Nẵng.",
+      "en": "Da Nang – Vietnam's most livable city – sits between ancient Hue and poetic Hoi An, boasting a rich culinary culture characteristic of Central Vietnam.\n\nFresh seafood is Da Nang's pride. From bustling seafood markets along the coast to upscale restaurants, visitors can enjoy shrimp, crab, squid, and fish caught fresh from the sea.\n\nBeyond seafood, Central-style banh xeo with its thin crispy crust and rich fillings; Mi Quang with golden noodles served with crispy rice crackers; or the distinctive bun mam nem... all create Da Nang's unique culinary identity."
+    },
+    "heroImage": "city-danang",
+    "gallery": ["city-danang"],
+    "featuredDishSlugs": ["banh-xeo", "cao-lau-hoi-an"],
+    "featuredTourSlugs": [],
+    "geo": { "lat": 16.0544, "lng": 108.2022 }
+  },
+  {
+    "slug": "hoi-an",
+    "name": { "vi": "Hội An", "en": "Hoi An" },
+    "region": "trung",
+    "shortDescription": {
+      "vi": "Phố cổ huyền diệu với những món ăn đặc trưng nức danh thế giới",
+      "en": "The enchanting ancient town with world-renowned distinctive dishes"
+    },
+    "story": {
+      "vi": "Hội An – Di sản văn hóa thế giới – không chỉ quyến rũ du khách bằng những ngôi nhà cổ, đèn lồng rực rỡ mà còn bởi nền ẩm thực đặc sắc không trộn lẫn.\n\nCao lầu – món mì dành riêng cho Hội An – được làm từ nước giếng Cẩm Phô và tro đốt từ củi cây bạch đàn, tạo nên hương vị không thể tái hiện ở bất kỳ nơi nào khác. Cùng với bánh mì Phượng nổi tiếng toàn cầu, cao lầu là biểu tượng ẩm thực của phố cổ.\n\nMỗi buổi sáng, chợ Hội An nhộn nhịp với gánh hàng rong bán các món bánh đặc sản: bánh vạc trắng muốt, hoành thánh chiên giòn, hay bát mì Quảng đậm đà.",
+      "en": "Hoi An – a UNESCO World Heritage Site – captivates visitors not only with its ancient houses and colorful lanterns but also with its uniquely distinctive cuisine.\n\nCao lau – a noodle dish exclusive to Hoi An – is made with water from the Cam Pho well and ash from eucalyptus wood, creating a flavor that cannot be replicated anywhere else. Together with the globally renowned Phuong Banh Mi, cao lau is the culinary symbol of the ancient town.\n\nEvery morning, Hoi An Market bustles with street vendors selling local specialties: silky white banh vac, crispy fried wontons, or hearty Mi Quang bowls."
+    },
+    "heroImage": "city-hoian",
+    "gallery": ["city-hoian", "hero-hoian"],
+    "featuredDishSlugs": ["cao-lau-hoi-an"],
+    "featuredTourSlugs": [],
+    "geo": { "lat": 15.8801, "lng": 108.338 }
+  },
+  {
+    "slug": "da-lat",
+    "name": { "vi": "Đà Lạt", "en": "Da Lat" },
+    "region": "nam",
+    "shortDescription": {
+      "vi": "Thành phố mộng mơ trên cao nguyên với ẩm thực đặc sắc xứ lạnh",
+      "en": "The dreamlike highland city with distinctive cool-weather cuisine"
+    },
+    "story": {
+      "vi": "Đà Lạt – Thành phố ngàn hoa – nằm ở độ cao hơn 1.500m so với mực nước biển, sở hữu khí hậu mát mẻ quanh năm và một nền ẩm thực đặc sắc.\n\nRau củ Đà Lạt nổi tiếng trên toàn quốc với chất lượng tươi ngon, giòn ngọt. Từ đó, ẩm thực Đà Lạt phát triển theo hướng tươi sáng, thanh đạm nhưng đủ vị, phù hợp với không khí se lạnh của thành phố.\n\nBánh tráng nướng Đà Lạt – hay 'pizza Đà Lạt' – đã trở thành món ăn vặt được yêu thích nhất, cùng với bắp nướng mỡ hành, sữa đậu nành nóng, hay những tô phở xào bò thơm lừng trong tiết trời lạnh.",
+      "en": "Da Lat – the City of Flowers – sits at over 1,500m elevation, blessed with a cool climate year-round and a distinctive culinary culture.\n\nDa Lat vegetables are renowned nationwide for their freshness and crispness. As a result, Da Lat cuisine has evolved to be fresh, light yet flavorful, perfectly suited to the city's cool air.\n\nGrilled rice crackers – or 'Da Lat pizza' – have become the most beloved street snack, along with grilled corn with scallion oil, hot soy milk, or fragrant beef stir-fried pho on cold days."
+    },
+    "heroImage": "city-dalat",
+    "gallery": ["city-dalat"],
+    "featuredDishSlugs": ["che-ha-noi"],
+    "featuredTourSlugs": [],
+    "geo": { "lat": 11.9404, "lng": 108.4583 }
+  },
+  {
+    "slug": "can-tho",
+    "name": { "vi": "Cần Thơ", "en": "Can Tho" },
+    "region": "nam",
+    "shortDescription": {
+      "vi": "Thủ phủ miền Tây với ẩm thực sông nước phong phú và đậm đà",
+      "en": "The Mekong Delta capital with rich and hearty riverside cuisine"
+    },
+    "story": {
+      "vi": "Cần Thơ – Thủ phủ đồng bằng sông Cửu Long – là nơi ẩm thực miền Nam đạt đến độ phong phú và đặc sắc nhất. Vùng đất sông nước hữu tình này ban tặng cho người dân nguồn thủy sản dồi dào và lúa gạo no đủ.\n\nBước ra chợ nổi Cái Răng sáng sớm, du khách sẽ được thưởng thức không khí mua bán nhộn nhịp trên sông cùng những món ăn sáng dân dã: hủ tiếu Nam Vang, bún mắm, hay bánh canh cá lóc thơm lừng.\n\nẨm thực Cần Thơ đặc trưng bởi sự phóng khoáng, dân dã và đậm đà của người miền Tây: cơm tấm sườn bì chả, lẩu mắm, hay những con tôm nướng muối ớt thơm lừng.",
+      "en": "Can Tho – the capital of the Mekong Delta – is where Southern Vietnamese cuisine reaches its most diverse and distinctive expression. This enchanting riverside land blesses its people with abundant seafood and plentiful rice.\n\nVenturing out to Cai Rang floating market in the early morning, visitors experience the lively waterway commerce alongside humble breakfast dishes: Nam Vang vermicelli, bun mam, or fragrant snakehead fish thick noodle soup.\n\nCan Tho cuisine is characterized by the generosity, rustic simplicity and bold flavors of Mekong people: com tam with grilled ribs, lau mam hotpot, or fragrant salt-chili grilled shrimp."
+    },
+    "heroImage": "city-cantho",
+    "gallery": ["city-cantho"],
+    "featuredDishSlugs": ["com-tam-sai-gon"],
+    "featuredTourSlugs": ["am-thuc-mien-tay"],
+    "geo": { "lat": 10.0452, "lng": 105.7469 }
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "hanoi-food-tours",
+    "name": "Hanoi Food Tours",
+    "description": {
+      "vi": "Đơn vị tour ẩm thực hàng đầu Hà Nội với hơn 10 năm kinh nghiệm, chuyên đưa du khách khám phá tinh hoa ẩm thực Thủ đô qua các góc phố bình dị và nhà hàng nổi tiếng.",
+      "en": "Hanoi's leading food tour operator with over 10 years of experience, specializing in guiding travelers to discover the capital's culinary gems through humble street corners and renowned restaurants."
+    },
+    "email": "hello@hanoifoodtours.vn",
+    "phone": "+84 28 3822 1234",
+    "website": "https://hanoifoodtours.vn",
+    "zaloUrl": "https://zalo.me/hanoifoodtours",
+    "messengerUrl": "https://m.me/hanoifoodtours"
+  },
+  {
+    "id": "mekong-delta-food",
+    "name": "Mekong Delta Food Tours",
+    "description": {
+      "vi": "Chuyên tổ chức các tour ẩm thực khám phá văn hóa sông nước miền Tây Nam Bộ, từ chợ nổi Cái Răng đến các làng nghề và vườn trái cây đặc sản.",
+      "en": "Specializing in culinary tours exploring the waterway culture of the Mekong Delta, from Cai Rang Floating Market to craft villages and specialty fruit orchards."
+    },
+    "email": "info@mekongdeltafood.vn",
+    "phone": "+84 292 3822 5678",
+    "website": "https://mekongdeltafood.vn",
+    "zaloUrl": "https://zalo.me/mekongdeltafood",
+    "messengerUrl": "https://m.me/mekongdeltafood"
+  },
+  {
+    "id": "vietnam-culinary",
+    "name": "Vietnam Culinary Arts",
+    "description": {
+      "vi": "Trung tâm ẩm thực cao cấp chuyên tổ chức các lớp học nấu ăn truyền thống, cooking class cho du khách quốc tế và các tour ẩm thực văn hóa chiều sâu.",
+      "en": "A premium culinary center specializing in traditional cooking classes, cooking experiences for international visitors, and in-depth culinary culture tours."
+    },
+    "email": "contact@vietnamculinary.vn",
+    "phone": "+84 24 3822 9012",
+    "website": "https://vietnamculinary.vn",
+    "zaloUrl": "https://zalo.me/vietnamculinary",
+    "messengerUrl": "https://m.me/vietnamculinary"
+  }
+]

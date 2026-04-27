@@ -1,20 +1,19 @@
-import { useEffect, useState } from "react";
-import { Heart, Globe, User, Menu, X } from "lucide-react";
+import { useEffect, useState, FormEvent } from "react";
+import { Search, Globe, Menu, X } from "lucide-react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
-import { Button } from "@/components/ui/button";
 
-const navItems = [
-  { label: "Khám phá", href: "#kham-pha" },
-  { label: "Thành phố", href: "#thanh-pho" },
-  { label: "Món ăn", href: "#mon-an" },
-  { label: "Tour", href: "#tour" },
-  { label: "Blog", href: "#blog" },
-  { label: "Về chúng tôi", href: "#ve-chung-toi" },
+const NAV_ITEMS = [
+  { label: "Thành phố", to: "/thanh-pho" },
+  { label: "Món ăn", to: "/mon-an" },
+  { label: "Tour", to: "/tour" },
 ];
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -22,51 +21,81 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleSearch = (e: FormEvent) => {
+    e.preventDefault();
+    const q = searchValue.trim();
+    if (!q) return;
+    navigate(`/tim-kiem?q=${encodeURIComponent(q)}`);
+    setSearchValue("");
+    setOpen(false);
+  };
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-smooth ${
-        scrolled
-          ? "bg-background/90 backdrop-blur-md shadow-soft"
-          : "bg-transparent"
+        scrolled ? "bg-background/95 backdrop-blur-md shadow-soft" : "bg-transparent"
       }`}
     >
-      <div className="container flex h-20 items-center justify-between gap-6">
-        <a href="/" aria-label="Tinh hoa Hương vị Việt">
+      <div className="container flex h-20 items-center justify-between gap-4">
+        <Link to="/" aria-label="Tinh hoa Hương vị Việt — Trang chủ">
           <Logo />
-        </a>
+        </Link>
 
-        <nav className="hidden lg:flex items-center gap-7">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={`text-sm font-medium transition-smooth hover:text-primary ${
-                scrolled ? "text-foreground" : "text-foreground"
-              }`}
+        <nav className="hidden lg:flex items-center gap-6" aria-label="Điều hướng chính">
+          {NAV_ITEMS.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `text-sm font-medium transition-smooth hover:text-primary ${
+                  isActive ? "text-primary" : scrolled ? "text-foreground" : "text-foreground"
+                }`
+              }
             >
               {item.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
+        <form
+          onSubmit={handleSearch}
+          className="hidden md:flex items-center gap-2 flex-1 max-w-xs"
+          role="search"
+        >
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+            <input
+              type="search"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              placeholder="Tìm kiếm…"
+              aria-label="Tìm kiếm"
+              className={`w-full h-9 pl-9 pr-3 rounded-full text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-smooth ${
+                scrolled
+                  ? "bg-secondary border border-input text-foreground"
+                  : "bg-white/15 border border-white/30 text-white placeholder:text-white/60 focus:bg-background focus:text-foreground"
+              }`}
+            />
+          </div>
+        </form>
+
         <div className="hidden md:flex items-center gap-2">
-          <Button variant="ghost" size="sm" className="gap-2">
-            <Heart className="h-4 w-4" />
-            <span className="hidden xl:inline">Yêu thích</span>
-          </Button>
-          <Button variant="ghost" size="sm" className="gap-2">
-            <Globe className="h-4 w-4" />
+          <button
+            aria-label="Chuyển ngôn ngữ"
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-smooth hover:border-primary hover:text-primary ${
+              scrolled ? "border-input text-foreground" : "border-white/30 text-white"
+            }`}
+          >
+            <Globe className="h-3.5 w-3.5" />
             VI
-          </Button>
-          <Button variant="outline" size="icon" className="rounded-full">
-            <User className="h-4 w-4" />
-          </Button>
+          </button>
         </div>
 
         <button
-          className="lg:hidden p-2 text-foreground"
+          className={`lg:hidden p-2 transition-smooth ${scrolled ? "text-foreground" : "text-white"}`}
           onClick={() => setOpen((v) => !v)}
-          aria-label="Menu"
+          aria-label={open ? "Đóng menu" : "Mở menu"}
+          aria-expanded={open}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -74,26 +103,42 @@ const Header = () => {
 
       {open && (
         <div className="lg:hidden bg-background border-t border-border shadow-soft animate-fade-up">
-          <nav className="container flex flex-col py-4 gap-1">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
+          <div className="container flex flex-col py-4 gap-1">
+            <form onSubmit={handleSearch} className="flex items-center gap-2 mb-3" role="search">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <input
+                  type="search"
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+                  placeholder="Tìm kiếm…"
+                  aria-label="Tìm kiếm"
+                  className="w-full h-10 pl-9 pr-3 rounded-md border border-input bg-secondary text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                />
+              </div>
+            </form>
+
+            {NAV_ITEMS.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
                 onClick={() => setOpen(false)}
-                className="py-3 text-sm font-medium text-foreground hover:text-primary border-b border-border/50"
+                className={({ isActive }) =>
+                  `py-3 text-sm font-medium border-b border-border/50 transition-smooth ${
+                    isActive ? "text-primary" : "text-foreground hover:text-primary"
+                  }`
+                }
               >
                 {item.label}
-              </a>
+              </NavLink>
             ))}
             <div className="flex gap-2 pt-3">
-              <Button variant="outline" size="sm" className="flex-1 gap-2">
-                <Heart className="h-4 w-4" /> Yêu thích
-              </Button>
-              <Button variant="outline" size="sm" className="gap-2">
-                <Globe className="h-4 w-4" /> VI
-              </Button>
+              <button className="flex-1 flex items-center justify-center gap-2 h-10 px-3 rounded-md border border-input text-sm text-foreground hover:border-primary hover:text-primary transition-smooth">
+                <Globe className="h-4 w-4" />
+                Tiếng Việt / EN
+              </button>
             </div>
-          </nav>
+          </div>
         </div>
       )}
     </header>

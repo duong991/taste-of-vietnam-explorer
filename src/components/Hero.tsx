@@ -1,8 +1,23 @@
-import { Search, MapPin, UtensilsCrossed, Calendar } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState, FormEvent } from "react";
+import { Search, ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-hoian.jpg";
 
 const Hero = () => {
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e: FormEvent) => {
+    e.preventDefault();
+    const q = query.trim();
+    if (!q) return;
+    navigate(`/tim-kiem?q=${encodeURIComponent(q)}`);
+  };
+
+  const scrollToCities = () => {
+    document.getElementById("section-cities")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative min-h-[760px] w-full overflow-hidden">
       <img
@@ -11,11 +26,12 @@ const Hero = () => {
         className="absolute inset-0 h-full w-full object-cover"
         width={1920}
         height={1088}
+        fetchPriority="high"
       />
       <div className="absolute inset-0 gradient-hero-overlay" />
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/30 via-transparent to-foreground/60" />
 
-      <div className="relative container flex min-h-[760px] flex-col justify-center pt-28 pb-12">
+      <div className="relative container flex min-h-[760px] flex-col justify-center pt-28 pb-16">
         <div className="max-w-3xl animate-fade-up">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-accent">
             Dấu ấn hương vị Việt
@@ -30,52 +46,48 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* Search bar */}
-        <div className="relative mt-10 animate-fade-up" style={{ animationDelay: "0.15s" }}>
-          <div className="rounded-2xl bg-background/95 backdrop-blur shadow-elegant p-2 md:p-3">
-            <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr_auto] gap-2 items-center">
-              <div className="flex items-center gap-3 px-4 py-3 md:py-2">
+        <form
+          onSubmit={handleSearch}
+          className="relative mt-10 animate-fade-up"
+          style={{ animationDelay: "0.15s" }}
+          role="search"
+        >
+          <div className="rounded-2xl bg-background/95 backdrop-blur shadow-elegant p-2">
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3 px-4 py-3 flex-1 min-w-0">
                 <Search className="h-5 w-5 text-muted-foreground shrink-0" />
-                <div className="min-w-0">
-                  <p className="text-xs font-medium text-foreground">Bạn muốn khám phá ẩm thực ở đâu?</p>
-                  <input
-                    placeholder="Tìm thành phố, món ăn, hoặc trải nghiệm…"
-                    className="w-full bg-transparent text-sm text-muted-foreground placeholder:text-muted-foreground outline-none"
-                  />
-                </div>
+                <input
+                  type="search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Tìm thành phố, món ăn, tour trải nghiệm…"
+                  aria-label="Tìm kiếm ẩm thực"
+                  className="w-full bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none"
+                />
               </div>
-
-              <SearchField icon={MapPin} label="Địa điểm" value="Tất cả địa điểm" />
-              <SearchField icon={UtensilsCrossed} label="Ẩm thực" value="Tất cả loại hình" />
-              <SearchField icon={Calendar} label="Thời gian" value="Chọn thời gian" />
-
-              <Button size="lg" className="h-14 px-8 gap-2 rounded-xl">
-                <Search className="h-4 w-4" /> Tìm kiếm
-              </Button>
+              <button
+                type="submit"
+                className="shrink-0 h-12 px-6 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-smooth focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+              >
+                Tìm kiếm
+              </button>
             </div>
           </div>
+        </form>
 
-          <div className="mt-5 flex items-center gap-3 text-xs text-white/80">
-            <span>Được đề xuất bởi</span>
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#00AA6C] text-white font-bold tracking-tight">
-              <svg viewBox="0 0 24 24" className="h-3 w-3 fill-white"><circle cx="12" cy="12" r="10"/></svg>
-              Tripadvisor
-            </span>
-          </div>
+        <div className="mt-10 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          <button
+            onClick={scrollToCities}
+            className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-smooth"
+            aria-label="Khám phá ngay"
+          >
+            Khám phá ngay
+            <ChevronDown className="h-4 w-4 animate-bounce" />
+          </button>
         </div>
       </div>
     </section>
   );
 };
-
-const SearchField = ({ icon: Icon, label, value }: { icon: typeof MapPin; label: string; value: string }) => (
-  <button className="flex items-center gap-3 px-4 py-3 md:py-2 rounded-xl hover:bg-secondary transition-smooth text-left">
-    <Icon className="h-5 w-5 text-primary shrink-0" />
-    <div className="min-w-0">
-      <p className="text-xs font-medium text-foreground">{label}</p>
-      <p className="text-sm text-muted-foreground truncate">{value}</p>
-    </div>
-  </button>
-);
 
 export default Hero;

@@ -1,0 +1,201 @@
+[
+  {
+    "slug": "kham-pha-am-thuc-ha-noi",
+    "name": {
+      "vi": "Khám phá ẩm thực phố cổ Hà Nội",
+      "en": "Hanoi Old Quarter Food Discovery"
+    },
+    "citySlug": "ha-noi",
+    "partnerId": "hanoi-food-tours",
+    "durationHours": 8,
+    "priceVnd": 1250000,
+    "themes": ["street-food", "walking", "culture"],
+    "itinerary": [
+      {
+        "time": "07:00",
+        "title": { "vi": "Phở bò buổi sáng", "en": "Morning Pho" },
+        "description": {
+          "vi": "Bắt đầu ngày mới với tô phở bò chuẩn vị tại một quán phở lâu đời trong khu phố cổ. Cảm nhận không khí Hà Nội buổi sáng sớm se lạnh bên bát phở nóng hổi.",
+          "en": "Start the day with an authentic bowl of beef pho at a long-standing pho shop in the old quarter. Experience the cool Hanoi morning atmosphere beside a steaming bowl of pho."
+        },
+        "image": "food-pho"
+      },
+      {
+        "time": "09:00",
+        "title": { "vi": "Tham quan chợ Đồng Xuân", "en": "Dong Xuan Market Tour" },
+        "description": {
+          "vi": "Dạo quanh chợ Đồng Xuân – chợ lớn nhất Hà Nội – tìm hiểu về các loại nguyên liệu ẩm thực đặc trưng, từ gia vị, rau củ đến các sản vật địa phương độc đáo.",
+          "en": "Stroll through Dong Xuan Market – Hanoi's largest market – to learn about distinctive culinary ingredients, from spices and vegetables to unique local products."
+        }
+      },
+      {
+        "time": "11:30",
+        "title": { "vi": "Bún chả trưa", "en": "Lunch Bun Cha" },
+        "description": {
+          "vi": "Thưởng thức bún chả tại quán gia đình nổi tiếng với hơn 40 năm kinh nghiệm. Nghe câu chuyện về cách chọn thịt, ướp gia vị và nướng than hoa đúng cách.",
+          "en": "Enjoy bun cha at a famous family restaurant with over 40 years of experience. Hear stories about how to select meat, marinate, and properly grill over charcoal."
+        },
+        "image": "food-buncha"
+      },
+      {
+        "time": "14:00",
+        "title": { "vi": "Cà phê trứng buổi chiều", "en": "Afternoon Egg Coffee" },
+        "description": {
+          "vi": "Ghé thăm quán cà phê trứng lâu đời nhất Hà Nội, tìm hiểu lịch sử ra đời của thức uống độc đáo này và thưởng thức tách cà phê trứng nguyên bản.",
+          "en": "Visit Hanoi's oldest egg coffee shop, learn the history of this unique beverage's creation, and enjoy an authentic cup of egg coffee."
+        },
+        "image": "food-cafetrung"
+      },
+      {
+        "time": "17:00",
+        "title": { "vi": "Bánh gối và ăn vặt phố cổ", "en": "Old Quarter Street Snacks" },
+        "description": {
+          "vi": "Khám phá văn hóa ăn vặt buổi chiều của người Hà Nội với bánh gối nóng giòn, bánh cuốn Thanh Trì, và các món ăn vặt truyền thống khác trên các phố ẩm thực.",
+          "en": "Explore Hanoi's afternoon snack culture with hot crispy pillow cakes, Thanh Tri steamed rice rolls, and other traditional snacks on the food streets."
+        },
+        "image": "food-banhgoi"
+      }
+    ],
+    "highlightDishSlugs": ["pho-bo-ha-noi", "bun-cha-ha-noi", "ca-phe-trung", "banh-goi"],
+    "image": "tour-hanoi"
+  },
+  {
+    "slug": "food-tour-ha-noi-xe-may",
+    "name": {
+      "vi": "Food Tour Hà Nội bằng xe máy",
+      "en": "Hanoi Food Tour by Motorbike"
+    },
+    "citySlug": "ha-noi",
+    "partnerId": "hanoi-food-tours",
+    "durationHours": 6,
+    "priceVnd": 1450000,
+    "themes": ["street-food", "motorbike", "adventure"],
+    "itinerary": [
+      {
+        "time": "18:00",
+        "title": { "vi": "Khởi hành từ Hồ Hoàn Kiếm", "en": "Depart from Hoan Kiem Lake" },
+        "description": {
+          "vi": "Tập hợp tại khu vực Hồ Hoàn Kiếm, nhận xe máy và bắt đầu hành trình khám phá ẩm thực đêm Hà Nội.",
+          "en": "Gather at Hoan Kiem Lake area, receive motorbike, and begin the journey exploring Hanoi's night food scene."
+        }
+      },
+      {
+        "time": "18:30",
+        "title": { "vi": "Phở cuốn ở phố Ngũ Xã", "en": "Pho Cuon at Ngu Xa Street" },
+        "description": {
+          "vi": "Dừng chân tại phố Ngũ Xã để thưởng thức phở cuốn – món cuốn độc đáo với bánh phở mềm cuộn thịt bò và rau thơm, chấm tương hoisin đặc biệt.",
+          "en": "Stop at Ngu Xa Street to enjoy pho cuon – a unique roll with soft pho noodle sheets wrapped around beef and herbs, dipped in special hoisin sauce."
+        }
+      },
+      {
+        "time": "20:00",
+        "title": { "vi": "Bún ốc phố Lương Định Của", "en": "Snail Noodle Soup" },
+        "description": {
+          "vi": "Khám phá món bún ốc chua cay đặc trưng Hà Nội – nước dùng chua cay từ me và cà chua, ốc bươu vàng mập mạp, thơm lừng.",
+          "en": "Discover Hanoi's signature sour-spicy snail noodle soup – tangy broth from tamarind and tomatoes, plump golden apple snails, with a wonderful aroma."
+        }
+      },
+      {
+        "time": "21:30",
+        "title": { "vi": "Tráng miệng kem Tràng Tiền", "en": "Trang Tien Ice Cream Dessert" },
+        "description": {
+          "vi": "Kết thúc hành trình tại kem Tràng Tiền nổi tiếng – thương hiệu kem hàng trăm năm của Hà Nội với các hương vị kem xếp truyền thống.",
+          "en": "End the journey at the famous Trang Tien Ice Cream – Hanoi's centuries-old ice cream brand with traditional layered ice cream flavors."
+        }
+      }
+    ],
+    "highlightDishSlugs": ["pho-bo-ha-noi"],
+    "image": "tour-motorbike"
+  },
+  {
+    "slug": "trai-nghiem-nau-an-truyen-thong",
+    "name": {
+      "vi": "Trải nghiệm nấu ăn truyền thống",
+      "en": "Traditional Cooking Experience"
+    },
+    "citySlug": "ha-noi",
+    "partnerId": "vietnam-culinary",
+    "durationHours": 5,
+    "priceVnd": 1350000,
+    "themes": ["cooking-class", "culture", "hands-on"],
+    "itinerary": [
+      {
+        "time": "09:00",
+        "title": { "vi": "Chợ và chọn nguyên liệu", "en": "Market and Ingredient Selection" },
+        "description": {
+          "vi": "Cùng đầu bếp chuyên nghiệp đi chợ truyền thống, học cách nhận biết và lựa chọn nguyên liệu tươi ngon theo tiêu chuẩn của người Hà Nội.",
+          "en": "Join a professional chef at a traditional market, learn how to identify and select fresh ingredients according to Hanoian standards."
+        }
+      },
+      {
+        "time": "10:30",
+        "title": { "vi": "Lớp học nấu ăn", "en": "Cooking Class" },
+        "description": {
+          "vi": "Trực tiếp tham gia nấu 3 món ăn truyền thống: phở bò, chả giò và nem rán. Đầu bếp hướng dẫn từng bước, từ sơ chế nguyên liệu đến kỹ thuật nấu.",
+          "en": "Participate in cooking 3 traditional dishes: beef pho, spring rolls, and fried nem. The chef guides each step from ingredient preparation to cooking techniques."
+        },
+        "image": "tour-cooking"
+      },
+      {
+        "time": "13:00",
+        "title": { "vi": "Thưởng thức thành quả", "en": "Enjoy Your Creations" },
+        "description": {
+          "vi": "Thưởng thức bữa trưa với những món ăn tự tay nấu trong không gian nhà truyền thống Hà Nội. Nhận sách công thức mang về.",
+          "en": "Enjoy lunch with the dishes you cooked yourself in a traditional Hanoi home setting. Receive a recipe book to take home."
+        }
+      }
+    ],
+    "highlightDishSlugs": ["pho-bo-ha-noi"],
+    "image": "tour-cooking"
+  },
+  {
+    "slug": "am-thuc-mien-tay",
+    "name": {
+      "vi": "Khám phá ẩm thực miền Tây sông nước",
+      "en": "Mekong Delta Culinary Discovery"
+    },
+    "citySlug": "can-tho",
+    "partnerId": "mekong-delta-food",
+    "durationHours": 48,
+    "priceVnd": 2350000,
+    "themes": ["river-food", "culture", "market", "cooking-class"],
+    "itinerary": [
+      {
+        "time": "Ngày 1 - 06:00",
+        "title": { "vi": "Chợ nổi Cái Răng lúc bình minh", "en": "Cai Rang Floating Market at Dawn" },
+        "description": {
+          "vi": "Xuất phát lúc 6 giờ sáng, đón ánh bình minh trên sông Cần Thơ và tham quan chợ nổi Cái Răng – một trong những chợ nổi lớn nhất miền Tây, nơi hàng trăm ghe thuyền tấp nập mua bán hoa quả, nông sản.",
+          "en": "Depart at 6am, watch the sunrise on Can Tho River and visit Cai Rang Floating Market – one of the largest floating markets in the Mekong Delta, where hundreds of boats bustle with fruit and agricultural trade."
+        },
+        "image": "tour-mekong"
+      },
+      {
+        "time": "Ngày 1 - 09:00",
+        "title": { "vi": "Ăn sáng và tham quan làng nghề", "en": "Breakfast and Village Visit" },
+        "description": {
+          "vi": "Ăn sáng với hủ tiếu miền Tây tại quán ven sông, sau đó tham quan làng làm kẹo dừa, lò nấu rượu gạo và vườn trái cây đặc sản miền Tây.",
+          "en": "Have breakfast with Mekong-style noodle soup at a riverside stall, then visit a coconut candy village, rice wine distillery, and orchard with Mekong Delta specialty fruits."
+        }
+      },
+      {
+        "time": "Ngày 1 - 14:00",
+        "title": { "vi": "Lớp học nấu ăn Nam Bộ", "en": "Southern Cooking Class" },
+        "description": {
+          "vi": "Học nấu các món miền Tây đặc trưng: lẩu mắm, cá kho tộ, canh chua cá linh – với nguyên liệu tươi từ chợ và sông nước địa phương.",
+          "en": "Learn to cook distinctive Mekong dishes: fermented fish hotpot, clay pot fish, sour fish soup – using fresh local ingredients from the market and waterways."
+        }
+      },
+      {
+        "time": "Ngày 2 - 08:00",
+        "title": { "vi": "Khám phá vườn trái cây và đảo ẩm thực", "en": "Fruit Garden and Food Island Exploration" },
+        "description": {
+          "vi": "Thuyền đến các cồn đảo giữa sông, thăm vườn trái cây, thưởng thức trái cây tươi ngon ngay tại vườn và tìm hiểu văn hóa ẩm thực sông nước đặc trưng.",
+          "en": "Boat to mid-river islets, visit fruit gardens, enjoy fresh fruits straight from the orchard, and learn about the distinctive waterway food culture."
+        },
+        "image": "tour-mekong"
+      }
+    ],
+    "highlightDishSlugs": ["com-tam-sai-gon"],
+    "image": "tour-mekong"
+  }
+]

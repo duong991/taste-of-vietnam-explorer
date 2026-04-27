@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { AlertCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import SectionHeader from "@/components/SectionHeader";
@@ -9,66 +11,65 @@ import Features from "@/components/Features";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import { useCities } from "@/hooks/useCities";
+import { useDishes } from "@/hooks/useDishes";
+import { useTours } from "@/hooks/useTours";
 
-import cityHanoi from "@/assets/city-hanoi.jpg";
-import cityHue from "@/assets/city-hue.jpg";
-import cityDanang from "@/assets/city-danang.jpg";
-import cityHoian from "@/assets/city-hoian.jpg";
-import cityDalat from "@/assets/city-dalat.jpg";
-import cityCantho from "@/assets/city-cantho.jpg";
+const CARD_SKELETON_COUNT = 4;
 
-import foodPho from "@/assets/food-pho.jpg";
-import foodBunbo from "@/assets/food-bunbo.jpg";
-import foodCaolau from "@/assets/food-caolau.jpg";
-import foodBanhxeo from "@/assets/food-banhxeo.jpg";
-import foodBuncha from "@/assets/food-buncha.jpg";
-import foodComtam from "@/assets/food-comtam.jpg";
+const CardSkeleton = ({ aspect }: { aspect?: string }) => (
+  <div
+    className={`shrink-0 snap-start w-[260px] md:w-[280px] ${aspect ?? "aspect-[3/4]"} rounded-2xl bg-muted animate-pulse`}
+  />
+);
 
-import tourHanoi from "@/assets/tour-hanoi.jpg";
-import tourMotorbike from "@/assets/tour-motorbike.jpg";
-import tourCooking from "@/assets/tour-cooking.jpg";
-import tourMekong from "@/assets/tour-mekong.jpg";
-
-const cities = [
-  { image: cityHanoi, name: "Hà Nội", tagline: "Tinh tế và cổ kính" },
-  { image: cityHue, name: "Huế", tagline: "Trầm mặc và thơ mộng" },
-  { image: cityDanang, name: "Đà Nẵng", tagline: "Năng động và đáng sống" },
-  { image: cityHoian, name: "Hội An", tagline: "Phố cổ rực ánh đèn" },
-  { image: cityDalat, name: "Đà Lạt", tagline: "Mộng mơ và lãng mạn" },
-  { image: cityCantho, name: "Cần Thơ", tagline: "Sông nước hữu tình" },
-];
-
-const foods = [
-  { image: foodPho, name: "Phở bò Hà Nội", city: "Hà Nội", rating: 4.8, michelin: true },
-  { image: foodBunbo, name: "Bún bò Huế", city: "Huế", rating: 4.7, michelin: true },
-  { image: foodCaolau, name: "Cao lầu Hội An", city: "Hội An", rating: 4.6, michelin: true },
-  { image: foodBanhxeo, name: "Bánh xèo", city: "Miền Nam", rating: 4.6, michelin: true },
-  { image: foodBuncha, name: "Bún chả Hà Nội", city: "Hà Nội", rating: 4.7, michelin: true },
-  { image: foodComtam, name: "Cơm tấm Sài Gòn", city: "Sài Gòn", rating: 4.7 },
-];
-
-const tours = [
-  { image: tourHanoi, name: "Khám phá ẩm thực phố cổ Hà Nội", city: "Hà Nội", duration: "1 ngày", price: "1.250.000đ", rating: 4.9, reviews: 120 },
-  { image: tourMotorbike, name: "Food Tour Hà Nội bằng xe máy", city: "Hà Nội", duration: "1 ngày", price: "1.450.000đ", rating: 4.8, reviews: 95 },
-  { image: tourCooking, name: "Trải nghiệm ẩm thực truyền thống", city: "Hà Nội", duration: "1 ngày", price: "1.350.000đ", rating: 4.9, reviews: 110 },
-  { image: tourMekong, name: "Khám phá ẩm thực miền Tây sông nước", city: "Cần Thơ", duration: "2 ngày 1 đêm", price: "2.350.000đ", rating: 4.8, reviews: 80 },
-];
+const SectionError = ({ message }: { message: string }) => (
+  <div className="flex items-center gap-3 p-4 rounded-xl border border-destructive/30 bg-destructive/5 text-destructive text-sm">
+    <AlertCircle className="h-4 w-4 shrink-0" />
+    <span>{message}</span>
+  </div>
+);
 
 const Index = () => {
+  const { data: cities, isLoading: citiesLoading, isError: citiesError } = useCities();
+  const { data: dishes, isLoading: dishesLoading, isError: dishesError } = useDishes();
+  const { data: tours, isLoading: toursLoading, isError: toursError } = useTours();
+
+  const formatPrice = (vnd: number) =>
+    new Intl.NumberFormat("vi-VN").format(vnd) + " đ";
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main>
         <Hero />
 
-        <section id="thanh-pho" className="container py-16 md:py-20">
+        <section id="section-cities" className="container py-16 md:py-20">
           <SectionHeader
             eyebrow="Khám phá các thành phố"
             title="Đi khắp Việt Nam, thưởng thức hương vị địa phương"
           />
-          <Carousel>
-            {cities.map((c) => <CityCard key={c.name} {...c} />)}
-          </Carousel>
+          {citiesLoading && (
+            <Carousel>
+              {Array.from({ length: CARD_SKELETON_COUNT }).map((_, i) => (
+                <CardSkeleton key={i} />
+              ))}
+            </Carousel>
+          )}
+          {citiesError && <SectionError message="Không tải được danh sách thành phố. Tải lại trang." />}
+          {cities && cities.length > 0 && (
+            <Carousel>
+              {cities.map((city) => (
+                <CityCard
+                  key={city.slug}
+                  image={city.heroImage}
+                  name={city.name.vi}
+                  tagline={city.shortDescription.vi}
+                  slug={city.slug}
+                />
+              ))}
+            </Carousel>
+          )}
         </section>
 
         <section id="mon-an" className="container py-12 md:py-16">
@@ -76,9 +77,27 @@ const Index = () => {
             eyebrow="Món ngon nổi bật"
             title="Những món ăn làm nên thương hiệu Việt"
           />
-          <Carousel>
-            {foods.map((f) => <FoodCard key={f.name} {...f} />)}
-          </Carousel>
+          {dishesLoading && (
+            <Carousel>
+              {Array.from({ length: CARD_SKELETON_COUNT }).map((_, i) => (
+                <CardSkeleton key={i} aspect="aspect-square" />
+              ))}
+            </Carousel>
+          )}
+          {dishesError && <SectionError message="Không tải được danh sách món ăn. Tải lại trang." />}
+          {dishes && dishes.length > 0 && (
+            <Carousel>
+              {dishes.slice(0, 6).map((dish) => (
+                <FoodCard
+                  key={dish.slug}
+                  slug={dish.slug}
+                  image={dish.image}
+                  name={dish.name.vi}
+                  city={cities?.find((c) => c.slug === dish.citySlug)?.name.vi ?? dish.citySlug}
+                />
+              ))}
+            </Carousel>
+          )}
         </section>
 
         <section id="tour" className="container py-12 md:py-16">
@@ -86,14 +105,34 @@ const Index = () => {
             eyebrow="Tour ẩm thực trải nghiệm"
             title="Những hành trình vị giác không thể bỏ lỡ"
             action={
-              <a href="#" className="text-sm font-medium text-primary hover:underline">
-                Xem tất cả tour →
-              </a>
+              <Link to="/tour" className="text-sm font-medium text-primary hover:underline">
+                Xem tất cả →
+              </Link>
             }
           />
-          <Carousel>
-            {tours.map((t) => <TourCard key={t.name} {...t} />)}
-          </Carousel>
+          {toursLoading && (
+            <Carousel>
+              {Array.from({ length: CARD_SKELETON_COUNT }).map((_, i) => (
+                <CardSkeleton key={i} aspect="aspect-[4/3]" />
+              ))}
+            </Carousel>
+          )}
+          {toursError && <SectionError message="Không tải được danh sách tour. Tải lại trang." />}
+          {tours && tours.length > 0 && (
+            <Carousel>
+              {tours.map((tour) => (
+                <TourCard
+                  key={tour.slug}
+                  slug={tour.slug}
+                  image={tour.image}
+                  name={tour.name.vi}
+                  city={cities?.find((c) => c.slug === tour.citySlug)?.name.vi ?? tour.citySlug}
+                  duration={`${tour.durationHours} giờ`}
+                  price={formatPrice(tour.priceVnd)}
+                />
+              ))}
+            </Carousel>
+          )}
         </section>
 
         <Features />

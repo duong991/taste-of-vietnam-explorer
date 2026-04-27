@@ -1,4 +1,5 @@
 import { Star, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Props {
   image: string;
@@ -6,13 +7,14 @@ interface Props {
   city: string;
   duration: string;
   price: string;
-  rating: number;
-  reviews: number;
+  rating?: number;
+  reviews?: number;
+  slug?: string;
 }
 
-const TourCard = ({ image, name, city, duration, price, rating, reviews }: Props) => (
-  <a
-    href="#"
+const TourCard = ({ image, name, city, duration, price, rating, reviews, slug }: Props) => (
+  <Link
+    to={slug ? `/tour/${slug}` : "/tour"}
     className="group shrink-0 snap-start w-[280px] md:w-[300px] rounded-2xl bg-card overflow-hidden shadow-soft hover:shadow-card transition-smooth"
   >
     <div className="relative aspect-[4/3] overflow-hidden">
@@ -44,7 +46,7 @@ const TourCard = ({ image, name, city, duration, price, rating, reviews }: Props
         </span>
       </div>
     </div>
-  </a>
+  </Link>
 );
 
 export default TourCard;

@@ -1,0 +1,172 @@
+[
+  {
+    "slug": "pho-bo-ha-noi",
+    "name": { "vi": "Phở bò Hà Nội", "en": "Hanoi Beef Pho" },
+    "citySlug": "ha-noi",
+    "region": "bac",
+    "type": ["savory"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Phở bò Hà Nội là linh hồn của ẩm thực Thủ đô, ra đời vào khoảng đầu thế kỷ 20 tại các làng quê vùng Nam Định trước khi 'di cư' lên Hà Nội và trở thành một biểu tượng văn hóa.\n\nNước dùng phở được hầm từ xương bò trong nhiều giờ đồng hồ cùng các loại gia vị đặc trưng như hoa hồi, quế, gừng nướng, tạo nên vị ngọt thanh, trong veo không có nơi nào sánh bằng. Bánh phở mỏng mềm, thịt bò thái lát mỏng hoặc viên bò giòn, hành lá xanh mướt...\n\nPhở Hà Nội khác phở ở các vùng khác bởi sự thanh thoát, không quá nhiều gia vị, tôn lên hương vị tự nhiên của xương và thịt bò. Đây là món ăn gắn liền với tuổi thơ, ký ức và tâm hồn của biết bao người Hà Nội.",
+      "en": "Hanoi Beef Pho is the soul of the capital's cuisine, originating around the early 20th century in Nam Dinh villages before 'migrating' to Hanoi and becoming a cultural icon.\n\nThe broth is simmered from beef bones for many hours with distinctive spices like star anise, cinnamon, and charred ginger, creating an unmatched clear, subtly sweet taste. Thin soft rice noodles, thinly sliced beef or tender meatballs, fresh green scallions...\n\nHanoi pho differs from other regional versions by its lightness and restraint, highlighting the natural flavors of bones and beef. This dish is intertwined with the childhood, memories, and soul of countless Hanoians."
+    },
+    "ingredients": {
+      "vi": "Xương bò, thịt bò tái, bánh phở, hành lá, gừng nướng, hoa hồi, quế, đinh hương, hành tây nướng",
+      "en": "Beef bones, rare beef slices, rice noodles, green onions, charred ginger, star anise, cinnamon, cloves, charred onion"
+    },
+    "image": "food-pho"
+  },
+  {
+    "slug": "bun-cha-ha-noi",
+    "name": { "vi": "Bún chả Hà Nội", "en": "Hanoi Grilled Pork Vermicelli" },
+    "citySlug": "ha-noi",
+    "region": "bac",
+    "type": ["savory", "street"],
+    "taste": ["salty", "sweet", "umami"],
+    "story": {
+      "vi": "Bún chả là một trong những món ăn tiêu biểu nhất của Hà Nội, được làm từ thịt lợn nướng than hoa thơm lừng ăn kèm bún trắng và nước chấm đặc biệt.\n\nNét đặc trưng của bún chả nằm ở tiếng xèo xèo của thịt trên than hồng, mùi khói thơm lảng vảng trong không khí – những âm thanh và hương vị mà người Hà Nội dù đi đâu cũng nhớ mãi.\n\nNước chấm bún chả là sự pha trộn tinh tế giữa chua, ngọt, mặn với đường, dấm, nước mắm, tỏi, ớt và cà rốt ngâm. Chính sự hài hòa này tạo nên linh hồn của món ăn.",
+      "en": "Bun cha is one of Hanoi's most iconic dishes, made from charcoal-grilled pork served with fresh vermicelli and a special dipping sauce.\n\nThe distinctive character of bun cha lies in the sizzling sound of meat on hot coals, the gentle drifting smoke aroma – sounds and flavors that Hanoians remember no matter where they go.\n\nThe bun cha dipping sauce is a refined blend of sour, sweet, and salty – sugar, vinegar, fish sauce, garlic, chili, and pickled carrots. This harmony creates the soul of the dish."
+    },
+    "ingredients": {
+      "vi": "Thịt lợn ba chỉ, thịt viên, bún trắng, rau thơm, nước mắm, đường, giấm, tỏi, ớt, cà rốt, đu đủ",
+      "en": "Pork belly, pork patties, white vermicelli, fresh herbs, fish sauce, sugar, vinegar, garlic, chili, carrot, papaya"
+    },
+    "image": "food-buncha"
+  },
+  {
+    "slug": "banh-cuon",
+    "name": { "vi": "Bánh cuốn Thanh Trì", "en": "Steamed Rice Rolls" },
+    "citySlug": "ha-noi",
+    "region": "bac",
+    "type": ["savory", "street"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Bánh cuốn Thanh Trì là đặc sản nổi tiếng của Hà Nội, được làm từ bột gạo tẻ hấp thành lớp mỏng như tờ giấy, cuộn lại không nhân hoặc nhân thịt mộc nhĩ.\n\nĐiều làm nên sự khác biệt của bánh cuốn Thanh Trì là kỹ thuật tráng bánh trên vải tơ căng trên nồi hơi – những tấm bánh mỏng đến mức trong suốt, mềm mượt như lụa. Nghề làm bánh cuốn Thanh Trì đã được công nhận là di sản văn hóa phi vật thể quốc gia.\n\nBánh được thưởng thức cùng chả quế thơm lừng, nước chấm chua ngọt và hành phi vàng giòn.",
+      "en": "Thanh Tri Steamed Rice Rolls are a famous Hanoi specialty, made from rice flour steamed into paper-thin sheets, rolled plain or with wood-ear mushroom filling.\n\nWhat makes Thanh Tri's version unique is the technique of spreading batter on silk cloth stretched over a steam pot – sheets so thin they become translucent, as soft and smooth as silk. The craft of making Thanh Tri rice rolls has been recognized as a national intangible cultural heritage.\n\nEnjoyed with fragrant grilled pork roll, sweet and sour dipping sauce, and crispy fried shallots."
+    },
+    "ingredients": {
+      "vi": "Bột gạo tẻ, mộc nhĩ, thịt heo xay, hành phi, chả quế, nước mắm",
+      "en": "Rice flour, wood-ear mushrooms, minced pork, fried shallots, grilled pork roll, fish sauce"
+    },
+    "image": "food-banhcuon"
+  },
+  {
+    "slug": "ca-phe-trung",
+    "name": { "vi": "Cà phê trứng", "en": "Egg Coffee" },
+    "citySlug": "ha-noi",
+    "region": "bac",
+    "type": ["street"],
+    "taste": ["sweet", "umami"],
+    "story": {
+      "vi": "Cà phê trứng là một sáng tạo độc đáo của người Hà Nội, ra đời vào năm 1946 tại quán Giảng – Ngõ 39 Nguyễn Hữu Huân – khi sữa bò khan hiếm và ông Nguyễn Văn Giang nảy ra ý tưởng dùng lòng đỏ trứng thay thế.\n\nLòng đỏ trứng được đánh bông cùng sữa đặc tạo thành lớp kem mịn mướt đặt lên trên nền cà phê đặc sánh – đây là sự kết hợp tưởng như kỳ lạ nhưng lại hài hòa đến kỳ diệu.\n\nNgày nay, cà phê trứng đã trở thành một trong những thức uống đặc trưng nhất của Hà Nội, xuất hiện trong nhiều danh sách 'must-try' của các tạp chí ẩm thực quốc tế.",
+      "en": "Egg coffee is a unique Hanoi creation, born in 1946 at Giang Cafe – 39 Nguyen Huu Huan Alley – when milk was scarce and Mr. Nguyen Van Giang had the idea of using egg yolks as a substitute.\n\nEgg yolks are whipped with condensed milk into a smooth, creamy foam placed atop a dense coffee base – a seemingly strange combination that is miraculously harmonious.\n\nToday, egg coffee has become one of Hanoi's most distinctive beverages, appearing on countless 'must-try' lists in international food magazines."
+    },
+    "ingredients": {
+      "vi": "Cà phê Robusta Việt Nam, lòng đỏ trứng gà, sữa đặc có đường, đường",
+      "en": "Vietnamese Robusta coffee, egg yolks, sweetened condensed milk, sugar"
+    },
+    "image": "food-cafetrung"
+  },
+  {
+    "slug": "bun-bo-hue",
+    "name": { "vi": "Bún bò Huế", "en": "Hue Spicy Beef Noodle Soup" },
+    "citySlug": "hue",
+    "region": "trung",
+    "type": ["savory"],
+    "taste": ["spicy", "salty", "umami"],
+    "story": {
+      "vi": "Bún bò Huế là đại diện tiêu biểu nhất của ẩm thực Cố đô Huế – một tô bún đầy đủ hương vị, đậm đà và kích thích khứu giác với màu đỏ cam rực rỡ từ dầu tôm chua.\n\nNước dùng bún bò được hầm từ xương bò và giò heo, nêm mắm ruốc Huế đặc trưng – chính mắm ruốc là linh hồn tạo nên hương vị độc đáo không thể nhầm lẫn. Thêm vào đó là sả, ớt, và mả màu tạo nên màu đỏ đặc trưng.\n\nTô bún đầy đủ gồm bún tròn, thịt bò tái, giò heo, chả bò, huyết và rau sống: bắp chuối, rau thơm, giá đỗ – tất cả tạo thành một tổng thể hoàn hảo.",
+      "en": "Bun Bo Hue is the most representative dish of Hue cuisine – a noodle bowl full of flavors, hearty and aromatic with its vivid orange-red color from fermented shrimp paste oil.\n\nThe broth is simmered from beef bones and pork trotters, seasoned with distinctive Hue fermented shrimp paste – this paste is the soul creating the unmistakable unique flavor. Lemongrass, chili, and annatto create the signature red color.\n\nA complete bowl includes round rice noodles, rare beef, pork trotters, beef patties, blood cake, and fresh vegetables: banana flower, herbs, bean sprouts – all forming a perfect whole."
+    },
+    "ingredients": {
+      "vi": "Xương bò, giò heo, bún tròn, mắm ruốc Huế, sả, ớt, mả màu, rau sống",
+      "en": "Beef bones, pork trotters, round rice noodles, Hue shrimp paste, lemongrass, chili, annatto, fresh vegetables"
+    },
+    "image": "food-bunbo"
+  },
+  {
+    "slug": "cao-lau-hoi-an",
+    "name": { "vi": "Cao lầu Hội An", "en": "Hoi An Cao Lau" },
+    "citySlug": "hoi-an",
+    "region": "trung",
+    "type": ["savory"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Cao lầu là món ăn duy nhất chỉ có thể được làm 'chuẩn vị' tại Hội An – không phải vì bí quyết mà vì nguyên liệu: nước giếng Cẩm Phô cổ và tro gỗ bạch đàn chỉ có ở vùng đất này.\n\nSợi mì cao lầu vàng óng được ngâm trong nước tro rồi hấp, tạo nên kết cấu cứng dai độc đáo. Ăn kèm là thịt xá xíu đậm đà, tôm chiên giòn, tóp mỡ, rau sống tươi và nước xốt sền sệt.\n\nCao lầu ảnh hưởng bởi nhiều nền văn hóa – có nét của mì Nhật Bản, thịt xá xíu Trung Hoa và hương vị Việt Nam – phản ánh lịch sử là thương cảng quốc tế sầm uất một thời của Hội An.",
+      "en": "Cao lau is a dish that can only be made 'authentically' in Hoi An – not because of a secret recipe but because of its ingredients: the ancient Cam Pho well water and eucalyptus wood ash found only in this area.\n\nThe golden cao lau noodles are soaked in ash water then steamed, creating a uniquely firm and chewy texture. Served with flavorful char siu pork, crispy fried shrimp, crackling, fresh vegetables, and a thick sauce.\n\nCao lau shows influences from multiple cultures – echoes of Japanese noodles, Chinese char siu, and Vietnamese flavors – reflecting Hoi An's history as a once-thriving international trading port."
+    },
+    "ingredients": {
+      "vi": "Bột gạo, nước giếng Cẩm Phô, tro bạch đàn, thịt xá xíu, tôm, tóp mỡ, rau sống",
+      "en": "Rice flour, Cam Pho well water, eucalyptus ash, char siu pork, shrimp, crackling, fresh vegetables"
+    },
+    "image": "food-caolau"
+  },
+  {
+    "slug": "banh-xeo",
+    "name": { "vi": "Bánh xèo miền Trung", "en": "Central Vietnamese Sizzling Crepe" },
+    "citySlug": "da-nang",
+    "region": "trung",
+    "type": ["savory", "street"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Bánh xèo miền Trung – đặc biệt là phiên bản Đà Nẵng và Quảng Nam – khác biệt hoàn toàn so với bánh xèo miền Nam bởi kích thước nhỏ nhắn và cách thưởng thức độc đáo.\n\nBánh nhỏ bằng bàn tay, vỏ giòn vàng ươm, nhân tôm thịt và giá đỗ, được gói trọn trong lá bánh tráng cùng rau sống rồi chấm nước mắm chua ngọt – đây là cách ăn đặc trưng của người miền Trung.\n\nTiếng 'xèo' vang lên khi đổ bột vào chảo nóng đã trở thành một phần không thể thiếu của bức tranh ẩm thực đường phố miền Trung, thu hút thực khách bằng cả âm thanh lẫn mùi thơm.",
+      "en": "Central Vietnamese Banh Xeo – especially the Da Nang and Quang Nam versions – differs completely from the Southern version with its small, hand-sized crepes and unique way of eating.\n\nSmall as a palm, with crispy golden crust, filled with shrimp, pork, and bean sprouts, wrapped in rice paper with fresh vegetables and dipped in sweet and sour fish sauce – this is the characteristic Central Vietnamese way to eat it.\n\nThe sizzling sound when batter hits the hot pan has become an inseparable part of the Central street food scene, attracting diners with both sound and aroma."
+    },
+    "ingredients": {
+      "vi": "Bột gạo, nghệ, tôm, thịt heo, giá đỗ, hành lá, mộc nhĩ, rau sống, bánh tráng",
+      "en": "Rice flour, turmeric, shrimp, pork, bean sprouts, green onions, wood-ear mushrooms, fresh vegetables, rice paper"
+    },
+    "image": "food-banhxeo"
+  },
+  {
+    "slug": "com-tam-sai-gon",
+    "name": { "vi": "Cơm tấm Sài Gòn", "en": "Saigon Broken Rice" },
+    "citySlug": "can-tho",
+    "region": "nam",
+    "type": ["savory"],
+    "taste": ["salty", "sweet", "umami"],
+    "story": {
+      "vi": "Cơm tấm xuất phát từ những người nghèo Nam Bộ xưa kia – những hạt gạo bị vỡ không bán được, được người lao động tận dụng làm thức ăn. Từ sự đơn giản đó, cơm tấm đã trở thành một trong những món ăn phổ biến và được yêu thích nhất của Sài Gòn và miền Nam.\n\nSuồn nướng thơm lừng, bì giòn tan, chả mịn ngọt, trứng ốp la vàng rộm – tất cả đặt trên nền cơm tấm hạt dẻ mịn, ăn kèm dưa leo, cà chua và nước mắm chua ngọt đặc trưng miền Nam.\n\nCơm tấm có thể ăn vào bất kỳ bữa nào trong ngày – sáng, trưa, tối – và luôn là lựa chọn hàng đầu của người Sài Gòn mỗi khi cần một bữa ngon nhanh.",
+      "en": "Com tam originates from the poor people of Southern Vietnam – broken rice grains that couldn't be sold, used by laborers as food. From this simplicity, com tam became one of the most popular and beloved dishes in Saigon and the South.\n\nFragrant grilled ribs, crispy pork skin, smooth sweet steamed pork cake, golden fried eggs – all placed on a bed of fine broken rice, served with cucumber, tomato, and the distinctive Southern sweet and sour fish sauce.\n\nCom tam can be eaten at any meal – breakfast, lunch, dinner – and is always the top choice for Saigonese wanting a quick and delicious meal."
+    },
+    "ingredients": {
+      "vi": "Gạo tấm, sườn nướng, bì, chả, trứng ốp la, nước mắm, đường, chanh, tỏi, ớt",
+      "en": "Broken rice, grilled ribs, pork skin with rice flakes, steamed pork cake, fried egg, fish sauce, sugar, lime, garlic, chili"
+    },
+    "image": "food-comtam"
+  },
+  {
+    "slug": "che-ha-noi",
+    "name": { "vi": "Chè Hà Nội", "en": "Hanoi Sweet Soup" },
+    "citySlug": "ha-noi",
+    "region": "bac",
+    "type": ["street"],
+    "taste": ["sweet"],
+    "story": {
+      "vi": "Chè Hà Nội là nét văn hóa ẩm thực không thể thiếu của người Thủ đô, với hàng chục loại chè truyền thống mỗi loại mang một hương vị và ý nghĩa riêng.\n\nChè bà cốt nấu từ gạo nếp và đường đen, chè hoa cau thanh tao từ nhãn lồng và hoa cau, chè đỗ đen béo ngậy, chè sâm bổ lượng mát lành... mỗi loại chè gắn với một mùa, một ký ức.\n\nNét đặc trưng của chè Hà Nội là sự thanh thoát, không quá ngọt, không quá béo – phản ánh khẩu vị tinh tế của người Hà Nội. Những gánh hàng chè bà cốt buổi chiều tà hay quán chè đêm đã trở thành một phần không thể thiếu của đời sống Hà Nội.",
+      "en": "Hanoi sweet soups are an indispensable part of the capital's food culture, with dozens of traditional varieties each carrying its own flavor and significance.\n\nBa Cot sweet glutinous rice with brown sugar, delicate longan and arecanut flower chè, rich black bean chè, cooling sam bo luong... each variety is associated with a season, a memory.\n\nThe distinctive character of Hanoi's sweet soups is their lightness – not too sweet, not too rich – reflecting the refined taste of Hanoians. Afternoon chè vendors or late-night sweet soup stalls have become an inseparable part of Hanoi life."
+    },
+    "ingredients": {
+      "vi": "Gạo nếp, đỗ xanh, đỗ đen, nhãn lồng, bột sắn, đường, nước cốt dừa",
+      "en": "Glutinous rice, mung beans, black beans, longan, tapioca, sugar, coconut milk"
+    },
+    "image": "food-che"
+  },
+  {
+    "slug": "banh-goi",
+    "name": { "vi": "Bánh gối", "en": "Pillow Cake" },
+    "citySlug": "ha-noi",
+    "region": "bac",
+    "type": ["savory", "street"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Bánh gối – hay còn gọi là bánh xếp – là món ăn vặt đường phố đặc trưng của Hà Nội, với hình dạng như chiếc gối nhỏ, vỏ giòn tan bọc nhân thịt thơm ngon.\n\nVỏ bánh được làm từ bột mì, chiên giòn vàng ươm. Nhân bánh gồm thịt heo xay, mộc nhĩ, miến, hành tím và các gia vị đặc trưng – tất cả được gói kín và chiên ngập dầu đến khi giòn rụm.\n\nBánh gối thường được bán vào buổi chiều tối, ăn nóng kèm rau sống và nước chấm chua ngọt. Mùi thơm của bánh chiên giòn lan tỏa khắp phố phường Hà Nội đã trở thành một phần của ký ức đô thị.",
+      "en": "Banh goi – also called banh xep (folded cake) – is a quintessential Hanoi street snack, shaped like a small pillow with a crispy crust encasing flavorful filling.\n\nThe pastry shell is made from wheat flour, fried golden and crispy. The filling includes ground pork, wood-ear mushrooms, vermicelli, shallots, and distinctive seasonings – all sealed and deep-fried until shatteringly crisp.\n\nBanh goi is typically sold in late afternoon and evening, eaten hot with fresh vegetables and sweet-sour dipping sauce. The aroma of crispy fried pastries drifting through Hanoi's streets has become part of the city's urban memory."
+    },
+    "ingredients": {
+      "vi": "Bột mì, thịt heo, mộc nhĩ, miến, hành tím, gia vị, dầu chiên",
+      "en": "Wheat flour, pork, wood-ear mushrooms, glass noodles, shallots, seasonings, frying oil"
+    },
+    "image": "food-banhgoi"
+  }
+]
