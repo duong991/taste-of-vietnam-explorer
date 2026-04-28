@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { cn } from "@/lib/utils";
 
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -8,6 +8,14 @@ interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 
 const LazyImage = ({ src, alt, className, ...props }: LazyImageProps) => {
   const [loaded, setLoaded] = useState(false);
+  const didLoad = useRef(false);
+
+  const handleLoad = useCallback(() => {
+    if (!didLoad.current) {
+      didLoad.current = true;
+      setLoaded(true);
+    }
+  }, []);
 
   return (
     <>
@@ -21,7 +29,7 @@ const LazyImage = ({ src, alt, className, ...props }: LazyImageProps) => {
       <img
         src={src}
         alt={alt}
-        onLoad={() => setLoaded(true)}
+        onLoad={handleLoad}
         className={cn(
           "transition-opacity duration-500",
           loaded ? "opacity-100" : "opacity-0",
