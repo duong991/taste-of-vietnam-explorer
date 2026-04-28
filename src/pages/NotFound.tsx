@@ -3,15 +3,17 @@ import { Link, useLocation } from "react-router-dom";
 import { Compass, Search, Home, UtensilsCrossed } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const SUGGESTIONS = [
-  { to: "/thanh-pho", icon: Compass, label: "Khám phá thành phố", desc: "Từ Hà Nội đến Cần Thơ" },
-  { to: "/mon-an", icon: UtensilsCrossed, label: "Tìm món ăn", desc: "Phở, Bún chả, Cao lầu…" },
-  { to: "/tim-kiem", icon: Search, label: "Tìm kiếm", desc: "Nhập từ khoá để khám phá" },
-];
+import { useLocale } from "@/hooks/useLocale";
 
 const NotFound = () => {
   const location = useLocation();
+  const { t, path } = useLocale();
+
+  const SUGGESTIONS = [
+    { to: path.cityList, icon: Compass, label: t("not_found.sug_cities_label"), desc: t("not_found.sug_cities_desc") },
+    { to: path.dishList, icon: UtensilsCrossed, label: t("not_found.sug_dishes_label"), desc: t("not_found.sug_dishes_desc") },
+    { to: path.search, icon: Search, label: t("not_found.sug_search_label"), desc: t("not_found.sug_search_desc") },
+  ];
 
   useEffect(() => {
     console.error("404 — Route not found:", location.pathname);
@@ -28,10 +30,10 @@ const NotFound = () => {
 
           <div className="-mt-4 mb-6">
             <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
-              Trang không tồn tại
+              {t("not_found.title")}
             </h1>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-sm mx-auto">
-              Trang bạn đang tìm không còn ở đây. Hãy thử khám phá các nội dung bên dưới.
+              {t("not_found.desc")}
             </p>
           </div>
 
@@ -58,7 +60,7 @@ const NotFound = () => {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-smooth focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
           >
             <Home className="h-4 w-4" />
-            Về trang chủ
+            {t("not_found.go_home")}
           </Link>
         </div>
       </main>

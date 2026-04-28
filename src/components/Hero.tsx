@@ -2,16 +2,18 @@ import { useState, FormEvent } from "react";
 import { Search, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-hoian.jpg";
+import { useLocale } from "@/hooks/useLocale";
 
 const Hero = () => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
+  const { t, path } = useLocale();
 
   const handleSearch = (e: FormEvent) => {
     e.preventDefault();
     const q = query.trim();
     if (!q) return;
-    navigate(`/tim-kiem?q=${encodeURIComponent(q)}`);
+    navigate(`${path.search}?q=${encodeURIComponent(q)}`);
   };
 
   const scrollToCities = () => {
@@ -22,7 +24,7 @@ const Hero = () => {
     <section className="relative min-h-[760px] w-full overflow-hidden">
       <img
         src={heroImage}
-        alt="Phố cổ Hội An rực rỡ ánh đèn lồng buổi tối"
+        alt={t("hero.img_alt")}
         className="absolute inset-0 h-full w-full object-cover"
         width={1920}
         height={1088}
@@ -34,15 +36,15 @@ const Hero = () => {
       <div className="relative container flex min-h-[760px] flex-col justify-center pt-28 pb-16">
         <div className="max-w-3xl animate-fade-up">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-accent">
-            Dấu ấn hương vị Việt
+            {t("hero.tagline")}
           </p>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] text-white">
-            Khám phá tinh hoa
+            {t("hero.title_line1")}
             <br />
-            ẩm thực Việt
+            {t("hero.title_line2")}
           </h1>
           <p className="mt-6 max-w-xl text-base md:text-lg text-white/85 leading-relaxed">
-            Hành trình vị giác — Kết nối văn hóa — Lan tỏa tinh hoa
+            {t("hero.subtitle")}
           </p>
         </div>
 
@@ -60,8 +62,8 @@ const Hero = () => {
                   type="search"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Tìm thành phố, món ăn, tour trải nghiệm…"
-                  aria-label="Tìm kiếm ẩm thực"
+                  placeholder={t("hero.search_placeholder")}
+                  aria-label={t("nav.search_label")}
                   className="w-full bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none"
                 />
               </div>
@@ -69,7 +71,7 @@ const Hero = () => {
                 type="submit"
                 className="shrink-0 h-12 px-6 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-smooth focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
               >
-                Tìm kiếm
+                {t("hero.search_btn")}
               </button>
             </div>
           </div>
@@ -79,9 +81,9 @@ const Hero = () => {
           <button
             onClick={scrollToCities}
             className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-smooth"
-            aria-label="Khám phá ngay"
+            aria-label={t("hero.explore_btn")}
           >
-            Khám phá ngay
+            {t("hero.explore_btn")}
             <ChevronDown className="h-4 w-4 animate-bounce" />
           </button>
         </div>

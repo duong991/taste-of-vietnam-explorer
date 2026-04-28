@@ -12,12 +12,7 @@ import { useCity } from "@/hooks/useCity";
 import { useDishes } from "@/hooks/useDishes";
 import { useTours } from "@/hooks/useTours";
 import { Markdown } from "@/lib/markdown";
-
-const REGION_LABEL: Record<string, string> = {
-  bac: "Miền Bắc",
-  trung: "Miền Trung",
-  nam: "Miền Nam",
-};
+import { useLocale } from "@/hooks/useLocale";
 
 const DetailSkeleton = () => (
   <div className="animate-pulse space-y-6">
@@ -33,6 +28,7 @@ const DetailSkeleton = () => (
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { t, pick, path, locale } = useLocale();
 
   const { data: city, isLoading, isError, refetch } = useCity(slug);
   const { data: dishes } = useDishes();
@@ -43,8 +39,9 @@ const CityPage = () => {
   }, [isLoading, isError, city, navigate]);
 
   const featuredDishes = dishes?.filter((d) => city?.featuredDishSlugs.includes(d.slug)) ?? [];
-  const featuredTours = tours?.filter((t) => city?.featuredTourSlugs.includes(t.slug)) ?? [];
-  const formatPrice = (vnd: number) => new Intl.NumberFormat("vi-VN").format(vnd) + " đ";
+  const featuredTours = tours?.filter((tr) => city?.featuredTourSlugs.includes(tr.slug)) ?? [];
+  const formatPrice = (vnd: number) =>
+    new Intl.NumberFormat(locale === "en" ? "en-US" : "vi-VN").format(vnd) + (locale === "en" ? " VND" : " đ");
 
   if (isLoading) {
     return (
@@ -63,12 +60,12 @@ const CityPage = () => {
         <main className="pt-24 pb-16 container">
           <div className="flex flex-col items-center gap-4 py-16 text-center">
             <AlertCircle className="h-10 w-10 text-destructive" />
-            <p className="text-sm text-muted-foreground">Không tải được thông tin thành phố.</p>
+            <p className="text-sm text-muted-foreground">{t("city_detail.err")}</p>
             <button
               onClick={() => refetch()}
               className="flex items-center gap-2 px-4 py-2 rounded-md border text-sm hover:border-primary hover:text-primary transition-smooth"
             >
-              <RefreshCw className="h-4 w-4" /> Thử lại
+              <RefreshCw className="h-4 w-4" /> {t("common.retry")}
             </button>
           </div>
         </main>
@@ -86,7 +83,7 @@ const CityPage = () => {
       <section className="relative min-h-[480px] w-full overflow-hidden">
         <img
           src={city.heroImage}
-          alt={city.name.vi}
+          alt={pick(city.name)}
           className="absolute inset-0 h-full w-full object-cover"
           fetchPriority="high"
         />
@@ -96,23 +93,23 @@ const CityPage = () => {
         <div className="relative container h-full pt-28 pb-12 flex flex-col justify-end text-white min-h-[480px]">
           <nav className="flex items-center gap-1.5 text-xs text-white/80 mb-5 flex-wrap" aria-label="Breadcrumb">
             <Link to="/" className="flex items-center gap-1 hover:text-white transition-smooth">
-              <Home className="h-3.5 w-3.5" /> Trang chủ
+              <Home className="h-3.5 w-3.5" /> {t("common.home")}
             </Link>
             <ChevronRight className="h-3 w-3" />
-            <Link to="/thanh-pho" className="hover:text-white transition-smooth">Thành phố</Link>
+            <Link to={path.cityList} className="hover:text-white transition-smooth">{t("city_detail.breadcrumb_cities")}</Link>
             <ChevronRight className="h-3 w-3" />
-            <span className="text-white">{city.name.vi}</span>
+            <span className="text-white">{pick(city.name)}</span>
           </nav>
 
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">
-              {REGION_LABEL[city.region]}
+              {t(`region.${city.region}`)}
             </p>
             <h1 className="font-display text-5xl md:text-7xl font-semibold leading-[1.05]">
-              {city.name.vi}
+              {pick(city.name)}
             </h1>
             <p className="mt-4 text-lg text-white/90 max-w-xl leading-relaxed">
-              {city.shortDescription.vi}
+              {pick(city.shortDescription)}
             </p>
             {city.geo && (
               <p className="mt-3 flex items-center gap-1.5 text-sm text-white/70">
@@ -126,26 +123,30 @@ const CityPage = () => {
 
       <main className="pb-16">
         <div className="container max-w-4xl py-12">
-          <Markdown className="mb-10">{city.story.vi}</Markdown>
+          <Markdown className="mb-10">{pick(city.story)}</Markdown>
 
           <div className="mb-10">
-            <ShareBar title={city.name.vi} />
+            <ShareBar title={pick(city.name)} />
           </div>
         </div>
 
         {city.gallery.length > 0 && (
           <section className="container mb-14">
-            <h2 className="font-display text-2xl font-semibold text-foreground mb-6">Ảnh {city.name.vi}</h2>
-            <Gallery images={city.gallery} alt={city.name.vi} />
+            <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
+              {t("city_detail.gallery", { name: pick(city.name) })}
+            </h2>
+            <Gallery images={city.gallery} alt={pick(city.name)} />
           </section>
         )}
 
         {city.geo && (
           <section className="container max-w-4xl mb-14">
-            <h2 className="font-display text-2xl font-semibold text-foreground mb-4">Bản đồ</h2>
+            <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
+              {t("city_detail.map_title", { name: pick(city.name) })}
+            </h2>
             <div className="aspect-[16/7] rounded-2xl overflow-hidden border border-border shadow-soft">
               <iframe
-                title={`Bản đồ ${city.name.vi}`}
+                title={t("city_detail.map_title", { name: pick(city.name) })}
                 src={`https://www.openstreetmap.org/export/embed.html?bbox=${city.geo.lng - 0.05}%2C${city.geo.lat - 0.04}%2C${city.geo.lng + 0.05}%2C${city.geo.lat + 0.04}&layer=mapnik&marker=${city.geo.lat}%2C${city.geo.lng}`}
                 className="h-full w-full"
                 loading="lazy"
@@ -158,10 +159,10 @@ const CityPage = () => {
           <section className="container mb-14">
             <div className="flex items-center justify-between mb-6">
               <h2 className="font-display text-2xl font-semibold text-foreground">
-                Món ăn đặc trưng
+                {t("city_detail.featured_dishes")}
               </h2>
-              <Link to={`/mon-an?city=${city.slug}`} className="text-sm font-medium text-primary hover:underline">
-                Xem tất cả →
+              <Link to={`${path.dishList}?city=${city.slug}`} className="text-sm font-medium text-primary hover:underline">
+                {t("city_detail.see_all_dishes")}
               </Link>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
@@ -170,8 +171,8 @@ const CityPage = () => {
                   key={dish.slug}
                   slug={dish.slug}
                   image={dish.image}
-                  name={dish.name.vi}
-                  city={city.name.vi}
+                  name={pick(dish.name)}
+                  city={pick(city.name)}
                 />
               ))}
             </div>
@@ -182,10 +183,10 @@ const CityPage = () => {
           <section className="container mb-14">
             <div className="flex items-center justify-between mb-6">
               <h2 className="font-display text-2xl font-semibold text-foreground">
-                Tour ẩm thực tại {city.name.vi}
+                {t("city_detail.featured_tours", { name: pick(city.name) })}
               </h2>
-              <Link to={`/tour?city=${city.slug}`} className="text-sm font-medium text-primary hover:underline">
-                Xem tất cả →
+              <Link to={`${path.tourList}?city=${city.slug}`} className="text-sm font-medium text-primary hover:underline">
+                {t("city_detail.see_all_tours")}
               </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -194,9 +195,9 @@ const CityPage = () => {
                   key={tour.slug}
                   slug={tour.slug}
                   image={tour.image}
-                  name={tour.name.vi}
-                  city={city.name.vi}
-                  duration={`${tour.durationHours} giờ`}
+                  name={pick(tour.name)}
+                  city={pick(city.name)}
+                  duration={`${tour.durationHours} ${t("common.hour")}`}
                   price={formatPrice(tour.priceVnd)}
                 />
               ))}

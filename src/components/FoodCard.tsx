@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLocale } from "@/hooks/useLocale";
 
 interface Props {
   image: string;
@@ -10,9 +11,11 @@ interface Props {
   slug?: string;
 }
 
-const FoodCard = ({ image, name, city, rating, michelin, slug }: Props) => (
+const FoodCard = ({ image, name, city, rating, michelin, slug }: Props) => {
+  const { path } = useLocale();
+  return (
   <Link
-    to={slug ? `/mon-an/${slug}` : "/mon-an"}
+    to={slug ? path.dish(slug) : path.dishList}
     className="group shrink-0 snap-start w-[220px] md:w-[240px] rounded-2xl bg-card overflow-hidden shadow-soft hover:shadow-card transition-smooth"
   >
     <div className="relative aspect-square overflow-hidden">
@@ -42,6 +45,7 @@ const FoodCard = ({ image, name, city, rating, michelin, slug }: Props) => (
       </div>
     </div>
   </Link>
-);
+  );
+};
 
 export default FoodCard;

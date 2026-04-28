@@ -37,5 +37,57 @@
     "website": "https://vietnamculinary.vn",
     "zaloUrl": "https://zalo.me/vietnamculinary",
     "messengerUrl": "https://m.me/vietnamculinary"
+  },
+  {
+    "id": "saigon-street-food",
+    "name": "Saigon Street Food Co.",
+    "description": {
+      "vi": "Đơn vị tour ẩm thực đường phố Sài Gòn – TP.HCM với mạng lưới hơn 50 quán ăn vỉa hè đối tác đã được tuyển chọn kỹ. Chuyên dẫn tour bằng xe máy về đêm, đưa du khách len lỏi qua các 'thiên đường ẩm thực' từ Quận 1 đến Chợ Lớn.",
+      "en": "Saigon's street food tour specialist with a curated network of 50+ partner sidewalk eateries. Specializing in nighttime motorbike tours that thread travelers through Saigon's culinary heavens from District 1 to Cho Lon."
+    },
+    "email": "hello@saigonstreetfood.vn",
+    "phone": "+84 28 3925 4567",
+    "website": "https://saigonstreetfood.vn",
+    "zaloUrl": "https://zalo.me/saigonstreetfood",
+    "messengerUrl": "https://m.me/saigonstreetfood"
+  },
+  {
+    "id": "hue-royal-cuisine",
+    "name": "Hue Royal Cuisine Experience",
+    "description": {
+      "vi": "Trung tâm trải nghiệm ẩm thực cung đình Huế, hợp tác với các nghệ nhân cung đình thế hệ thứ 4–5. Tổ chức bữa cỗ 'cơm vua' theo nghi thức triều Nguyễn, lớp nấu ăn cung đình, và tour ẩm thực dân gian Huế.",
+      "en": "Hue royal cuisine experience center, partnering with 4th–5th generation imperial culinary artisans. Hosting Nguyen-dynasty 'royal banquet' meals, imperial cooking classes, and Hue popular-food tours."
+    },
+    "email": "info@hueroyalcuisine.vn",
+    "phone": "+84 234 3866 1122",
+    "website": "https://hueroyalcuisine.vn",
+    "zaloUrl": "https://zalo.me/hueroyalcuisine",
+    "messengerUrl": "https://m.me/hueroyalcuisine"
+  },
+  {
+    "id": "hoian-lantern-tours",
+    "name": "Hoi An Lantern Tours",
+    "description": {
+      "vi": "Đơn vị tour Hội An chuyên về trải nghiệm phố cổ về đêm: lớp làm đèn lồng truyền thống, lớp nấu ăn 4 món signature (cao lầu, mì Quảng, bánh mì, bánh xèo), và tour thuyền hoa đăng trên sông Hoài.",
+      "en": "A Hoi An tour operator specializing in ancient-town nighttime experiences: traditional lantern-making classes, 4-signature-dish cooking class (cao lau, mi quang, banh mi, banh xeo), and Hoai River lantern-boat tours."
+    },
+    "email": "contact@hoianlantern.vn",
+    "phone": "+84 235 3917 8899",
+    "website": "https://hoianlantern.vn",
+    "zaloUrl": "https://zalo.me/hoianlantern",
+    "messengerUrl": "https://m.me/hoianlantern"
+  },
+  {
+    "id": "danang-seafood-tours",
+    "name": "Da Nang Seafood Tours",
+    "description": {
+      "vi": "Tour hải sản Đà Nẵng – đối tác trực tiếp với các chủ tàu cá tại cảng cá Thọ Quang. Đưa du khách ra cảng cá lúc 4h sáng đón thuyền cập bến, mua hải sản tươi nhất rồi mang về nhà hàng địa phương chế biến tại chỗ.",
+      "en": "Da Nang seafood tour – partnering directly with boat owners at Tho Quang fishing port. Take travelers to the dock at 4am to greet returning boats, source the freshest catch, and have it cooked at a local restaurant on the spot."
+    },
+    "email": "hello@danangseafood.vn",
+    "phone": "+84 236 3941 2233",
+    "website": "https://danangseafood.vn",
+    "zaloUrl": "https://zalo.me/danangseafood",
+    "messengerUrl": "https://m.me/danangseafood"
   }
 ]

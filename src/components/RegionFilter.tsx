@@ -1,19 +1,23 @@
 import type { Region } from "@/types/content";
+import { useLocale } from "@/hooks/useLocale";
 
-const REGIONS: { key: Region | "all"; label: string }[] = [
-  { key: "all", label: "Tất cả" },
-  { key: "bac", label: "Miền Bắc" },
-  { key: "trung", label: "Miền Trung" },
-  { key: "nam", label: "Miền Nam" },
-];
+const REGION_KEYS: (Region | "all")[] = ["all", "bac", "trung", "nam"];
 
 interface RegionFilterProps {
   value: Region | "all";
   onChange: (region: Region | "all") => void;
 }
 
-const RegionFilter = ({ value, onChange }: RegionFilterProps) => (
-  <div className="flex flex-wrap gap-2" role="group" aria-label="Lọc theo vùng miền">
+const RegionFilter = ({ value, onChange }: RegionFilterProps) => {
+  const { t } = useLocale();
+
+  const REGIONS = REGION_KEYS.map((key) => ({
+    key,
+    label: t(`region.${key}`),
+  }));
+
+  return (
+  <div className="flex flex-wrap gap-2" role="group" aria-label={t("city_list.breadcrumb")}>
     {REGIONS.map((r) => (
       <button
         key={r.key}
@@ -29,6 +33,7 @@ const RegionFilter = ({ value, onChange }: RegionFilterProps) => (
       </button>
     ))}
   </div>
-);
+  );
+};
 
 export default RegionFilter;

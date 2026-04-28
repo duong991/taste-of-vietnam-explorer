@@ -10,15 +10,9 @@ import Chatbot from "@/components/Chatbot";
 import { useTours } from "@/hooks/useTours";
 import { useCities } from "@/hooks/useCities";
 import { filterTours, sortTours, type TourSortKey } from "@/lib/filter";
+import { useLocale } from "@/hooks/useLocale";
 
 const PAGE_SIZE = 9;
-
-const SORT_OPTIONS = [
-  { value: "default", label: "Mặc định" },
-  { value: "price-asc", label: "Giá: thấp → cao" },
-  { value: "price-desc", label: "Giá: cao → thấp" },
-  { value: "duration-asc", label: "Thời gian: ngắn nhất" },
-];
 
 const GridSkeleton = () => (
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -38,6 +32,14 @@ const TourListPage = () => {
   const [citySlug, setCitySlug] = useState(searchParams.get("city") ?? "");
   const [sort, setSort] = useState<TourSortKey>("default");
   const [page, setPage] = useState(1);
+  const { t, pick, locale } = useLocale();
+
+  const SORT_OPTIONS = [
+    { value: "default", label: t("tour_list.sort_default") },
+    { value: "price-asc", label: t("tour_list.sort_price_asc") },
+    { value: "price-desc", label: t("tour_list.sort_price_desc") },
+    { value: "duration-asc", label: t("tour_list.sort_duration_asc") },
+  ];
 
   const { data: tours, isLoading, isError, refetch } = useTours();
   const { data: cities } = useCities();
@@ -61,9 +63,10 @@ const TourListPage = () => {
   const visible = sorted.slice(0, page * PAGE_SIZE);
   const hasMore = visible.length < sorted.length;
 
-  const cityOptions = (cities ?? []).map((c) => ({ value: c.slug, label: c.name.vi }));
+  const cityOptions = (cities ?? []).map((c) => ({ value: c.slug, label: pick(c.name) }));
 
-  const formatPrice = (vnd: number) => new Intl.NumberFormat("vi-VN").format(vnd) + " đ";
+  const formatPrice = (vnd: number) =>
+    new Intl.NumberFormat(locale === "en" ? "en-US" : "vi-VN").format(vnd) + (locale === "en" ? " VND" : " đ");
 
   const handleReset = () => {
     setFilters(EMPTY_FILTERS);
@@ -77,19 +80,19 @@ const TourListPage = () => {
         <div className="container">
           <nav className="flex items-center gap-1.5 text-xs text-muted-foreground mb-6" aria-label="Breadcrumb">
             <Link to="/" className="flex items-center gap-1 hover:text-primary transition-smooth">
-              <Home className="h-3.5 w-3.5" /> Trang chủ
+              <Home className="h-3.5 w-3.5" /> {t("common.home")}
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />
-            <span className="text-foreground font-medium">Tour ẩm thực</span>
+            <span className="text-foreground font-medium">{t("tour_list.breadcrumb")}</span>
           </nav>
 
           <div className="mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">Trải nghiệm</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">{t("tour_list.eyebrow")}</p>
             <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground">
-              Tour ẩm thực Việt Nam
+              {t("tour_list.title")}
             </h1>
             <p className="mt-3 text-muted-foreground max-w-xl">
-              Hành trình vị giác — từ phố cổ Hà Nội đến miền Tây sông nước.
+              {t("tour_list.desc")}
             </p>
           </div>
 
@@ -109,7 +112,7 @@ const TourListPage = () => {
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between mb-5">
                 <p className="text-sm text-muted-foreground">
-                  {isLoading ? "Đang tải…" : `${sorted.length} tour`}
+                  {isLoading ? t("common.loading") : `${sorted.length} ${t("tour_list.breadcrumb")}`}
                 </p>
                 <SortDropdown value={sort} options={SORT_OPTIONS} onChange={(v) => setSort(v as TourSortKey)} />
               </div>
@@ -119,21 +122,21 @@ const TourListPage = () => {
               {isError && (
                 <div className="flex flex-col items-center gap-4 py-16 text-center">
                   <AlertCircle className="h-10 w-10 text-destructive" />
-                  <p className="text-sm text-muted-foreground">Không tải được danh sách tour.</p>
+                  <p className="text-sm text-muted-foreground">{t("tour_list.err")}</p>
                   <button
                     onClick={() => refetch()}
                     className="flex items-center gap-2 px-4 py-2 rounded-md border text-sm hover:border-primary hover:text-primary transition-smooth"
                   >
-                    <RefreshCw className="h-4 w-4" /> Thử lại
+                    <RefreshCw className="h-4 w-4" /> {t("common.retry")}
                   </button>
                 </div>
               )}
 
               {!isLoading && !isError && sorted.length === 0 && (
                 <div className="flex flex-col items-center gap-4 py-16 text-center">
-                  <p className="text-muted-foreground">Không có tour phù hợp với bộ lọc.</p>
+                  <p className="text-muted-foreground">{t("tour_list.empty")}</p>
                   <button onClick={handleReset} className="text-sm text-primary hover:underline">
-                    Xoá tất cả bộ lọc
+                    {t("common.clear_filter")}
                   </button>
                 </div>
               )}
@@ -146,9 +149,9 @@ const TourListPage = () => {
                         key={tour.slug}
                         slug={tour.slug}
                         image={tour.image}
-                        name={tour.name.vi}
-                        city={cities?.find((c) => c.slug === tour.citySlug)?.name.vi ?? tour.citySlug}
-                        duration={`${tour.durationHours} giờ`}
+                        name={pick(tour.name)}
+                        city={(() => { const c = cities?.find((c) => c.slug === tour.citySlug); return c ? pick(c.name) : tour.citySlug; })()}
+                        duration={`${tour.durationHours} ${t("common.hour")}`}
                         price={formatPrice(tour.priceVnd)}
                       />
                     ))}
@@ -160,7 +163,7 @@ const TourListPage = () => {
                         onClick={() => setPage((p) => p + 1)}
                         className="px-8 py-3 rounded-xl border border-border text-sm font-medium hover:border-primary hover:text-primary transition-smooth"
                       >
-                        Xem thêm ({sorted.length - visible.length} tour còn lại)
+                        {t("common.load_more")} ({t("tour_list.load_more_count", { count: sorted.length - visible.length })})
                       </button>
                     </div>
                   )}

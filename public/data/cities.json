@@ -13,9 +13,63 @@
     },
     "heroImage": "city-hanoi-hero",
     "gallery": ["city-hanoi", "city-hanoi-hero"],
-    "featuredDishSlugs": ["pho-bo-ha-noi", "bun-cha-ha-noi", "banh-cuon", "ca-phe-trung"],
-    "featuredTourSlugs": ["kham-pha-am-thuc-ha-noi", "food-tour-ha-noi-xe-may"],
+    "featuredDishSlugs": ["pho-bo-ha-noi", "bun-cha-ha-noi", "banh-cuon", "ca-phe-trung", "pho-ga-ha-noi", "bun-thang", "nem-ran", "xoi-xeo", "che-ha-noi", "banh-goi"],
+    "featuredTourSlugs": ["kham-pha-am-thuc-ha-noi", "food-tour-ha-noi-xe-may", "trai-nghiem-nau-an-truyen-thong"],
     "geo": { "lat": 21.0285, "lng": 105.8542 }
+  },
+  {
+    "slug": "sapa",
+    "name": { "vi": "Sa Pa", "en": "Sa Pa" },
+    "region": "bac",
+    "shortDescription": {
+      "vi": "Thị trấn vùng cao với ẩm thực dân tộc đậm hương rừng",
+      "en": "A highland town with hearty ethnic cuisine flavored by the forest"
+    },
+    "story": {
+      "vi": "Sa Pa – thị trấn nằm trong sương ở độ cao hơn 1.500m – là cửa ngõ vào ẩm thực vùng cao Tây Bắc. Đây là nơi người H'Mông, Dao đỏ, Tày, Giáy cùng chia sẻ căn bếp và nâng tầm những món ăn từ nguyên liệu giản dị nhất của núi rừng.\n\nThắng cố – nồi 'súp' truyền thống của người H'Mông với thịt và nội tạng ngựa, nêm thảo quả, sa nhân, hạt dổi – là biểu tượng. Bên cạnh là cá hồi nuôi nước lạnh Sa Pa, lợn cắp nách quay giòn da, gà đen luộc chấm muối tiêu chanh.\n\nMùa nào thức ấy: măng đắng đầu hè, su su luộc chấm muối vừng, rượu táo mèo nồng ấm – tất cả thưởng thức bên bếp than củi giữa cái lạnh núi rừng, là trải nghiệm khó quên.",
+      "en": "Sa Pa – a town wrapped in mist at over 1,500m – is the gateway to the highland cuisine of Northwest Vietnam. Here the H'Mong, Red Dao, Tay, and Giay peoples share their kitchens, elevating the simplest mountain ingredients.\n\nThang co – the traditional H'Mong stew of horse meat and offal seasoned with cardamom, sand-ginger, and dổi seeds – is the icon. Alongside: cold-water Sa Pa salmon, crispy-skin baby pork, black chicken with lime-pepper-salt dip.\n\nEvery season has its own flavor: bitter bamboo shoots in early summer, boiled chayote with sesame salt, warming táo mèo apple wine – all enjoyed beside a charcoal stove in the mountain cold, an unforgettable experience."
+    },
+    "heroImage": "city-dalat",
+    "gallery": ["city-dalat"],
+    "featuredDishSlugs": ["thang-co-sapa", "ca-hoi-sapa"],
+    "featuredTourSlugs": ["sapa-am-thuc-vung-cao"],
+    "geo": { "lat": 22.3364, "lng": 103.8438 }
+  },
+  {
+    "slug": "ninh-binh",
+    "name": { "vi": "Ninh Bình", "en": "Ninh Binh" },
+    "region": "bac",
+    "shortDescription": {
+      "vi": "Vùng đất 'Hạ Long trên cạn' với đặc sản dê núi và cơm cháy",
+      "en": "Land of the 'inland Ha Long' with mountain goat and crispy rice specialties"
+    },
+    "story": {
+      "vi": "Ninh Bình – cố đô Hoa Lư xưa – nổi tiếng với cảnh quan núi đá vôi hùng vĩ và một nền ẩm thực gắn liền với địa hình đặc biệt này. Dê núi Ninh Bình được nuôi thả tự nhiên trên các vách đá, ăn lá cây thuốc nên thịt săn chắc, thơm và ngọt khác biệt hoàn toàn với dê đồng bằng.\n\nDê được chế biến đa dạng: dê tái chanh, dê nướng, dê hấp, dê nấu lẩu... Cơm cháy Ninh Bình – cơm gạo nấu khô rồi chiên giòn rụm – chấm cùng ruốc thịt và nước sốt dê là combo kinh điển.\n\nThêm vào đó là ốc núi đá, cá rô Tổng Trường, miến lươn Yên Mô – tất cả tạo nên bản đồ ẩm thực phong phú của một vùng đất di sản.",
+      "en": "Ninh Binh – the ancient Hoa Lư capital – is famous for its dramatic karst landscape and a cuisine deeply tied to this terrain. Ninh Binh mountain goats roam free on limestone cliffs, feeding on medicinal leaves; the meat is firm, fragrant, and distinctly sweet compared to lowland goats.\n\nGoat is prepared in many ways: tartare with lime, grilled, steamed, or hotpot. Ninh Binh com chay – sun-dried rice deep-fried until shatteringly crisp – served with floss pork and goat sauce is the classic combination.\n\nAdded to this are limestone-mountain snails, Tong Truong perch, Yen Mo eel vermicelli – a rich culinary map of a heritage land."
+    },
+    "heroImage": "city-hanoi",
+    "gallery": ["city-hanoi"],
+    "featuredDishSlugs": ["de-nui-ninh-binh", "com-chay-ninh-binh"],
+    "featuredTourSlugs": [],
+    "geo": { "lat": 20.2506, "lng": 105.9745 }
+  },
+  {
+    "slug": "ha-giang",
+    "name": { "vi": "Hà Giang", "en": "Ha Giang" },
+    "region": "bac",
+    "shortDescription": {
+      "vi": "Cao nguyên đá với ẩm thực mộc mạc, hương vị rất riêng",
+      "en": "The rocky plateau with rustic cuisine and unmistakable flavors"
+    },
+    "story": {
+      "vi": "Hà Giang – nơi địa đầu Tổ quốc – sở hữu cao nguyên đá Đồng Văn được UNESCO công nhận là Công viên Địa chất Toàn cầu. Ẩm thực Hà Giang mang dấu ấn của 19 dân tộc thiểu số, mộc mạc nhưng đặc biệt khó quên.\n\nMèn mén – món bột ngô đồ xốp ăn thay cơm của người H'Mông – là biểu tượng. Phở chua Hà Giang lại hoàn toàn khác phở miền xuôi: ăn nguội, có vị chua thanh từ giấm, kèm thịt xá xíu, lạc rang và rau thơm.\n\nThắng dền (món tráng miệng nóng từ bột nếp), cháo ấu tẩu, bánh tam giác mạch – tất cả là những hương vị chỉ Hà Giang mới có, gắn với mùa hoa tam giác mạch hồng tím phủ kín núi đồi mỗi độ thu về.",
+      "en": "Ha Giang – Vietnam's northernmost frontier – holds the UNESCO Global Geopark of Dong Van karst plateau. Its cuisine bears the imprint of 19 ethnic minorities, rustic yet unforgettable.\n\nMèn mén – steamed corn flour eaten in place of rice by the H'Mong people – is iconic. Ha Giang sour pho is entirely different from lowland pho: served cool, with tangy vinegar broth, char siu pork, roasted peanuts, and fresh herbs.\n\nThang den (warm sticky-rice dumpling dessert), au tau porridge, buckwheat cakes – all flavors found only here, tied to the buckwheat blossom season that paints the hills pink-purple every autumn."
+    },
+    "heroImage": "city-dalat",
+    "gallery": ["city-dalat"],
+    "featuredDishSlugs": ["pho-chua-ha-giang", "men-men"],
+    "featuredTourSlugs": [],
+    "geo": { "lat": 22.8025, "lng": 104.9784 }
   },
   {
     "slug": "hue",
@@ -31,8 +85,8 @@
     },
     "heroImage": "city-hue",
     "gallery": ["city-hue"],
-    "featuredDishSlugs": ["bun-bo-hue"],
-    "featuredTourSlugs": ["trai-nghiem-nau-an-truyen-thong"],
+    "featuredDishSlugs": ["bun-bo-hue", "com-hen-hue", "banh-beo-hue"],
+    "featuredTourSlugs": ["am-thuc-cung-dinh-hue"],
     "geo": { "lat": 16.4637, "lng": 107.5909 }
   },
   {
@@ -40,17 +94,17 @@
     "name": { "vi": "Đà Nẵng", "en": "Da Nang" },
     "region": "trung",
     "shortDescription": {
-      "vi": "Thành phố biển năng động với ẩm thực phong phú và tươi ngon",
-      "en": "A dynamic coastal city with fresh and diverse culinary offerings"
+      "vi": "Thành phố biển năng động với hải sản tươi và mì Quảng trứ danh",
+      "en": "A dynamic coastal city with fresh seafood and the famed Mi Quang"
     },
     "story": {
-      "vi": "Đà Nẵng – Thành phố đáng sống – nằm giữa Huế cổ kính và Hội An thơ mộng, sở hữu một nền ẩm thực phong phú mang đặc trưng của miền Trung.\n\nHải sản tươi sống là niềm tự hào của Đà Nẵng. Từ những chợ hải sản sầm uất ven biển đến các nhà hàng sang trọng, thực khách có thể thưởng thức tôm, cua, mực, cá vừa đánh bắt từ biển về còn tươi nguyên.\n\nNgoài hải sản, bánh xèo miền Trung với vỏ giòn mỏng, nhân phong phú; mì Quảng sợi vàng óng ăn kèm bánh đa giòn; hay bún mắm nêm đặc trưng... tất cả tạo nên bản sắc ẩm thực riêng của Đà Nẵng.",
-      "en": "Da Nang – Vietnam's most livable city – sits between ancient Hue and poetic Hoi An, boasting a rich culinary culture characteristic of Central Vietnam.\n\nFresh seafood is Da Nang's pride. From bustling seafood markets along the coast to upscale restaurants, visitors can enjoy shrimp, crab, squid, and fish caught fresh from the sea.\n\nBeyond seafood, Central-style banh xeo with its thin crispy crust and rich fillings; Mi Quang with golden noodles served with crispy rice crackers; or the distinctive bun mam nem... all create Da Nang's unique culinary identity."
+      "vi": "Đà Nẵng – Thành phố đáng sống – nằm giữa Huế cổ kính và Hội An thơ mộng, sở hữu một nền ẩm thực phong phú mang đặc trưng của miền Trung.\n\nHải sản tươi sống là niềm tự hào của Đà Nẵng. Từ những chợ hải sản sầm uất ven biển đến các nhà hàng sang trọng, thực khách có thể thưởng thức tôm, cua, mực, cá vừa đánh bắt từ biển về còn tươi nguyên.\n\nNgoài hải sản, bánh xèo miền Trung với vỏ giòn mỏng, nhân phong phú; mì Quảng sợi vàng óng ăn kèm bánh đa giòn; hay bánh tráng cuốn thịt heo Đại Lộc – tất cả tạo nên bản sắc ẩm thực riêng của Đà Nẵng.",
+      "en": "Da Nang – Vietnam's most livable city – sits between ancient Hue and poetic Hoi An, boasting a rich culinary culture characteristic of Central Vietnam.\n\nFresh seafood is Da Nang's pride. From bustling seafood markets along the coast to upscale restaurants, visitors can enjoy shrimp, crab, squid, and fish caught fresh from the sea.\n\nBeyond seafood, Central-style banh xeo with its thin crispy crust and rich fillings; Mi Quang with golden noodles served with crispy rice crackers; or Dai Loc-style pork rolled in rice paper – all create Da Nang's unique culinary identity."
     },
     "heroImage": "city-danang",
     "gallery": ["city-danang"],
-    "featuredDishSlugs": ["banh-xeo", "cao-lau-hoi-an"],
-    "featuredTourSlugs": [],
+    "featuredDishSlugs": ["banh-xeo", "mi-quang", "banh-trang-cuon-thit-heo"],
+    "featuredTourSlugs": ["da-nang-hai-san-tour"],
     "geo": { "lat": 16.0544, "lng": 108.2022 }
   },
   {
@@ -67,9 +121,27 @@
     },
     "heroImage": "city-hoian",
     "gallery": ["city-hoian", "hero-hoian"],
-    "featuredDishSlugs": ["cao-lau-hoi-an"],
-    "featuredTourSlugs": [],
+    "featuredDishSlugs": ["cao-lau-hoi-an", "banh-mi-hoi-an", "com-ga-hoi-an"],
+    "featuredTourSlugs": ["hoi-an-den-long-cooking"],
     "geo": { "lat": 15.8801, "lng": 108.338 }
+  },
+  {
+    "slug": "nha-trang",
+    "name": { "vi": "Nha Trang", "en": "Nha Trang" },
+    "region": "trung",
+    "shortDescription": {
+      "vi": "Thành phố biển nắng vàng với nem nướng và yến sào nức tiếng",
+      "en": "The sunny beach city famed for grilled pork rolls and bird's nest"
+    },
+    "story": {
+      "vi": "Nha Trang – Khánh Hòa – là thiên đường biển miền Nam Trung Bộ với bãi cát trắng dài và làn nước trong xanh. Ẩm thực nơi đây gắn bó mật thiết với biển và những vịnh đầy hải sản tươi.\n\nNem nướng Nha Trang – những viên nem cuộn lá chuối, nướng than hoa, ăn cuốn bánh tráng với rau sống và nước chấm tương đậu phộng – là món signature mà du khách nào cũng phải thử. Bún chả cá Nha Trang dùng cá thu tươi vùng vịnh, dai mềm khác hẳn chả cá nơi khác.\n\nKhánh Hòa cũng là thủ phủ của yến sào Việt Nam – đặc sản quý từ các đảo yến tự nhiên ngoài khơi, được chế biến thành các món súp, chè bổ dưỡng phục vụ giới sành ăn.",
+      "en": "Nha Trang – Khanh Hoa – is the South Central beach paradise with long white sands and crystal-clear waters. Its cuisine is intimately tied to the sea and bays brimming with fresh seafood.\n\nNha Trang nem nuong – grilled pork rolls wrapped in banana leaves, charcoal-fired and rolled in rice paper with herbs and a peanut-soybean sauce – is the signature every traveler must try. Nha Trang fish-cake noodle soup uses fresh bay-caught mackerel, with a chew distinctly different from elsewhere.\n\nKhanh Hoa is also Vietnam's bird's-nest capital – a precious specialty from offshore swiftlet islands, prepared in nourishing soups and sweet broths for the discerning palate."
+    },
+    "heroImage": "city-danang",
+    "gallery": ["city-danang"],
+    "featuredDishSlugs": ["nem-nuong-nha-trang", "bun-cha-ca-nha-trang"],
+    "featuredTourSlugs": [],
+    "geo": { "lat": 12.2388, "lng": 109.1967 }
   },
   {
     "slug": "da-lat",
@@ -85,9 +157,27 @@
     },
     "heroImage": "city-dalat",
     "gallery": ["city-dalat"],
-    "featuredDishSlugs": ["che-ha-noi"],
-    "featuredTourSlugs": [],
+    "featuredDishSlugs": ["banh-trang-nuong-dalat", "sua-dau-nanh-dalat"],
+    "featuredTourSlugs": ["da-lat-farm-to-table"],
     "geo": { "lat": 11.9404, "lng": 108.4583 }
+  },
+  {
+    "slug": "sai-gon",
+    "name": { "vi": "Sài Gòn", "en": "Saigon" },
+    "region": "nam",
+    "shortDescription": {
+      "vi": "Đô thị sôi động bậc nhất với bản đồ ẩm thực đa văn hóa",
+      "en": "The vibrant metropolis with a multicultural food map"
+    },
+    "story": {
+      "vi": "Sài Gòn – TP. Hồ Chí Minh – là điểm hội tụ của mọi luồng văn hóa ẩm thực Việt Nam và quốc tế. Đây là thành phố không bao giờ ngủ – nơi có thể tìm thấy món ngon ở bất kỳ giờ nào, từ gánh xôi sáng sớm đến ốc khuya nóng hổi 2 giờ sáng.\n\nCơm tấm sườn bì chả là 'quốc hồn' của Sài Gòn – từng đĩa cơm tấm vỉa hè giản dị nhưng đong đầy năng lượng phố thị. Bánh mì Sài Gòn vẫn được nhiều bảng xếp hạng quốc tế tôn vinh là 'sandwich ngon nhất thế giới'. Hủ tiếu Nam Vang, gỏi cuốn, bún mắm – tất cả là những hương vị làm nên một Sài Gòn rất riêng.\n\nẨm thực Sài Gòn còn đặc trưng bởi sự giao thoa: hương Hoa từ Chợ Lớn (sủi cảo, mì hoành thánh), hương Khmer từ miền Tây, hương Pháp đọng lại trong những chiếc bánh mì baguette – tất cả hòa quyện thành một bức tranh vừa phóng khoáng vừa tinh tế.",
+      "en": "Saigon – Ho Chi Minh City – is the meeting point of every Vietnamese and international culinary current. A city that never sleeps – where great food can be found at any hour, from early-morning sticky rice carts to steaming snail stalls at 2am.\n\nCom tam with grilled ribs, pork skin, and steamed pork cake is Saigon's soul – simple sidewalk plates packed with urban energy. Saigon banh mi is still crowned by international rankings as 'the world's best sandwich.' Nam Vang noodle soup, fresh spring rolls, bun mam – all flavors that define a uniquely Saigonese identity.\n\nSaigon cuisine is also defined by its fusion: Chinese influences from Chợ Lớn (sui cao, wonton noodles), Khmer notes from the Mekong, French legacy in the baguette – all blending into a portrait that is both generous and refined."
+    },
+    "heroImage": "city-danang",
+    "gallery": ["city-danang"],
+    "featuredDishSlugs": ["com-tam-sai-gon", "banh-mi-sai-gon", "hu-tieu-nam-vang", "goi-cuon"],
+    "featuredTourSlugs": ["sai-gon-street-food-night"],
+    "geo": { "lat": 10.7626, "lng": 106.6602 }
   },
   {
     "slug": "can-tho",
@@ -98,13 +188,31 @@
       "en": "The Mekong Delta capital with rich and hearty riverside cuisine"
     },
     "story": {
-      "vi": "Cần Thơ – Thủ phủ đồng bằng sông Cửu Long – là nơi ẩm thực miền Nam đạt đến độ phong phú và đặc sắc nhất. Vùng đất sông nước hữu tình này ban tặng cho người dân nguồn thủy sản dồi dào và lúa gạo no đủ.\n\nBước ra chợ nổi Cái Răng sáng sớm, du khách sẽ được thưởng thức không khí mua bán nhộn nhịp trên sông cùng những món ăn sáng dân dã: hủ tiếu Nam Vang, bún mắm, hay bánh canh cá lóc thơm lừng.\n\nẨm thực Cần Thơ đặc trưng bởi sự phóng khoáng, dân dã và đậm đà của người miền Tây: cơm tấm sườn bì chả, lẩu mắm, hay những con tôm nướng muối ớt thơm lừng.",
-      "en": "Can Tho – the capital of the Mekong Delta – is where Southern Vietnamese cuisine reaches its most diverse and distinctive expression. This enchanting riverside land blesses its people with abundant seafood and plentiful rice.\n\nVenturing out to Cai Rang floating market in the early morning, visitors experience the lively waterway commerce alongside humble breakfast dishes: Nam Vang vermicelli, bun mam, or fragrant snakehead fish thick noodle soup.\n\nCan Tho cuisine is characterized by the generosity, rustic simplicity and bold flavors of Mekong people: com tam with grilled ribs, lau mam hotpot, or fragrant salt-chili grilled shrimp."
+      "vi": "Cần Thơ – Thủ phủ đồng bằng sông Cửu Long – là nơi ẩm thực miền Nam đạt đến độ phong phú và đặc sắc nhất. Vùng đất sông nước hữu tình này ban tặng cho người dân nguồn thủy sản dồi dào và lúa gạo no đủ.\n\nBước ra chợ nổi Cái Răng sáng sớm, du khách sẽ được thưởng thức không khí mua bán nhộn nhịp trên sông cùng những món ăn sáng dân dã: hủ tiếu Nam Vang, bún mắm, hay bánh canh cá lóc thơm lừng.\n\nẨm thực Cần Thơ đặc trưng bởi sự phóng khoáng, dân dã và đậm đà của người miền Tây: lẩu mắm, cá kho tộ, canh chua cá linh bông điên điển, hay những con tôm nướng muối ớt thơm lừng.",
+      "en": "Can Tho – the capital of the Mekong Delta – is where Southern Vietnamese cuisine reaches its most diverse and distinctive expression. This enchanting riverside land blesses its people with abundant seafood and plentiful rice.\n\nVenturing out to Cai Rang floating market in the early morning, visitors experience the lively waterway commerce alongside humble breakfast dishes: Nam Vang vermicelli, bun mam, or fragrant snakehead fish thick noodle soup.\n\nCan Tho cuisine is characterized by the generosity, rustic simplicity and bold flavors of Mekong people: lau mam fermented-fish hotpot, clay-pot fish, sour soup with linh fish and dien dien flowers, or fragrant salt-chili grilled shrimp."
     },
     "heroImage": "city-cantho",
     "gallery": ["city-cantho"],
-    "featuredDishSlugs": ["com-tam-sai-gon"],
+    "featuredDishSlugs": ["lau-mam", "ca-kho-to", "banh-canh-ca-loc"],
     "featuredTourSlugs": ["am-thuc-mien-tay"],
     "geo": { "lat": 10.0452, "lng": 105.7469 }
+  },
+  {
+    "slug": "phu-quoc",
+    "name": { "vi": "Phú Quốc", "en": "Phu Quoc" },
+    "region": "nam",
+    "shortDescription": {
+      "vi": "Đảo ngọc với hải sản tươi và nước mắm trứ danh thế giới",
+      "en": "The pearl island with fresh seafood and world-class fish sauce"
+    },
+    "story": {
+      "vi": "Phú Quốc – đảo lớn nhất Việt Nam ở vịnh Thái Lan – là thiên đường nhiệt đới với hải sản phong phú và một di sản ẩm thực không nơi nào sánh được: nước mắm Phú Quốc.\n\nNước mắm Phú Quốc được ủ từ cá cơm than đánh bắt ngay tại ngư trường quanh đảo, ủ trong thùng gỗ bời lời từ 12–15 tháng, cho ra giọt nước mắm cốt nhỉ màu hổ phách, đạm tự nhiên 40°N – là chỉ dẫn địa lý đầu tiên của Việt Nam được EU bảo hộ.\n\nẨm thực Phú Quốc còn nổi tiếng với gỏi cá trích chấm nước mắm ớt, nhum biển nướng mỡ hành, ghẹ Hàm Ninh hấp bia, bún quậy đặc sản – và những bữa ăn ngay trên ghe đánh cá lúc hoàng hôn buông xuống vịnh.",
+      "en": "Phu Quoc – Vietnam's largest island in the Gulf of Thailand – is a tropical paradise with abundant seafood and an unmatched culinary heritage: Phu Quoc fish sauce.\n\nPhu Quoc fish sauce is fermented from black anchovies caught in the island's surrounding fishing grounds, aged 12–15 months in wooden boi loi barrels, yielding amber drops with 40°N natural protein – Vietnam's first geographical indication protected by the EU.\n\nPhu Quoc cuisine is also famed for herring salad with chili fish sauce, grilled sea urchin with scallion oil, beer-steamed Ham Ninh crab, and the local bun quay – and meals served right on a fishing boat as sunset falls over the bay."
+    },
+    "heroImage": "city-cantho",
+    "gallery": ["city-cantho"],
+    "featuredDishSlugs": ["goi-ca-trich", "bun-quay-phu-quoc"],
+    "featuredTourSlugs": ["phu-quoc-nuoc-mam-tour"],
+    "geo": { "lat": 10.2899, "lng": 103.984 }
   }
 ]

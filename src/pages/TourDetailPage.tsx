@@ -14,19 +14,7 @@ import { useTours } from "@/hooks/useTours";
 import { useCities } from "@/hooks/useCities";
 import { useDishes } from "@/hooks/useDishes";
 import { usePartner } from "@/hooks/usePartners";
-
-const THEME_LABEL: Record<string, string> = {
-  "street-food": "Ẩm thực đường phố",
-  "fine-dining": "Nhà hàng cao cấp",
-  "cooking-class": "Lớp nấu ăn",
-  market: "Chợ truyền thống",
-  culture: "Văn hoá",
-  walking: "Đi bộ",
-  motorbike: "Xe máy",
-  "river-food": "Sông nước",
-  adventure: "Phiêu lưu",
-  "hands-on": "Tự tay làm",
-};
+import { useLocale } from "@/hooks/useLocale";
 
 const DetailSkeleton = () => (
   <div className="animate-pulse space-y-6">
@@ -44,6 +32,7 @@ const DetailSkeleton = () => (
 const TourDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { t, pick, path, locale } = useLocale();
 
   const { data: tour, isLoading, isError, refetch } = useTour(slug);
   const { data: tours } = useTours();
@@ -57,8 +46,9 @@ const TourDetailPage = () => {
 
   const city = cities?.find((c) => c.slug === tour?.citySlug);
   const highlightDishes = dishes?.filter((d) => tour?.highlightDishSlugs.includes(d.slug)).slice(0, 4) ?? [];
-  const relatedTours = tours?.filter((t) => t.citySlug === tour?.citySlug && t.slug !== tour?.slug).slice(0, 3) ?? [];
-  const formatPrice = (vnd: number) => new Intl.NumberFormat("vi-VN").format(vnd) + " đ";
+  const relatedTours = tours?.filter((tr) => tr.citySlug === tour?.citySlug && tr.slug !== tour?.slug).slice(0, 3) ?? [];
+  const formatPrice = (vnd: number) =>
+    new Intl.NumberFormat(locale === "en" ? "en-US" : "vi-VN").format(vnd) + (locale === "en" ? " VND" : " đ");
 
   if (isLoading) {
     return (
@@ -79,12 +69,12 @@ const TourDetailPage = () => {
         <main className="pt-24 pb-16 container">
           <div className="flex flex-col items-center gap-4 py-16 text-center">
             <AlertCircle className="h-10 w-10 text-destructive" />
-            <p className="text-sm text-muted-foreground">Không tải được thông tin tour.</p>
+            <p className="text-sm text-muted-foreground">{t("tour_detail.err")}</p>
             <button
               onClick={() => refetch()}
               className="flex items-center gap-2 px-4 py-2 rounded-md border text-sm hover:border-primary hover:text-primary transition-smooth"
             >
-              <RefreshCw className="h-4 w-4" /> Thử lại
+              <RefreshCw className="h-4 w-4" /> {t("common.retry")}
             </button>
           </div>
         </main>
@@ -102,32 +92,32 @@ const TourDetailPage = () => {
         <div className="container max-w-4xl">
           <nav className="flex items-center gap-1.5 text-xs text-muted-foreground mb-6 flex-wrap" aria-label="Breadcrumb">
             <Link to="/" className="flex items-center gap-1 hover:text-primary transition-smooth">
-              <Home className="h-3.5 w-3.5" /> Trang chủ
+              <Home className="h-3.5 w-3.5" /> {t("common.home")}
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />
-            <Link to="/tour" className="hover:text-primary transition-smooth">Tour ẩm thực</Link>
+            <Link to={path.tourList} className="hover:text-primary transition-smooth">{t("tour_detail.breadcrumb_tours")}</Link>
             <ChevronRight className="h-3.5 w-3.5" />
-            <span className="text-foreground font-medium truncate max-w-[200px]">{tour.name.vi}</span>
+            <span className="text-foreground font-medium truncate max-w-[200px]">{pick(tour.name)}</span>
           </nav>
 
           <div className="relative aspect-[16/8] rounded-2xl overflow-hidden mb-8 shadow-elegant">
-            <img src={tour.image} alt={tour.name.vi} className="h-full w-full object-cover" fetchPriority="high" />
+            <img src={tour.image} alt={pick(tour.name)} className="h-full w-full object-cover" fetchPriority="high" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10" />
             <div className="absolute bottom-5 left-5 right-5">
               <div className="flex flex-wrap gap-2 mb-3">
-                {tour.themes.slice(0, 3).map((t) => (
-                  <span key={t} className="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur text-white text-xs font-medium">
-                    {THEME_LABEL[t] ?? t}
+                {tour.themes.slice(0, 3).map((th) => (
+                  <span key={th} className="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur text-white text-xs font-medium">
+                    {t(`tour_detail.theme_${th.replace("-", "_")}`) || th}
                   </span>
                 ))}
               </div>
               <h1 className="font-display text-3xl md:text-4xl font-bold text-white leading-tight">
-                {tour.name.vi}
+                {pick(tour.name)}
               </h1>
               {city && (
                 <p className="text-sm text-white/80 mt-1.5">
-                  <Link to={`/thanh-pho/${city.slug}`} className="hover:text-white transition-smooth">
-                    {city.name.vi}
+                  <Link to={path.city(city.slug)} className="hover:text-white transition-smooth">
+                    {pick(city.name)}
                   </Link>
                 </p>
               )}
@@ -138,58 +128,58 @@ const TourDetailPage = () => {
             <div className="flex items-center gap-3 p-4 rounded-xl bg-secondary border border-border">
               <Clock className="h-5 w-5 text-primary shrink-0" />
               <div>
-                <p className="text-xs text-muted-foreground">Thời gian</p>
-                <p className="font-semibold text-foreground">{tour.durationHours} giờ</p>
+                <p className="text-xs text-muted-foreground">{t("tour_detail.duration")}</p>
+                <p className="font-semibold text-foreground">{tour.durationHours} {t("common.hour")}</p>
               </div>
             </div>
             <div className="flex items-center gap-3 p-4 rounded-xl bg-secondary border border-border">
               <Wallet className="h-5 w-5 text-primary shrink-0" />
               <div>
-                <p className="text-xs text-muted-foreground">Giá từ</p>
+                <p className="text-xs text-muted-foreground">{t("tour_detail.price_from")}</p>
                 <p className="font-semibold text-primary">{formatPrice(tour.priceVnd)}</p>
               </div>
             </div>
             <div className="flex items-center gap-3 p-4 rounded-xl bg-secondary border border-border col-span-2 sm:col-span-1">
               <Users className="h-5 w-5 text-primary shrink-0" />
               <div>
-                <p className="text-xs text-muted-foreground">Đối tác</p>
+                <p className="text-xs text-muted-foreground">{t("tour_detail.partner")}</p>
                 <p className="font-semibold text-foreground truncate">{partner?.name ?? tour.partnerId}</p>
               </div>
             </div>
           </div>
 
           <section className="mb-10">
-            <h2 className="font-display text-2xl font-semibold text-foreground mb-6">Lịch trình</h2>
-            <Itinerary steps={tour.itinerary} locale="vi" />
+            <h2 className="font-display text-2xl font-semibold text-foreground mb-6">{t("tour_detail.itinerary")}</h2>
+            <Itinerary steps={tour.itinerary} locale={locale} />
           </section>
 
           {partner && (
             <section className="mb-10 p-6 rounded-2xl border border-border bg-secondary">
               <h2 className="font-display text-xl font-semibold text-foreground mb-2">{partner.name}</h2>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-5">{partner.description.vi}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5">{pick(partner.description)}</p>
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-                Liên hệ đặt tour
+                {t("tour_detail.contact")}
               </p>
               <PartnerContactBar partner={partner} />
             </section>
           )}
 
           <div className="mb-10">
-            <ShareBar title={tour.name.vi} />
+            <ShareBar title={pick(tour.name)} />
           </div>
         </div>
 
         {highlightDishes.length > 0 && (
           <section className="container mt-8">
-            <h2 className="font-display text-2xl font-semibold text-foreground mb-6">Những món ăn trong tour</h2>
+            <h2 className="font-display text-2xl font-semibold text-foreground mb-6">{t("tour_detail.highlight_dishes")}</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
               {highlightDishes.map((d) => (
                 <FoodCard
                   key={d.slug}
                   slug={d.slug}
                   image={d.image}
-                  name={d.name.vi}
-                  city={cities?.find((c) => c.slug === d.citySlug)?.name.vi ?? d.citySlug}
+                  name={pick(d.name)}
+                  city={(() => { const c = cities?.find((c) => c.slug === d.citySlug); return c ? pick(c.name) : d.citySlug; })()}
                 />
               ))}
             </div>
@@ -199,18 +189,18 @@ const TourDetailPage = () => {
         {relatedTours.length > 0 && (
           <section className="container mt-12">
             <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
-              Tour khác tại {city?.name.vi}
+              {t("tour_detail.related_tours", { name: city ? pick(city.name) : "" })}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {relatedTours.map((t) => (
+              {relatedTours.map((tr) => (
                 <TourCard
-                  key={t.slug}
-                  slug={t.slug}
-                  image={t.image}
-                  name={t.name.vi}
-                  city={cities?.find((c) => c.slug === t.citySlug)?.name.vi ?? t.citySlug}
-                  duration={`${t.durationHours} giờ`}
-                  price={formatPrice(t.priceVnd)}
+                  key={tr.slug}
+                  slug={tr.slug}
+                  image={tr.image}
+                  name={pick(tr.name)}
+                  city={(() => { const c = cities?.find((c) => c.slug === tr.citySlug); return c ? pick(c.name) : tr.citySlug; })()}
+                  duration={`${tr.durationHours} ${t("common.hour")}`}
+                  price={formatPrice(tr.priceVnd)}
                 />
               ))}
             </div>

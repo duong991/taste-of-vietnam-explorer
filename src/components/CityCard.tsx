@@ -1,5 +1,6 @@
 import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLocale } from "@/hooks/useLocale";
 
 interface Props {
   image: string;
@@ -8,9 +9,11 @@ interface Props {
   slug?: string;
 }
 
-const CityCard = ({ image, name, tagline, slug }: Props) => (
+const CityCard = ({ image, name, tagline, slug }: Props) => {
+  const { path } = useLocale();
+  return (
   <Link
-    to={`/thanh-pho/${slug ?? name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/\s+/g, "-")}`}
+    to={path.city(slug ?? name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/\s+/g, "-"))}
     className="group relative shrink-0 snap-start w-[260px] md:w-[280px] aspect-[3/4] rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-smooth"
   >
     <img
@@ -28,6 +31,7 @@ const CityCard = ({ image, name, tagline, slug }: Props) => (
       </p>
     </div>
   </Link>
-);
+  );
+};
 
 export default CityCard;

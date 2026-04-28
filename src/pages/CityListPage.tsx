@@ -9,15 +9,10 @@ import SortDropdown from "@/components/SortDropdown";
 import Chatbot from "@/components/Chatbot";
 import { useCities } from "@/hooks/useCities";
 import { filterCities } from "@/lib/filter";
+import { useLocale } from "@/hooks/useLocale";
 import type { Region } from "@/types/content";
 
 const PAGE_SIZE = 9;
-
-const SORT_OPTIONS = [
-  { value: "default", label: "Mặc định" },
-  { value: "name-asc", label: "A → Z" },
-  { value: "name-desc", label: "Z → A" },
-];
 
 const CityListSkeleton = () => (
   <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
@@ -33,8 +28,15 @@ const CityListPage = () => {
   const [region, setRegion] = useState<Region | "all">(regionParam ?? "all");
   const [sort, setSort] = useState("default");
   const [page, setPage] = useState(1);
+  const { t, pick } = useLocale();
 
   const { data: cities, isLoading, isError, refetch } = useCities();
+
+  const SORT_OPTIONS = [
+    { value: "default", label: t("city_list.sort_default") },
+    { value: "name-asc", label: t("city_list.sort_asc") },
+    { value: "name-desc", label: t("city_list.sort_desc") },
+  ];
 
   useEffect(() => {
     const r = searchParams.get("region") as Region | null;
@@ -53,8 +55,8 @@ const CityListPage = () => {
   const filtered = filterCities(cities ?? [], region === "all" ? undefined : region);
 
   const sorted = [...filtered].sort((a, b) => {
-    if (sort === "name-asc") return a.name.vi.localeCompare(b.name.vi);
-    if (sort === "name-desc") return b.name.vi.localeCompare(a.name.vi);
+    if (sort === "name-asc") return pick(a.name).localeCompare(pick(b.name));
+    if (sort === "name-desc") return pick(b.name).localeCompare(pick(a.name));
     return 0;
   });
 
@@ -68,19 +70,19 @@ const CityListPage = () => {
         <div className="container">
           <nav className="flex items-center gap-1.5 text-xs text-muted-foreground mb-6" aria-label="Breadcrumb">
             <Link to="/" className="flex items-center gap-1 hover:text-primary transition-smooth">
-              <Home className="h-3.5 w-3.5" /> Trang chủ
+              <Home className="h-3.5 w-3.5" /> {t("common.home")}
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />
-            <span className="text-foreground font-medium">Thành phố</span>
+            <span className="text-foreground font-medium">{t("city_list.breadcrumb")}</span>
           </nav>
 
           <div className="mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">Khám phá</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">{t("city_list.eyebrow")}</p>
             <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground">
-              Thành phố ẩm thực Việt Nam
+              {t("city_list.title")}
             </h1>
             <p className="mt-3 text-muted-foreground max-w-xl">
-              Từ bắc vào nam — mỗi thành phố là một bản sắc ẩm thực riêng không thể trộn lẫn.
+              {t("city_list.desc")}
             </p>
           </div>
 
@@ -94,24 +96,24 @@ const CityListPage = () => {
           {isError && (
             <div className="flex flex-col items-center gap-4 py-16 text-center">
               <AlertCircle className="h-10 w-10 text-destructive" />
-              <p className="text-sm text-muted-foreground">Không tải được danh sách thành phố.</p>
+              <p className="text-sm text-muted-foreground">{t("city_list.err")}</p>
               <button
                 onClick={() => refetch()}
                 className="flex items-center gap-2 px-4 py-2 rounded-md border border-border text-sm hover:border-primary hover:text-primary transition-smooth"
               >
-                <RefreshCw className="h-4 w-4" /> Thử lại
+                <RefreshCw className="h-4 w-4" /> {t("common.retry")}
               </button>
             </div>
           )}
 
           {!isLoading && !isError && sorted.length === 0 && (
             <div className="flex flex-col items-center gap-4 py-16 text-center">
-              <p className="text-muted-foreground">Không có thành phố nào ở vùng miền này.</p>
+              <p className="text-muted-foreground">{t("city_list.empty")}</p>
               <button
                 onClick={() => handleRegionChange("all")}
                 className="text-sm text-primary hover:underline"
               >
-                Xoá bộ lọc
+                {t("common.clear_filter")}
               </button>
             </div>
           )}
@@ -123,8 +125,8 @@ const CityListPage = () => {
                   <CityCard
                     key={city.slug}
                     image={city.heroImage}
-                    name={city.name.vi}
-                    tagline={city.shortDescription.vi}
+                    name={pick(city.name)}
+                    tagline={pick(city.shortDescription)}
                     slug={city.slug}
                   />
                 ))}
@@ -136,7 +138,7 @@ const CityListPage = () => {
                     onClick={() => setPage((p) => p + 1)}
                     className="px-8 py-3 rounded-xl border border-border text-sm font-medium hover:border-primary hover:text-primary transition-smooth"
                   >
-                    Xem thêm ({sorted.length - visible.length} thành phố còn lại)
+                    {t("common.load_more")} ({t("city_list.load_more_count", { count: sorted.length - visible.length })})
                   </button>
                 </div>
               )}

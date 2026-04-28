@@ -31,6 +31,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          {/* Vietnamese routes */}
           <Route path="/thanh-pho" element={<CityListPage />} />
           <Route path="/thanh-pho/:slug" element={<CityPage />} />
           <Route path="/mon-an" element={<DishListPage />} />
@@ -38,6 +39,14 @@ const App = () => (
           <Route path="/tour" element={<TourListPage />} />
           <Route path="/tour/:slug" element={<TourDetailPage />} />
           <Route path="/tim-kiem" element={<SearchPage />} />
+          {/* English bilingual aliases */}
+          <Route path="/cities" element={<CityListPage />} />
+          <Route path="/cities/:slug" element={<CityPage />} />
+          <Route path="/dishes" element={<DishListPage />} />
+          <Route path="/dishes/:slug" element={<DishDetailPage />} />
+          <Route path="/tours" element={<TourListPage />} />
+          <Route path="/tours/:slug" element={<TourDetailPage />} />
+          <Route path="/search" element={<SearchPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

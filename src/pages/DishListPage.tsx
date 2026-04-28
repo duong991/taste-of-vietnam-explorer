@@ -10,15 +10,10 @@ import Chatbot from "@/components/Chatbot";
 import { useDishes } from "@/hooks/useDishes";
 import { useCities } from "@/hooks/useCities";
 import { filterDishes, sortDishes, type DishSortKey } from "@/lib/filter";
+import { useLocale } from "@/hooks/useLocale";
 import type { Region } from "@/types/content";
 
 const PAGE_SIZE = 12;
-
-const SORT_OPTIONS = [
-  { value: "default", label: "Mặc định" },
-  { value: "name-asc", label: "A → Z" },
-  { value: "name-desc", label: "Z → A" },
-];
 
 const GridSkeleton = () => (
   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
@@ -40,6 +35,13 @@ const DishListPage = () => {
   const [citySlug, setCitySlug] = useState(searchParams.get("city") ?? "");
   const [sort, setSort] = useState<DishSortKey>("default");
   const [page, setPage] = useState(1);
+  const { t, pick } = useLocale();
+
+  const SORT_OPTIONS = [
+    { value: "default", label: t("city_list.sort_default") },
+    { value: "name-asc", label: t("city_list.sort_asc") },
+    { value: "name-desc", label: t("city_list.sort_desc") },
+  ];
 
   const { data: dishes, isLoading, isError, refetch } = useDishes();
   const { data: cities } = useCities();
@@ -65,7 +67,7 @@ const DishListPage = () => {
   const visible = sorted.slice(0, page * PAGE_SIZE);
   const hasMore = visible.length < sorted.length;
 
-  const cityOptions = (cities ?? []).map((c) => ({ value: c.slug, label: c.name.vi }));
+  const cityOptions = (cities ?? []).map((c) => ({ value: c.slug, label: pick(c.name) }));
 
   const handleReset = () => {
     setFilters(EMPTY_FILTERS);
@@ -79,16 +81,16 @@ const DishListPage = () => {
         <div className="container">
           <nav className="flex items-center gap-1.5 text-xs text-muted-foreground mb-6" aria-label="Breadcrumb">
             <Link to="/" className="flex items-center gap-1 hover:text-primary transition-smooth">
-              <Home className="h-3.5 w-3.5" /> Trang chủ
+              <Home className="h-3.5 w-3.5" /> {t("common.home")}
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />
-            <span className="text-foreground font-medium">Món ăn</span>
+            <span className="text-foreground font-medium">{t("dish_list.breadcrumb")}</span>
           </nav>
 
           <div className="mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">Tinh hoa ẩm thực</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">{t("dish_list.eyebrow")}</p>
             <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground">
-              Khám phá món ăn Việt Nam
+              {t("dish_list.title")}
             </h1>
           </div>
 
@@ -108,7 +110,7 @@ const DishListPage = () => {
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between mb-5">
                 <p className="text-sm text-muted-foreground">
-                  {isLoading ? "Đang tải…" : `${sorted.length} món ăn`}
+                  {isLoading ? t("common.loading") : `${sorted.length} ${t("dish_list.breadcrumb")}`}
                 </p>
                 <SortDropdown value={sort} options={SORT_OPTIONS} onChange={(v) => setSort(v as DishSortKey)} />
               </div>
@@ -118,21 +120,21 @@ const DishListPage = () => {
               {isError && (
                 <div className="flex flex-col items-center gap-4 py-16 text-center">
                   <AlertCircle className="h-10 w-10 text-destructive" />
-                  <p className="text-sm text-muted-foreground">Không tải được danh sách món ăn.</p>
+                  <p className="text-sm text-muted-foreground">{t("dish_list.err")}</p>
                   <button
                     onClick={() => refetch()}
                     className="flex items-center gap-2 px-4 py-2 rounded-md border border-border text-sm hover:border-primary hover:text-primary transition-smooth"
                   >
-                    <RefreshCw className="h-4 w-4" /> Thử lại
+                    <RefreshCw className="h-4 w-4" /> {t("common.retry")}
                   </button>
                 </div>
               )}
 
               {!isLoading && !isError && sorted.length === 0 && (
                 <div className="flex flex-col items-center gap-4 py-16 text-center">
-                  <p className="text-muted-foreground">Không có món ăn phù hợp với bộ lọc.</p>
+                  <p className="text-muted-foreground">{t("dish_list.empty")}</p>
                   <button onClick={handleReset} className="text-sm text-primary hover:underline">
-                    Xoá tất cả bộ lọc
+                    {t("common.clear_filter")}
                   </button>
                 </div>
               )}
@@ -145,8 +147,8 @@ const DishListPage = () => {
                         key={dish.slug}
                         slug={dish.slug}
                         image={dish.image}
-                        name={dish.name.vi}
-                        city={cities?.find((c) => c.slug === dish.citySlug)?.name.vi ?? dish.citySlug}
+                        name={pick(dish.name)}
+                        city={(() => { const c = cities?.find((c) => c.slug === dish.citySlug); return c ? pick(c.name) : dish.citySlug; })()}
                       />
                     ))}
                   </div>
@@ -157,7 +159,7 @@ const DishListPage = () => {
                         onClick={() => setPage((p) => p + 1)}
                         className="px-8 py-3 rounded-xl border border-border text-sm font-medium hover:border-primary hover:text-primary transition-smooth"
                       >
-                        Xem thêm ({sorted.length - visible.length} món còn lại)
+                        {t("common.load_more")} ({t("dish_list.load_more_count", { count: sorted.length - visible.length })})
                       </button>
                     </div>
                   )}

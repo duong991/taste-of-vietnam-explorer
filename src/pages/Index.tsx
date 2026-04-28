@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { AlertCircle } from "lucide-react";
+import { useLocale } from "@/hooks/useLocale";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import SectionHeader from "@/components/SectionHeader";
@@ -34,9 +35,10 @@ const Index = () => {
   const { data: cities, isLoading: citiesLoading, isError: citiesError } = useCities();
   const { data: dishes, isLoading: dishesLoading, isError: dishesError } = useDishes();
   const { data: tours, isLoading: toursLoading, isError: toursError } = useTours();
+  const { t, pick, path, locale } = useLocale();
 
   const formatPrice = (vnd: number) =>
-    new Intl.NumberFormat("vi-VN").format(vnd) + " đ";
+    new Intl.NumberFormat(locale === "en" ? "en-US" : "vi-VN").format(vnd) + (locale === "en" ? " VND" : " đ");
 
   return (
     <div className="min-h-screen bg-background">
@@ -46,8 +48,8 @@ const Index = () => {
 
         <section id="section-cities" className="container py-16 md:py-20">
           <SectionHeader
-            eyebrow="Khám phá các thành phố"
-            title="Đi khắp Việt Nam, thưởng thức hương vị địa phương"
+            eyebrow={t("home.cities_eyebrow")}
+            title={t("home.cities_title")}
           />
           {citiesLoading && (
             <Carousel>
@@ -56,15 +58,15 @@ const Index = () => {
               ))}
             </Carousel>
           )}
-          {citiesError && <SectionError message="Không tải được danh sách thành phố. Tải lại trang." />}
+          {citiesError && <SectionError message={t("home.err_cities")} />}
           {cities && cities.length > 0 && (
             <Carousel>
               {cities.map((city) => (
                 <CityCard
                   key={city.slug}
                   image={city.heroImage}
-                  name={city.name.vi}
-                  tagline={city.shortDescription.vi}
+                  name={pick(city.name)}
+                  tagline={pick(city.shortDescription)}
                   slug={city.slug}
                 />
               ))}
@@ -74,8 +76,8 @@ const Index = () => {
 
         <section id="mon-an" className="container py-12 md:py-16">
           <SectionHeader
-            eyebrow="Món ngon nổi bật"
-            title="Những món ăn làm nên thương hiệu Việt"
+            eyebrow={t("home.dishes_eyebrow")}
+            title={t("home.dishes_title")}
           />
           {dishesLoading && (
             <Carousel>
@@ -84,7 +86,7 @@ const Index = () => {
               ))}
             </Carousel>
           )}
-          {dishesError && <SectionError message="Không tải được danh sách món ăn. Tải lại trang." />}
+          {dishesError && <SectionError message={t("home.err_dishes")} />}
           {dishes && dishes.length > 0 && (
             <Carousel>
               {dishes.slice(0, 6).map((dish) => (
@@ -92,8 +94,8 @@ const Index = () => {
                   key={dish.slug}
                   slug={dish.slug}
                   image={dish.image}
-                  name={dish.name.vi}
-                  city={cities?.find((c) => c.slug === dish.citySlug)?.name.vi ?? dish.citySlug}
+                  name={pick(dish.name)}
+                  city={(() => { const c = cities?.find((c) => c.slug === dish.citySlug); return c ? pick(c.name) : dish.citySlug; })()}
                 />
               ))}
             </Carousel>
@@ -102,11 +104,11 @@ const Index = () => {
 
         <section id="tour" className="container py-12 md:py-16">
           <SectionHeader
-            eyebrow="Tour ẩm thực trải nghiệm"
-            title="Những hành trình vị giác không thể bỏ lỡ"
+            eyebrow={t("home.tours_eyebrow")}
+            title={t("home.tours_title")}
             action={
-              <Link to="/tour" className="text-sm font-medium text-primary hover:underline">
-                Xem tất cả →
+              <Link to={path.tourList} className="text-sm font-medium text-primary hover:underline">
+                {t("common.see_all")}
               </Link>
             }
           />
@@ -117,7 +119,7 @@ const Index = () => {
               ))}
             </Carousel>
           )}
-          {toursError && <SectionError message="Không tải được danh sách tour. Tải lại trang." />}
+          {toursError && <SectionError message={t("home.err_tours")} />}
           {tours && tours.length > 0 && (
             <Carousel>
               {tours.map((tour) => (
@@ -125,9 +127,9 @@ const Index = () => {
                   key={tour.slug}
                   slug={tour.slug}
                   image={tour.image}
-                  name={tour.name.vi}
-                  city={cities?.find((c) => c.slug === tour.citySlug)?.name.vi ?? tour.citySlug}
-                  duration={`${tour.durationHours} giờ`}
+                  name={pick(tour.name)}
+                  city={(() => { const c = cities?.find((c) => c.slug === tour.citySlug); return c ? pick(c.name) : tour.citySlug; })()}
+                  duration={`${tour.durationHours} ${t("common.hour")}`}
                   price={formatPrice(tour.priceVnd)}
                 />
               ))}

@@ -1,24 +1,27 @@
 import { useState, FormEvent } from "react";
-import { Search, Globe, Menu, X } from "lucide-react";
+import { Search, Menu, X } from "lucide-react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
-
-const NAV_ITEMS = [
-  { label: "Thành phố", to: "/thanh-pho" },
-  { label: "Món ăn", to: "/mon-an" },
-  { label: "Tour", to: "/tour" },
-];
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLocale } from "@/hooks/useLocale";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
+  const { t, path } = useLocale();
+
+  const NAV_ITEMS = [
+    { label: t("nav.cities"), to: path.cityList },
+    { label: t("nav.dishes"), to: path.dishList },
+    { label: t("nav.tours"), to: path.tourList },
+  ];
 
   const handleSearch = (e: FormEvent) => {
     e.preventDefault();
     const q = searchValue.trim();
     if (!q) return;
-    navigate(`/tim-kiem?q=${encodeURIComponent(q)}`);
+    navigate(`${path.search}?q=${encodeURIComponent(q)}`);
     setSearchValue("");
     setOpen(false);
   };
@@ -26,11 +29,11 @@ const Header = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border/60 bg-background/95 backdrop-blur-md shadow-soft transition-smooth">
       <div className="container flex h-20 items-center justify-between gap-4">
-        <Link to="/" aria-label="Tinh hoa Hương vị Việt — Trang chủ">
+        <Link to="/" aria-label={t("nav.logo_label")}>
           <Logo />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-6" aria-label="Điều hướng chính">
+        <nav className="hidden lg:flex items-center gap-6" aria-label={t("nav.search_label")}>
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.to}
@@ -57,27 +60,21 @@ const Header = () => {
               type="search"
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Tìm kiếm…"
-              aria-label="Tìm kiếm"
+              placeholder={t("nav.search_placeholder")}
+              aria-label={t("nav.search_label")}
               className="h-9 w-full rounded-full border border-input bg-secondary pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground transition-smooth focus:outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
         </form>
 
         <div className="hidden md:flex items-center gap-2">
-          <button
-            aria-label="Chuyển ngôn ngữ"
-            className="flex items-center gap-1.5 rounded-full border border-input px-3 py-1.5 text-xs font-medium text-foreground transition-smooth hover:border-primary hover:text-primary"
-          >
-            <Globe className="h-3.5 w-3.5" />
-            VI
-          </button>
+          <LanguageSwitcher />
         </div>
 
         <button
           className="p-2 text-foreground transition-smooth lg:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Đóng menu" : "Mở menu"}
+          aria-label={open ? t("nav.close_menu") : t("nav.open_menu")}
           aria-expanded={open}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -94,8 +91,8 @@ const Header = () => {
                   type="search"
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
-                  placeholder="Tìm kiếm…"
-                  aria-label="Tìm kiếm"
+                  placeholder={t("nav.search_placeholder")}
+                  aria-label={t("nav.search_label")}
                   className="w-full h-10 pl-9 pr-3 rounded-md border border-input bg-secondary text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
                 />
               </div>
@@ -116,10 +113,7 @@ const Header = () => {
               </NavLink>
             ))}
             <div className="flex gap-2 pt-3">
-              <button className="flex-1 flex items-center justify-center gap-2 h-10 px-3 rounded-md border border-input text-sm text-foreground hover:border-primary hover:text-primary transition-smooth">
-                <Globe className="h-4 w-4" />
-                Tiếng Việt / EN
-              </button>
+              <LanguageSwitcher className="flex-1 flex items-center justify-center gap-2 h-10 px-3 rounded-md border border-input text-sm text-foreground hover:border-primary hover:text-primary transition-smooth" />
             </div>
           </div>
         </div>

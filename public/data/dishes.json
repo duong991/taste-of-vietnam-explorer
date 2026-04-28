@@ -121,7 +121,7 @@
   {
     "slug": "com-tam-sai-gon",
     "name": { "vi": "Cơm tấm Sài Gòn", "en": "Saigon Broken Rice" },
-    "citySlug": "can-tho",
+    "citySlug": "sai-gon",
     "region": "nam",
     "type": ["savory"],
     "taste": ["salty", "sweet", "umami"],
@@ -168,5 +168,481 @@
       "en": "Wheat flour, pork, wood-ear mushrooms, glass noodles, shallots, seasonings, frying oil"
     },
     "image": "food-banhgoi"
+  },
+  {
+    "slug": "pho-ga-ha-noi",
+    "name": { "vi": "Phở gà Hà Nội", "en": "Hanoi Chicken Pho" },
+    "citySlug": "ha-noi",
+    "region": "bac",
+    "type": ["savory"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Phở gà – người anh em của phở bò – ra đời khoảng những năm 1930, khi giới quan lại Hà Nội muốn một phiên bản 'thanh hơn'. Nước dùng được nấu từ xương gà ta thả vườn, không cần hoa hồi quế nhiều như phở bò, để giữ vị ngọt nhẹ tự nhiên của thịt gà.\n\nGà ta ngon nhất là gà mái tơ chừng 1,2–1,5kg, luộc vừa chín tới để da vàng giòn còn thịt mềm ngọt. Khi ăn xé tay (không chặt) để giữ thớ thịt, kèm hành lá – mùi tàu – lá chanh thái sợi.\n\nNgười Hà Nội sành ăn còn yêu cầu thêm 'tim cật mề' để tô phở gà đầy đủ – một bữa sáng thanh tao, đặc biệt là trong những ngày se lạnh đầu đông.",
+      "en": "Chicken pho – beef pho's sibling – emerged around the 1930s when Hanoi mandarins wanted a lighter version. The broth simmers free-range chicken bones with far less star anise and cinnamon than beef pho, preserving the natural sweetness of chicken.\n\nThe ideal chicken is a young hen of 1.2–1.5kg, poached just done. Hand-shredded (not chopped) to preserve the fibers, served with scallions, sawtooth herb, lime-leaf julienne.\n\nThe true Hanoi connoisseur asks for 'heart-gizzard-liver' to complete the bowl – a refined breakfast, especially on the first cool days of winter."
+    },
+    "ingredients": {
+      "vi": "Gà ta, xương gà, bánh phở, hành lá, mùi tàu, lá chanh, gừng tươi, hành tây",
+      "en": "Free-range chicken, chicken bones, rice noodles, scallions, sawtooth herb, lime leaves, fresh ginger, onion"
+    },
+    "image": "food-pho"
+  },
+  {
+    "slug": "bun-thang",
+    "name": { "vi": "Bún thang", "en": "Bun Thang" },
+    "citySlug": "ha-noi",
+    "region": "bac",
+    "type": ["savory", "fine-dining"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Bún thang là món cầu kỳ bậc nhất của ẩm thực Hà Nội, có nguồn gốc từ các bữa 'tận dụng' sau Tết khi các bà nội trợ gom thịt gà, giò lụa, trứng còn lại để chế biến thành tô bún thanh nhã.\n\nMột tô chuẩn vị có đến 20 nguyên liệu thái chỉ tinh xảo: gà xé phay, giò lụa, trứng tráng mỏng cuộn cắt chỉ, củ cải khô, ruốc tôm... xếp theo hình hoa cúc trên nền bún rối, chan nước dùng trong từ xương gà – tôm khô.\n\nĐiều khó nhất là tinh dầu cà cuống – chỉ một giọt – đủ làm tô bún 'lên hương' theo cách không gì thay thế được. Đây là món ăn được xếp vào hàng 'tinh hoa Hà thành'.",
+      "en": "Bun thang is arguably Hanoi's most meticulous dish, originating from post-Tet 'leftover' meals when housewives gathered remaining chicken, ham, and eggs into one elegant bowl.\n\nA proper bowl contains up to 20 julienned ingredients: shredded chicken, ham, paper-thin egg ribbons, dried radish, shrimp floss... arranged like a chrysanthemum atop vermicelli, doused with crystal-clear chicken-and-dried-shrimp broth.\n\nThe hardest element is ca cuong essence – a single drop – which lifts the bowl to a fragrance nothing else can replace."
+    },
+    "ingredients": {
+      "vi": "Bún rối, gà ta xé, giò lụa, trứng tráng, ruốc tôm, củ cải khô, nấm hương, tinh dầu cà cuống",
+      "en": "Vermicelli, shredded chicken, Vietnamese ham, egg crepe, shrimp floss, dried radish, shiitake, ca cuong essence"
+    },
+    "image": "food-pho"
+  },
+  {
+    "slug": "nem-ran",
+    "name": { "vi": "Nem rán Hà Nội", "en": "Hanoi Fried Spring Rolls" },
+    "citySlug": "ha-noi",
+    "region": "bac",
+    "type": ["savory", "street"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Nem rán – chả giò theo cách gọi miền Nam – là món không thể thiếu trên mâm cỗ Tết, đám giỗ và tiệc cưới của người Hà Nội. Một chiếc nem chuẩn vị phải đạt 'tam giác vàng': vỏ giòn rụm – nhân ngọt mềm – nước chấm hài hòa.\n\nNhân nem cầu kỳ với 7–8 loại nguyên liệu thái nhỏ: thịt heo nạc vai băm, miến dong, mộc nhĩ – nấm hương thái chỉ, hành tây, cà rốt, giá đỗ, lòng đỏ trứng. Vỏ bánh đa nem được phết một lớp giấm đường để rán xong vàng đều.\n\nBí kíp của các bà nội trợ Hà Nội: rán hai lần lửa – lần đầu vừa chín, vớt ra để nguội, lần hai rán nóng già để vỏ rộp lên giòn rụm.",
+      "en": "Nem ran – called cha gio in the South – is indispensable on Hanoi's Tet trays, ancestral feasts, and weddings. A proper one achieves the 'golden triangle': shatteringly crisp shell, tender filling, balanced sauce.\n\nThe filling is meticulous, with 7–8 finely chopped components: minced pork shoulder, soaked glass noodles, julienned wood-ear mushrooms and shiitake, onion, carrot, bean sprouts, egg yolk. The thin rice-paper wrapper is brushed with vinegar-sugar so it fries evenly golden.\n\nA Hanoi housewife's secret: fry twice – first to just-done, then a second hotter fry that blisters the shell crisp."
+    },
+    "ingredients": {
+      "vi": "Thịt heo, miến dong, mộc nhĩ, nấm hương, hành tây, cà rốt, lòng đỏ trứng, bánh đa nem",
+      "en": "Pork, glass noodles, wood-ear mushrooms, shiitake, onion, carrot, egg yolk, rice-paper wrappers"
+    },
+    "image": "food-banhgoi"
+  },
+  {
+    "slug": "xoi-xeo",
+    "name": { "vi": "Xôi xéo", "en": "Xoi Xeo" },
+    "citySlug": "ha-noi",
+    "region": "bac",
+    "type": ["street"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Xôi xéo là bữa sáng quen thuộc của người Hà Nội, được bán trên những gánh hàng rong từ tinh mơ. Tên 'xéo' xuất phát từ cách dùng dao xéo (cắt xiên) lớp đậu xanh đồ nhuyễn nắm thành khối – mỗi lát đậu mỏng đặt lên đĩa xôi vàng óng.\n\nBa lớp hương vị: xôi nếp cái hoa vàng đồ với nước nghệ – cho màu vàng tự nhiên; lớp đậu xanh đồ chín xéo mỏng phủ lên; cuối cùng là hành phi vàng giòn rưới mỡ gà thơm phức.\n\nMột nắm xôi xéo gói trong lá sen hoặc lá chuối, ăn nóng giữa cái lạnh của mùa thu Hà Nội – là khoảnh khắc gợi nhắc về một thời xa vắng nhưng ấm áp.",
+      "en": "Xoi xeo is a Hanoi breakfast staple. The name 'xeo' comes from the diagonal slicing of a packed mung-bean block – each thin shaving laid atop the golden rice mound.\n\nThree layers: glutinous rice steamed with turmeric water for natural gold; mashed mung beans pressed and shaved thin; finally crisp golden fried shallots drizzled with fragrant chicken fat.\n\nA portion wrapped in lotus or banana leaf, eaten hot in the chill of Hanoi's autumn – a moment that recalls a distant yet startlingly warm past."
+    },
+    "ingredients": {
+      "vi": "Gạo nếp cái hoa vàng, đậu xanh, nghệ tươi, hành tím phi, mỡ gà, muối vừng",
+      "en": "Hoa Vang glutinous rice, mung beans, fresh turmeric, fried shallots, chicken fat, sesame salt"
+    },
+    "image": "food-banhcuon"
+  },
+  {
+    "slug": "thang-co-sapa",
+    "name": { "vi": "Thắng cố Sa Pa", "en": "Sa Pa Thang Co Stew" },
+    "citySlug": "sapa",
+    "region": "bac",
+    "type": ["savory"],
+    "taste": ["spicy", "salty", "umami"],
+    "story": {
+      "vi": "Thắng cố là món ăn cổ truyền hơn 200 năm tuổi của người H'Mông vùng cao Tây Bắc, ban đầu được nấu trong các phiên chợ phiên để cánh đàn ông nhâm nhi với rượu ngô. Tên 'thắng cố' bắt nguồn từ tiếng H'Mông 'thoảng cố' – nghĩa là 'nồi nước'.\n\nNguyên liệu truyền thống là thịt và đầy đủ 12 bộ nội tạng của ngựa (ngày nay thường thay bằng bò hoặc trâu), nấu trong nồi gang lớn cùng 12 vị gia vị núi rừng đặc trưng: thảo quả, sa nhân, địa điền, hạt dổi, quế, hồi, gừng, sả... ninh suốt nhiều giờ.\n\nThắng cố ăn nóng bốc khói trong cái lạnh núi rừng, kèm bát mèn mén ngô đồ và chén rượu ngô Bắc Hà ấm bụng – là trải nghiệm nguyên bản nhất của ẩm thực vùng cao.",
+      "en": "Thang co is a 200-year-old traditional dish of the H'Mong people of Northwest Vietnam, originally simmered at weekly markets for men to share with corn wine. The name comes from H'Mong 'thoảng cố' – 'pot of broth.'\n\nTraditional ingredients: meat and all 12 offal parts of horse (today often beef or buffalo), simmered for hours in an iron cauldron with 12 mountain spices: black cardamom, sand-ginger, sa nhan, dổi seed, cinnamon, star anise, ginger, lemongrass.\n\nEaten steaming hot in the mountain cold with steamed corn flour and Bac Ha corn liquor – it is the most authentic highland food experience."
+    },
+    "ingredients": {
+      "vi": "Thịt và nội tạng ngựa (hoặc bò/trâu), thảo quả, sa nhân, địa điền, hạt dổi, quế, hồi, gừng, sả",
+      "en": "Horse meat and offal (or beef/buffalo), black cardamom, sand-ginger, sa nhan, dổi seed, cinnamon, star anise, ginger, lemongrass"
+    },
+    "image": "food-bunbo"
+  },
+  {
+    "slug": "ca-hoi-sapa",
+    "name": { "vi": "Cá hồi Sa Pa", "en": "Sa Pa Salmon" },
+    "citySlug": "sapa",
+    "region": "bac",
+    "type": ["savory", "fine-dining"],
+    "taste": ["umami", "salty"],
+    "story": {
+      "vi": "Sa Pa là một trong số ít vùng ở Việt Nam nuôi được cá hồi vân – loài cá nước lạnh đòi hỏi nhiệt độ dưới 18°C quanh năm. Những trại cá hồi nằm trong các thung lũng suối lạnh ở Bản Khoang, Tả Phìn cung cấp cá hồi tươi cho cả vùng.\n\nCá hồi Sa Pa được chế biến đa dạng: gỏi cá hồi tươi với rau cải mèo và mù tạt, cá hồi nướng giấy bạc với thảo mộc rừng, lẩu cá hồi nấu măng chua, cá hồi áp chảo sốt rượu vang táo mèo... mỗi món đều mang dấu ấn của vùng cao.\n\nThịt cá hồi Sa Pa săn chắc hơn cá nhập khẩu nhờ điều kiện nuôi gần với tự nhiên – là lựa chọn hàng đầu của các nhà hàng cao cấp tại các khu nghỉ dưỡng vùng cao.",
+      "en": "Sa Pa is one of the few regions in Vietnam suited for raising rainbow trout – a cold-water species requiring year-round temperatures below 18°C. Trout farms in the cold-stream valleys of Ban Khoang and Ta Phin supply the entire region.\n\nSa Pa salmon is prepared in many ways: sashimi with H'Mong mustard greens and wasabi, foil-baked with forest herbs, sour-bamboo hotpot, pan-seared with táo mèo apple-wine sauce.\n\nThe flesh is firmer than imported salmon thanks to near-natural farming conditions – making it a favorite at premium restaurants in highland resorts."
+    },
+    "ingredients": {
+      "vi": "Cá hồi vân Sa Pa, rau cải mèo, mù tạt, măng chua, rượu táo mèo, thảo mộc rừng",
+      "en": "Sa Pa rainbow trout, H'Mong mustard greens, wasabi, sour bamboo, táo mèo wine, forest herbs"
+    },
+    "image": "food-bunbo"
+  },
+  {
+    "slug": "de-nui-ninh-binh",
+    "name": { "vi": "Dê núi Ninh Bình", "en": "Ninh Binh Mountain Goat" },
+    "citySlug": "ninh-binh",
+    "region": "bac",
+    "type": ["savory"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Dê núi Ninh Bình là đặc sản vang danh khắp miền Bắc – những đàn dê được chăn thả tự do trên các vách đá vôi của Hoa Lư, Tam Cốc, Bích Động. Chúng leo trèo cả ngày, ăn lá cây thuốc và cỏ núi nên thịt săn chắc, ít mỡ, có vị ngọt thơm rất đặc trưng.\n\nNgười Ninh Bình có hàng chục cách chế biến dê: dê tái chanh thái mỏng trộn hành tây và lá đinh lăng, dê nướng tảng chấm tương bần, dê hấp tía tô, dê hầm thuốc bắc, lẩu dê thập cẩm... Mỗi món tôn lên một khía cạnh khác nhau của vị thịt dê núi.\n\nMón ăn không thể thiếu khi gọi dê là cơm cháy chấm sốt – sự kết hợp 'dê + cơm cháy' đã trở thành combo mặc định khi nhắc đến Ninh Bình.",
+      "en": "Ninh Binh mountain goat is celebrated across Northern Vietnam – herds graze freely on the limestone cliffs of Hoa Lư, Tam Cốc, and Bích Động. Climbing all day, feeding on medicinal leaves, the meat is firm, lean, and distinctly sweet-fragrant.\n\nLocals have dozens of preparations: lime-cured tartare with onion and dinh lang leaves, char-grilled with bần soybean paste, perilla-steamed, herbal-broth simmered, mixed hotpot.\n\nThe inseparable companion is com chay (crispy rice) with goat sauce – the goat-and-com-chay pairing has become the default order whenever Ninh Binh is mentioned."
+    },
+    "ingredients": {
+      "vi": "Thịt dê núi, chanh, hành tây, lá đinh lăng, tía tô, tương bần, thuốc bắc, sả, ớt",
+      "en": "Mountain goat, lime, onion, dinh lang leaves, perilla, bần soybean paste, Chinese herbs, lemongrass, chili"
+    },
+    "image": "food-comtam"
+  },
+  {
+    "slug": "com-chay-ninh-binh",
+    "name": { "vi": "Cơm cháy Ninh Bình", "en": "Ninh Binh Crispy Rice" },
+    "citySlug": "ninh-binh",
+    "region": "bac",
+    "type": ["savory"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Cơm cháy Ninh Bình tương truyền do một người con đất Tổng Trường sáng chế từ thế kỷ 19 khi mở quán cơm tại Hà Nội. Lớp cơm dưới đáy nồi cháy giòn được sấy khô, đem chiên ngập dầu rồi rưới sốt – không ngờ trở thành 'thương hiệu' lan tỏa khắp miền Bắc.\n\nCơm cháy đúng vị Ninh Bình được làm từ gạo tám thơm, nắm thành miếng tròn dẹt, phơi nắng khô rồi chiên ở dầu nóng đến khi vàng rộm và nở phồng. Quan trọng nhất là nước sốt – nấu từ thịt bò băm, mỡ hành, hành phi, tương ớt, có nơi cho thêm tóp dê.\n\nCắn một miếng: vỏ ngoài giòn rụm, trong vẫn còn ẩm, sốt đậm đà phủ kín – là sự kết hợp giòn-ngon-đậm khó nơi nào sánh bằng. Đây cũng là món quà mang về phổ biến nhất khi du khách rời Ninh Bình.",
+      "en": "Ninh Binh com chay is said to have been invented in the 19th century by a Tổng Trường native who opened a Hanoi rice shop. He sun-dried the crispy bottom-of-pot rice, deep-fried it, and ladled sauce on top – an unintentional brand that spread across the North.\n\nAuthentic com chay uses fragrant tám rice, pressed into round flat patties, sun-dried, then deep-fried until golden and puffed. The crucial element is the sauce – simmered minced beef, scallion oil, fried shallots, chili paste; some versions include goat cracklings.\n\nOne bite: shatter-crisp outside, still moist within, blanketed in rich sauce – a crunch-savory-deep balance unmatched elsewhere. It is also the most popular souvenir for departing visitors."
+    },
+    "ingredients": {
+      "vi": "Gạo tám thơm, thịt bò băm, mỡ hành, hành phi, tương ớt, ruốc thịt, dầu chiên",
+      "en": "Tám fragrant rice, minced beef, scallion oil, fried shallots, chili paste, pork floss, frying oil"
+    },
+    "image": "food-comtam"
+  },
+  {
+    "slug": "pho-chua-ha-giang",
+    "name": { "vi": "Phở chua Hà Giang", "en": "Ha Giang Sour Pho" },
+    "citySlug": "ha-giang",
+    "region": "bac",
+    "type": ["savory"],
+    "taste": ["sour", "salty", "umami"],
+    "story": {
+      "vi": "Phở chua Hà Giang là một 'phiên bản phở' hoàn toàn khác biệt với phở miền xuôi – ăn nguội, có vị chua thanh từ giấm gạo và lẫn chút ngọt dịu của đường. Đây là món bắt nguồn từ vùng biên Trung Quốc, du nhập qua các phiên chợ Đồng Văn rồi được người Tày, Nùng, H'Mông biến tấu theo khẩu vị địa phương.\n\nMột tô đầy đủ gồm bánh phở cuộn, thịt xá xíu, lạc rang giã thô, đu đủ thái sợi muối chua, hành phi, rau thơm – tất cả chan nước trộn pha từ giấm – tương – đường – bột năng tạo độ sệt sánh.\n\nĂn phở chua trong cái lạnh trên cao nguyên đá, vị chua mát đánh thức vị giác – là một trong những trải nghiệm ẩm thực 'không có ở miền xuôi' mà du khách thường gọi là 'cú twist của phở Việt'.",
+      "en": "Ha Giang sour pho is a 'pho version' utterly unlike its lowland cousin – served cool, with a clean tang from rice vinegar and a soft sugar-sweet finish. The dish came across the border markets of Đồng Văn from southern China, then was adapted by the Tay, Nung, and H'Mong to local taste.\n\nA full bowl: rolled rice noodles, char siu pork, coarsely crushed roasted peanuts, sour-pickled papaya julienne, fried shallots, herbs – all dressed in a vinegar-soy-sugar-tapioca sauce that turns silky thick.\n\nEaten in the karst-plateau chill, the cool tang awakens the palate – one of those 'not-found-in-the-lowlands' experiences that travelers call 'Vietnamese pho's twist.'"
+    },
+    "ingredients": {
+      "vi": "Bánh phở, thịt xá xíu, đu đủ muối chua, lạc rang, giấm gạo, tương, đường, bột năng, rau thơm",
+      "en": "Rice noodles, char siu pork, sour-pickled papaya, roasted peanuts, rice vinegar, soybean sauce, sugar, tapioca, herbs"
+    },
+    "image": "food-pho"
+  },
+  {
+    "slug": "men-men",
+    "name": { "vi": "Mèn mén", "en": "Men Men (Steamed Corn Flour)" },
+    "citySlug": "ha-giang",
+    "region": "bac",
+    "type": ["savory"],
+    "taste": ["salty"],
+    "story": {
+      "vi": "Mèn mén là 'cơm' của người H'Mông trên cao nguyên đá Hà Giang – nơi đất khô cằn không trồng được lúa nước. Người H'Mông trồng ngô trên các hốc đá, lấy bắp đem xay thành bột rồi đồ hai lửa thành mèn mén tơi xốp – là nguồn lương thực chính qua bao đời.\n\nQuy trình công phu: ngô xay vừa, sàng kỹ, rưới chút nước rồi đồ lần một cho ráo; đảo tơi, rưới thêm nước, đồ lần hai cho chín. Bí kíp là canh lửa và lượng nước – nếu sai một bước, mèn mén sẽ vón cục hoặc khô cứng.\n\nMèn mén thường ăn với canh rau cải đắng, thắng cố, đậu chao... – mỗi miếng tơi mềm thấm vị nước canh là một mảnh ghép trong đời sống văn hóa H'Mông.",
+      "en": "Men men is the 'rice' of the H'Mong on Ha Giang's karst plateau – where dry stone won't grow paddy rice. The H'Mong plant corn in rock crevices, mill the kernels, and double-steam the flour into a fluffy staple that has fed generations.\n\nThe process is exacting: medium-grind corn, careful sifting, a sprinkle of water, first steam to dry it out; toss, sprinkle again, second steam to finish. The secret is fire control and water ratio.\n\nMen men is eaten with bitter mustard greens soup, thang co, fermented tofu – each fluffy mouthful soaked in broth is a piece of H'Mong cultural life."
+    },
+    "ingredients": {
+      "vi": "Bột ngô tẻ, nước, muối",
+      "en": "Corn flour, water, salt"
+    },
+    "image": "food-banhcuon"
+  },
+  {
+    "slug": "com-hen-hue",
+    "name": { "vi": "Cơm hến Huế", "en": "Hue Clam Rice" },
+    "citySlug": "hue",
+    "region": "trung",
+    "type": ["savory", "street"],
+    "taste": ["spicy", "salty", "umami"],
+    "story": {
+      "vi": "Cơm hến – món dân dã đặc trưng của xứ Huế – tương truyền có nguồn gốc từ những năm 1930 trên bãi nổi Cồn Hến giữa sông Hương, nơi người dân nghèo tận dụng hến nhỏ trộn với cơm nguội thành bữa ăn tằn tiện.\n\nTừ sự chắt chiu ấy, cơm hến đã trở thành biểu tượng ẩm thực Huế với hơn 15 nguyên liệu: cơm trắng nguội, hến luộc xào sả ớt, da heo chiên giòn, đậu phộng rang, mè rang, rau thơm xắt nhuyễn, giá đỗ, bắp chuối thái sợi, mắm ruốc Huế, ớt bột, ớt tươi.\n\nĂn đúng vị phải trộn đều, ăn ngay, vị cay xé lưỡi đặc trưng Huế kết hợp với độ mát của rau sống và độ giòn của da heo – là một bản hòa âm khó quên.",
+      "en": "Com hen – a humble Hue specialty – is said to have originated in the 1930s on Cồn Hến islet in the Perfume River, where poor residents stretched their tiny clam catch by mixing it with cold leftover rice.\n\nFrom this thrift came an icon: com hen now combines over 15 elements – cold white rice, lemongrass-chili stir-fried clams, crisp pork crackling, roasted peanuts, sesame, finely chopped herbs, bean sprouts, banana-flower julienne, Hue shrimp paste, chili powder, fresh chili.\n\nEat it properly: stir thoroughly and dig in immediately. The signature Hue tongue-searing heat against cool greens and crackling crunch is unforgettable."
+    },
+    "ingredients": {
+      "vi": "Hến nhỏ, cơm trắng nguội, sả, ớt, da heo chiên, đậu phộng, mè rang, mắm ruốc, rau thơm",
+      "en": "Tiny clams, cold white rice, lemongrass, chili, fried pork skin, peanuts, sesame, shrimp paste, herbs"
+    },
+    "image": "food-bunbo"
+  },
+  {
+    "slug": "banh-beo-hue",
+    "name": { "vi": "Bánh bèo Huế", "en": "Hue Water Fern Cakes" },
+    "citySlug": "hue",
+    "region": "trung",
+    "type": ["savory", "fine-dining"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Bánh bèo Huế là tinh hoa của ẩm thực cung đình – mỗi chiếc bánh nhỏ xíu vừa đúng một miếng, được hấp trong những chén sứ nhỏ tròn xoe trông như lá bèo nổi trên mặt nước.\n\nBột gạo tẻ pha với nước lọc và chút muối, đổ vào chén nhỏ rồi hấp đến khi mặt bánh nổi vân lõm xuống ở giữa – đây là dấu hiệu của bánh chuẩn vị. Trên mặt rắc tôm chấy đỏ cam và tóp mỡ vàng giòn, ăn kèm nước mắm pha loãng có ớt tươi.\n\nTrong các bữa tiệc cung đình Huế xưa, một mâm bánh bèo có thể lên đến 30–40 chén, sắp xếp như những đoá hoa nhỏ – là biểu hiện của sự cầu kỳ và tinh tế trong văn hóa ẩm thực hoàng gia.",
+      "en": "Banh beo Hue is the essence of imperial cuisine – each tiny single-bite cake is steamed in small round porcelain dishes resembling water-fern leaves on a pond.\n\nRice flour mixed with water and salt is poured into small dishes and steamed until the surface dimples concentrically – the mark of a true bánh bèo. Topped with shrimp floss and crisp golden pork crackling, served with thinned fish sauce and fresh chili.\n\nAt former Hue royal banquets, a single tray could hold 30–40 dishes arranged like a bouquet – a manifestation of imperial culinary refinement."
+    },
+    "ingredients": {
+      "vi": "Bột gạo tẻ, nước, muối, tôm khô, tóp mỡ, hành phi, nước mắm, ớt",
+      "en": "Rice flour, water, salt, dried shrimp floss, pork crackling, fried shallots, fish sauce, chili"
+    },
+    "image": "food-banhcuon"
+  },
+  {
+    "slug": "mi-quang",
+    "name": { "vi": "Mì Quảng", "en": "Mi Quang" },
+    "citySlug": "da-nang",
+    "region": "trung",
+    "type": ["savory"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Mì Quảng – linh hồn ẩm thực Quảng Nam – Đà Nẵng – là món mì rất đặc biệt: ít nước (gần như khô), sợi mì vàng óng tô bằng bột nghệ, ăn kèm bánh đa nướng vừng đập vụn lên trên.\n\nNước nhân mì Quảng được nấu từ tôm, thịt heo ba chỉ, có khi thêm gà hoặc cá lóc – cô đặc, đậm đà, vừa đủ để thấm vào sợi mì. Trên bát còn có tôm rim, đậu phộng rang, hành phi, trứng cút luộc, rau sống đặc trưng (rau húng, cải con, bắp chuối, xà lách).\n\nMỗi nhà ở Quảng Nam có một công thức mì Quảng riêng, không nơi nào giống nơi nào – có người gọi đó là 'món ăn của trí nhớ', nơi mỗi tô là dấu ấn của một gia đình.",
+      "en": "Mi Quang – the soul of Quang Nam–Da Nang cuisine – is a very particular noodle: barely any broth (nearly dry), with golden turmeric-tinted noodles topped with crushed sesame rice crackers.\n\nThe sauce is reduced from shrimp, pork belly, sometimes chicken or snakehead fish – concentrated, rich, just enough to coat the noodles. The bowl is finished with caramelized shrimp, roasted peanuts, fried shallots, quail eggs, and a signature herb medley (basil, baby mustard, banana flower, lettuce).\n\nEvery household in Quang Nam has its own recipe – locals call it 'a dish of memory', where every bowl bears the signature of a family."
+    },
+    "ingredients": {
+      "vi": "Sợi mì gạo nghệ, tôm, thịt heo ba chỉ, đậu phộng rang, bánh đa nướng, hành phi, rau sống, trứng cút",
+      "en": "Turmeric rice noodles, shrimp, pork belly, roasted peanuts, sesame rice crackers, fried shallots, herbs, quail eggs"
+    },
+    "image": "food-caolau"
+  },
+  {
+    "slug": "banh-trang-cuon-thit-heo",
+    "name": { "vi": "Bánh tráng cuốn thịt heo", "en": "Pork Rolled in Rice Paper" },
+    "citySlug": "da-nang",
+    "region": "trung",
+    "type": ["savory"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Bánh tráng cuốn thịt heo Đại Lộc – đặc sản Đà Nẵng – là một trong những món ăn 'sạch và lành' nhất của ẩm thực Việt Nam: chỉ có thịt heo luộc, rau sống và bánh tráng, nhưng đòi hỏi sự hoàn hảo trong từng nguyên liệu.\n\nThịt phải là thịt heo cỏ vùng Đại Lộc, luộc đúng cách để giữ vị ngọt tự nhiên – hai đầu thịt mỡ và nạc xen kẽ thành dải. Rau sống Đà Nẵng đặc biệt với hơn 10 loại: tía tô, húng quế, kinh giới, diếp cá, lá hẹ, dưa leo, chuối chát, khế chua, xà lách, giá đỗ.\n\nNước chấm là 'mắm nêm' đặc trưng – mắm cá lên men pha với tỏi, ớt, đường, dứa băm. Cuốn một cuốn nhỏ vừa miệng, chấm mắm nêm, cắn một miếng – đây là vị Đà Nẵng trong sáng và thanh đạm nhất.",
+      "en": "Dai Loc pork rolled in rice paper – a Da Nang specialty – is one of Vietnamese cuisine's 'cleanest' dishes: just boiled pork, herbs, and rice paper, but demanding perfection in every ingredient.\n\nThe pork must be free-range Dai Loc pork, boiled to preserve natural sweetness – with alternating fat and lean stripes. Da Nang herbs are exceptional, with 10+ varieties: perilla, basil, kinh gioi, fish mint, chives, cucumber, green banana, sour star fruit, lettuce, bean sprouts.\n\nThe dipping sauce is signature 'mam nem' – fermented fish sauce with garlic, chili, sugar, minced pineapple. Roll a small bite-sized parcel, dip in mam nem, and savor the cleanest, lightest taste of Da Nang."
+    },
+    "ingredients": {
+      "vi": "Thịt heo cỏ luộc, bánh tráng mỏng, 10+ loại rau sống Đà Nẵng, mắm nêm, dứa, tỏi, ớt",
+      "en": "Boiled free-range pork, thin rice paper, 10+ Da Nang herbs, mam nem fish sauce, pineapple, garlic, chili"
+    },
+    "image": "food-banhxeo"
+  },
+  {
+    "slug": "banh-mi-hoi-an",
+    "name": { "vi": "Bánh mì Hội An", "en": "Hoi An Banh Mi" },
+    "citySlug": "hoi-an",
+    "region": "trung",
+    "type": ["savory", "street"],
+    "taste": ["salty", "sweet", "umami"],
+    "story": {
+      "vi": "Bánh mì Hội An – đặc biệt là Bánh mì Phượng và Bánh mì Madam Khánh – đã được đầu bếp Anthony Bourdain gọi là 'sự giao thoa hoàn hảo của ẩm thực phương Tây và châu Á' và đưa vào danh sách 'sandwich ngon nhất thế giới'.\n\nBí quyết nằm ở từng yếu tố: vỏ bánh nướng tại lò gạch truyền thống – mỏng, giòn rụm bên ngoài, ruột mềm xốp; pate gan béo ngậy nấu theo công thức gia truyền; hơn 10 loại nhân thịt xíu mại, chả lụa, jambon; rau thơm tươi từ làng rau Trà Quế cách đó 3km.\n\nQuan trọng nhất là loại sốt 'gia truyền' với công thức bí mật – tạo nên hương vị mà du khách quốc tế phải xếp hàng cả tiếng đồng hồ chỉ để được thử.",
+      "en": "Hoi An banh mi – especially Banh Mi Phuong and Madam Khanh – was called 'a perfect symphony of Western and Asian cuisines' by Anthony Bourdain and ranked among 'the world's best sandwiches.'\n\nThe secret lies in every element: bread baked in traditional brick ovens – thin, crackling crust, airy crumb; rich pate made by family recipe; over 10 fillings including xíu mại meatballs, ham, char-grilled pork; fresh herbs from Trà Quế herb village 3km away.\n\nThe crucial element is the 'house sauce' with its guarded recipe – producing the flavor that has international visitors queuing for an hour just to taste."
+    },
+    "ingredients": {
+      "vi": "Bánh mì baguette nướng lò gạch, pate gan, xíu mại, chả lụa, jambon, rau Trà Quế, sốt gia truyền",
+      "en": "Brick-oven baguette, liver pate, xíu mại meatballs, Vietnamese ham, jambon, Trà Quế herbs, house sauce"
+    },
+    "image": "food-banhgoi"
+  },
+  {
+    "slug": "com-ga-hoi-an",
+    "name": { "vi": "Cơm gà Hội An", "en": "Hoi An Chicken Rice" },
+    "citySlug": "hoi-an",
+    "region": "trung",
+    "type": ["savory"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Cơm gà Hội An – ra đời từ những năm 1950 ở khu phố cổ – là sự kết tinh đơn giản nhưng hoàn hảo: gà ta luộc xé phay, cơm nấu bằng nước luộc gà với nghệ tươi cho màu vàng óng, ăn kèm gỏi đu đủ – cà rốt – hành tây ngâm chua.\n\nGà phải là gà mái tơ chừng 1,2kg nuôi vườn, luộc đúng cách để da vàng giòn căng, thịt mềm ngọt không khô. Cơm phải tơi mà không nát, vàng đẹp mà không gắt – là kỹ thuật của các quán gia truyền Hội An.\n\nMón ăn được hoàn thiện với chén nước chấm pha mắm – chanh – đường – tỏi – ớt, vài lát hành phi, rau răm thái nhỏ. Ăn cùng tách trà sen nóng – là bữa trưa phố cổ chuẩn vị nhất.",
+      "en": "Hoi An chicken rice – born in the 1950s in the ancient quarter – is simplicity perfected: poached free-range chicken hand-shredded, rice cooked in chicken stock with fresh turmeric for a golden hue, served with tangy papaya-carrot-onion pickles.\n\nThe chicken must be a young hen, around 1.2kg, free-range, poached just right so the skin stays taut and golden and the flesh tender. The rice must be fluffy yet intact, golden but never brassy – the craft of Hoi An's heritage shops.\n\nFinished with a fish sauce–lime–sugar–garlic–chili dip, fried shallots, and rau răm coriander. Paired with hot lotus tea, it is the most authentic ancient-quarter lunch."
+    },
+    "ingredients": {
+      "vi": "Gà ta, gạo dẻo, nghệ tươi, đu đủ, cà rốt, hành tây, rau răm, hành phi, nước mắm, chanh",
+      "en": "Free-range chicken, fragrant rice, fresh turmeric, papaya, carrot, onion, rau răm, fried shallots, fish sauce, lime"
+    },
+    "image": "food-comtam"
+  },
+  {
+    "slug": "nem-nuong-nha-trang",
+    "name": { "vi": "Nem nướng Nha Trang", "en": "Nha Trang Grilled Pork Rolls" },
+    "citySlug": "nha-trang",
+    "region": "trung",
+    "type": ["savory", "street"],
+    "taste": ["salty", "sweet", "umami"],
+    "story": {
+      "vi": "Nem nướng Nha Trang là món ăn signature của Khánh Hòa – những viên nem hình trụ làm từ thịt heo nạc xay nhuyễn, ướp gia vị rồi xiên que tre nướng than hoa thơm lừng.\n\nThịt làm nem phải tươi, xay nhuyễn cùng chút mỡ heo, đường, tỏi, tiêu, nước mắm – ướp đủ thời gian rồi nắm thành viên đều. Khi nướng, mỡ trong nem chảy ra tạo lớp cháy cạnh đẹp mắt, mùi khói than hoa lẫn mùi sả thơm lan cả đoạn phố.\n\nĂn nem nướng đúng kiểu Nha Trang phải cuốn bánh tráng phơi sương với rau sống, bún tươi, chuối chát, khế chua, dưa leo – chấm nước tương đậu phộng béo ngậy đặc trưng (khác hẳn nem nướng các vùng khác chấm nước mắm).",
+      "en": "Nha Trang nem nuong is the signature dish of Khanh Hoa – cylindrical rolls of finely ground pork, marinated, skewered on bamboo, and grilled over charcoal.\n\nThe pork must be fresh, ground with a touch of fat, sugar, garlic, pepper, and fish sauce – marinated thoroughly then pressed into uniform rolls. As they grill, the fat bastes the rolls into beautiful charred edges, and lemongrass-tinged smoke perfumes whole streets.\n\nThe Nha Trang way: roll in 'phơi sương' (dew-dried) rice paper with herbs, vermicelli, green banana, sour star fruit, and cucumber – dipped in the signature rich peanut-soybean sauce (distinct from other regions that use fish sauce)."
+    },
+    "ingredients": {
+      "vi": "Thịt heo nạc, mỡ heo, sả, tỏi, đường, nước mắm, bánh tráng phơi sương, rau sống, đậu phộng, tương",
+      "en": "Lean pork, pork fat, lemongrass, garlic, sugar, fish sauce, dew-dried rice paper, herbs, peanuts, soybean paste"
+    },
+    "image": "food-buncha"
+  },
+  {
+    "slug": "bun-cha-ca-nha-trang",
+    "name": { "vi": "Bún chả cá Nha Trang", "en": "Nha Trang Fish Cake Noodle Soup" },
+    "citySlug": "nha-trang",
+    "region": "trung",
+    "type": ["savory", "street"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Bún chả cá Nha Trang – đặc sản miền biển Khánh Hòa – nổi tiếng vì dùng cá thu, cá nhồng tươi vừa đánh bắt từ vịnh Nha Trang, quết nhuyễn cùng tỏi tiêu rồi viên thành miếng chả vừa dai vừa ngọt.\n\nCó hai loại chả: chả cá hấp (mềm, ngọt) và chả cá chiên (vàng giòn cạnh ngoài, mềm bên trong). Nước dùng nấu từ xương cá hầm với cà chua, dứa, củ cải trắng – cho vị thanh nhẹ ngọt mặn cân bằng, khác hẳn vị béo của bún bò Huế.\n\nMột tô đầy đủ có bún tươi, hai loại chả cá, hành lá, rau húng – ăn kèm chén rau sống đầy đặn (xà lách, bắp chuối, giá đỗ). Đây là bữa sáng kinh điển của người Nha Trang.",
+      "en": "Nha Trang bun cha ca – a Khanh Hoa coastal specialty – is famous for using mackerel and barracuda freshly caught from Nha Trang Bay, ground with garlic and pepper into chewy-sweet fish cakes.\n\nTwo varieties: steamed cake (soft, sweet) and fried cake (crisp-edged, soft within). The broth is simmered from fish bones with tomato, pineapple, and white radish – yielding a light, balanced sweet-savory profile, unlike the rich Bun Bo Hue.\n\nA full bowl: fresh vermicelli, both fish cakes, scallions, basil – with a generous plate of herbs (lettuce, banana flower, bean sprouts). It is the classic Nha Trang breakfast."
+    },
+    "ingredients": {
+      "vi": "Cá thu/cá nhồng tươi, tỏi, tiêu, bún tươi, cà chua, dứa, củ cải trắng, hành lá, rau sống",
+      "en": "Fresh mackerel/barracuda, garlic, pepper, vermicelli, tomato, pineapple, white radish, scallions, herbs"
+    },
+    "image": "food-bunbo"
+  },
+  {
+    "slug": "banh-trang-nuong-dalat",
+    "name": { "vi": "Bánh tráng nướng Đà Lạt", "en": "Da Lat Grilled Rice Paper" },
+    "citySlug": "da-lat",
+    "region": "nam",
+    "type": ["street"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Bánh tráng nướng Đà Lạt – được giới trẻ Việt Nam gọi vui là 'pizza Đà Lạt' – là món ăn vặt sinh ra cùng cái lạnh của thành phố cao nguyên. Từ chiếc bánh tráng đơn giản nướng trên than hoa, người Đà Lạt biến tấu thành món street food đặc sắc.\n\nBánh tráng phơi sương được đặt trên vỉ than hồng, phết một lớp trứng cút (hoặc trứng gà) đánh tan, rắc hành lá, ruốc khô, xúc xích, mỡ hành, phô mai bào, tóp mỡ – nướng đến khi bánh giòn vàng. Một số biến tấu còn có nem chua, bò khô, sa tế.\n\nĂn nóng giữa cái se lạnh của Đà Lạt, bánh tráng giòn rụm, lớp trứng béo, mùi than hoa thơm lừng – là trải nghiệm street food khó quên cho bất kỳ ai ghé thành phố ngàn hoa.",
+      "en": "Da Lat grilled rice paper – playfully nicknamed 'Da Lat pizza' by young Vietnamese – was born from the cold of this highland city. Locals turned a humble rice-paper sheet over charcoal into an iconic street snack.\n\nDew-dried rice paper sits on hot coals, brushed with beaten quail (or chicken) eggs, sprinkled with scallions, dried floss, sausage, scallion oil, grated cheese, pork crackling – grilled until golden and crisp. Variations add fermented pork, beef jerky, and sa tế chili oil.\n\nEaten hot in Da Lat's cool air, the rice paper shatters, the egg layer is rich, the charcoal aroma lingers – an unforgettable street-food experience in the City of Flowers."
+    },
+    "ingredients": {
+      "vi": "Bánh tráng phơi sương, trứng cút, hành lá, ruốc khô, xúc xích, phô mai, tóp mỡ, mỡ hành",
+      "en": "Dew-dried rice paper, quail eggs, scallions, dried floss, sausage, cheese, pork crackling, scallion oil"
+    },
+    "image": "food-banhxeo"
+  },
+  {
+    "slug": "sua-dau-nanh-dalat",
+    "name": { "vi": "Sữa đậu nành Đà Lạt", "en": "Da Lat Soy Milk" },
+    "citySlug": "da-lat",
+    "region": "nam",
+    "type": ["street"],
+    "taste": ["sweet"],
+    "story": {
+      "vi": "Sữa đậu nành nóng – uống dọc các quán đêm trên phố Tăng Bạt Hổ và Phan Đình Phùng – đã trở thành một phần không thể thiếu của trải nghiệm Đà Lạt về đêm. Trong cái lạnh 12–15°C của đêm cao nguyên, ly sữa đậu nành nóng phả khói nghi ngút như một cái ôm ấm áp.\n\nĐiều khác biệt của sữa đậu nành Đà Lạt nằm ở nguyên liệu: đậu nành trồng tại các nông trại cao nguyên, hạt to mẩy, vị béo ngọt tự nhiên. Sữa được nấu chậm với đường vàng, lá dứa, cho ra ly sữa trắng ngà thơm dịu không cần thêm gì.\n\nMột số quán còn phục vụ kèm bánh tiêu, bánh quẩy, bánh ngô nướng – gói bữa khuya Đà Lạt trọn vẹn cho cả người dân lẫn du khách.",
+      "en": "Hot soy milk – sipped along the night stalls of Tang Bat Ho and Phan Dinh Phung streets – has become an essential part of Da Lat's nighttime experience. In the highland chill of 12–15°C, a steaming cup feels like a warm embrace.\n\nWhat sets Da Lat soy milk apart is the ingredient: soybeans grown on highland farms, plump and naturally sweet. Slowly simmered with palm sugar and pandan leaves, it yields a creamy ivory cup that needs no additions.\n\nSome stalls pair it with banh tieu (sesame doughnuts), banh quay (Chinese fried dough), and grilled corn cakes – completing a perfect Da Lat late-night meal for locals and travelers alike."
+    },
+    "ingredients": {
+      "vi": "Đậu nành cao nguyên, lá dứa, đường vàng, nước",
+      "en": "Highland soybeans, pandan leaves, palm sugar, water"
+    },
+    "image": "food-cafetrung"
+  },
+  {
+    "slug": "banh-mi-sai-gon",
+    "name": { "vi": "Bánh mì Sài Gòn", "en": "Saigon Banh Mi" },
+    "citySlug": "sai-gon",
+    "region": "nam",
+    "type": ["savory", "street"],
+    "taste": ["salty", "sweet", "umami"],
+    "story": {
+      "vi": "Bánh mì Sài Gòn – được nhiều bảng xếp hạng quốc tế (CNN, Time Out, The Guardian) tôn vinh là 'sandwich ngon nhất thế giới' – là sự giao thoa hoàn hảo giữa baguette Pháp thuộc địa và hương vị nhiệt đới Việt Nam.\n\nVỏ bánh là baguette Sài Gòn 'phiên bản Việt': mỏng hơn, giòn hơn, ruột xốp nhẹ với độ ẩm vừa đủ. Pate gan và bơ là hai 'mặt nền' kinh điển. Nhân thì vô cùng đa dạng: thịt nguội (chả lụa, jambon, xíu mại), thịt nướng, gà xé, trứng ốp la, cá sardine sốt cà...\n\nĐiều làm bánh mì Sài Gòn 'biết bay xa' là tổ hợp rau ăn kèm: dưa leo, đồ chua (cà rốt + củ cải ngâm chua ngọt), ngò rí, ớt tươi, vài giọt nước tương Maggi. Một ổ bánh mì Sài Gòn chuẩn = bữa sáng nhanh – ngon – rẻ trên 4 châu lục.",
+      "en": "Saigon banh mi – crowned by international rankings (CNN, Time Out, The Guardian) as 'the world's best sandwich' – is the perfect crossover of colonial-era French baguette and tropical Vietnamese flavor.\n\nThe shell is the Saigon-style baguette: thinner, crisper, with airy crumb and just-right moisture. Pate and butter form the classic base layer. Fillings range widely: cold cuts (Vietnamese ham, jambon, xíu mại meatballs), grilled pork, shredded chicken, sunny-side-up egg, sardine in tomato sauce.\n\nWhat lets Saigon banh mi 'fly far' is the produce mix: cucumber, sweet-pickled carrot-radish, cilantro, fresh chili, a few drops of Maggi seasoning. A proper Saigon banh mi = a fast, delicious, affordable breakfast across four continents."
+    },
+    "ingredients": {
+      "vi": "Baguette Sài Gòn, pate gan, bơ, chả lụa, thịt nướng, trứng, đồ chua, dưa leo, ngò, ớt, Maggi",
+      "en": "Saigon baguette, liver pate, butter, Vietnamese ham, grilled pork, egg, pickled vegetables, cucumber, cilantro, chili, Maggi sauce"
+    },
+    "image": "food-banhgoi"
+  },
+  {
+    "slug": "hu-tieu-nam-vang",
+    "name": { "vi": "Hủ tiếu Nam Vang", "en": "Nam Vang Noodle Soup" },
+    "citySlug": "sai-gon",
+    "region": "nam",
+    "type": ["savory", "street"],
+    "taste": ["salty", "umami", "sweet"],
+    "story": {
+      "vi": "Hủ tiếu Nam Vang – tên gốc xuất phát từ Phnom Penh (Campuchia gọi là 'Nam Vang') – được người Hoa Triều Châu di cư mang vào Sài Gòn từ thập niên 1950, dần trở thành một trong những món ăn sáng phổ biến nhất của Sài Gòn và miền Nam.\n\nKhác với phở Bắc dùng nước dùng bò, hủ tiếu Nam Vang ngọt đặc trưng từ xương heo + tôm khô + mực khô + củ cải trắng. Sợi hủ tiếu mảnh dai làm từ bột gạo, có thể chọn 'khô' (chan ít nước) hoặc 'nước' (đầy bát).\n\nMột tô đầy đủ có tôm tươi, thịt heo bằm, gan – tim heo, trứng cút, hẹ, giá đỗ, hành phi, tỏi phi – ăn kèm xà lách, chanh, ớt sa tế. Hủ tiếu Nam Vang là minh chứng cho khả năng 'hấp thụ và Việt hóa' của ẩm thực Sài Gòn.",
+      "en": "Hu tieu Nam Vang – its name comes from Phnom Penh ('Nam Vang' in Vietnamese) – was brought to Saigon by Teochew Chinese immigrants in the 1950s and has become one of Saigon's most beloved breakfast dishes.\n\nUnlike Northern pho with beef broth, Nam Vang noodle soup gets its signature sweetness from pork bones + dried shrimp + dried squid + white radish. The noodles are thin, chewy, and rice-flour-based – ordered 'dry' (with little broth) or 'wet' (full bowl).\n\nA full bowl: fresh shrimp, ground pork, pork liver and heart, quail eggs, chives, bean sprouts, fried shallots and garlic – served with lettuce, lime, and chili sa tế. Hu tieu Nam Vang is proof of Saigon's ability to 'absorb and Vietnamize.'"
+    },
+    "ingredients": {
+      "vi": "Sợi hủ tiếu, xương heo, tôm khô, mực khô, củ cải trắng, tôm tươi, thịt bằm, gan tim heo, trứng cút, hẹ",
+      "en": "Hu tieu noodles, pork bones, dried shrimp, dried squid, white radish, fresh shrimp, minced pork, pork organs, quail eggs, chives"
+    },
+    "image": "food-pho"
+  },
+  {
+    "slug": "goi-cuon",
+    "name": { "vi": "Gỏi cuốn", "en": "Fresh Spring Rolls" },
+    "citySlug": "sai-gon",
+    "region": "nam",
+    "type": ["street", "vegetarian"],
+    "taste": ["umami", "sweet"],
+    "story": {
+      "vi": "Gỏi cuốn – chiếc cuốn trắng trong gói tôm hồng, thịt ba chỉ, bún và rau sống – đã trở thành 'đại sứ' của ẩm thực Việt Nam ra thế giới, được CNN xếp vào top 50 món ngon thế giới.\n\nLớp bánh tráng mỏng tang ngâm nước cho mềm, đặt lên miếng thịt heo luộc, vài con tôm bóc vỏ chẻ đôi, một nắm bún tươi, lá xà lách, hẹ, vài cọng rau húng – cuốn chặt tay nhưng nhẹ. Cái khó là cuốn không rách, đẹp đều, và để được nhân tôm hồng nổi bật phía trên.\n\nNước chấm là 'chìa khóa': tương đậu phộng (hoisin pha bơ đậu phộng) ngọt béo của Sài Gòn, hoặc nước mắm pha chua ngọt với đồ chua – mỗi loại tạo nên một trải nghiệm khác nhau cho cùng một món ăn.",
+      "en": "Goi cuon – the translucent roll bundling pink shrimp, pork belly, vermicelli and herbs – has become an 'ambassador' of Vietnamese cuisine, ranked by CNN among the world's 50 best foods.\n\nThe paper-thin rice paper is briefly soaked, then layered with boiled pork, halved peeled shrimp, a small bundle of vermicelli, lettuce, chives, basil – rolled tight yet light. The challenge: no tears, even shape, and the pink shrimp showing prettily on top.\n\nThe sauce is the key: Saigon's sweet-rich peanut sauce (hoisin blended with peanut butter), or sweet-sour fish sauce with pickled vegetables – each gives the same roll a different soul."
+    },
+    "ingredients": {
+      "vi": "Bánh tráng, tôm tươi, thịt ba chỉ luộc, bún tươi, xà lách, hẹ, rau húng, tương đậu phộng",
+      "en": "Rice paper, fresh shrimp, boiled pork belly, vermicelli, lettuce, chives, basil, peanut sauce"
+    },
+    "image": "food-banhcuon"
+  },
+  {
+    "slug": "lau-mam",
+    "name": { "vi": "Lẩu mắm miền Tây", "en": "Mekong Fermented Fish Hotpot" },
+    "citySlug": "can-tho",
+    "region": "nam",
+    "type": ["savory"],
+    "taste": ["salty", "umami", "spicy"],
+    "story": {
+      "vi": "Lẩu mắm – 'vua' của ẩm thực miền Tây – là minh chứng rõ nhất cho sự phong phú của vùng đất sông nước. Một nồi lẩu mắm đầy ụ là cả một 'bản đồ' nguyên liệu Mekong: đủ loại cá đồng, tôm, mực, thịt heo, bóng heo, đậu hũ, cà tím...\n\nLinh hồn của lẩu là nước dùng nấu từ mắm cá linh + mắm cá sặc của An Giang, lọc kỹ rồi pha với nước dừa tươi, sả, ớt, đường thốt nốt – cho vị mặn ngọt cay đậm đà rất riêng. Vị mắm thoạt đầu nồng nhưng sau khi nấu cùng nguyên liệu lại trở nên thơm đến lạ.\n\nĐiểm đặc biệt của lẩu mắm miền Tây là rổ rau ăn kèm khổng lồ – hơn 20 loại: bông súng, bông điên điển, rau đắng, kèo nèo, rau muống, đọt nhãn lồng... mỗi loại rau là một mảnh ghép của hệ sinh thái Mekong.",
+      "en": "Lau mam – the 'king' of Mekong cuisine – is the clearest proof of the delta's bounty. A full pot is a 'map' of Mekong ingredients: river fish, shrimp, squid, pork, pork bladder, tofu, eggplant...\n\nThe soul is a broth simmered from An Giang's mam ca linh + mam ca sac (fermented fish), strained then enriched with fresh coconut water, lemongrass, chili, and palm sugar – yielding a deep, distinctive salty-sweet-spicy profile. The mam smells pungent at first but blooms into uncommon fragrance once the pot simmers.\n\nThe Mekong signature is the giant herb basket alongside – 20+ varieties: water lily, sesbania flower, bitter herb, kèo nèo water plant, water spinach, longan shoots... each a piece of the delta ecosystem."
+    },
+    "ingredients": {
+      "vi": "Mắm cá linh + cá sặc, nước dừa, cá đồng, tôm, mực, heo, bóng heo, sả, ớt, đường thốt nốt, 20+ loại rau",
+      "en": "Fermented linh + sac fish, coconut water, river fish, shrimp, squid, pork, pork bladder, lemongrass, chili, palm sugar, 20+ herbs"
+    },
+    "image": "food-bunbo"
+  },
+  {
+    "slug": "ca-kho-to",
+    "name": { "vi": "Cá kho tộ miền Tây", "en": "Clay Pot Fish" },
+    "citySlug": "can-tho",
+    "region": "nam",
+    "type": ["savory"],
+    "taste": ["salty", "sweet", "umami"],
+    "story": {
+      "vi": "Cá kho tộ – món cơm nhà kinh điển của miền Tây – là sự kết hợp ngọt-mặn-đậm hoàn hảo trong nồi đất nung nóng rực. Cá thường dùng là cá lóc đồng, cá basa, cá kèo, cá rô đồng – những loài cá sông nước đặc trưng Mekong.\n\nBí quyết của một nồi cá kho tộ ngon là nước màu (caramel) tự thắng từ đường thốt nốt – cho màu nâu đỏ óng và vị ngọt sâu khác hẳn đường trắng. Cá ướp tiêu, hành, ớt, nước mắm rồi kho liu riu trong nồi đất, đến khi nước rút sệt, cá săn lại, mùi tiêu thơm nức.\n\nĂn cá kho tộ với cơm trắng nóng và canh chua cá – là 'mâm cơm miền Tây' đúng chuẩn mà bất cứ người Nam Bộ xa quê nào cũng nhớ về.",
+      "en": "Ca kho to – the classic Mekong home-style dish – is a perfect sweet-salty-deep balance simmered in a fire-hot clay pot. The fish is typically snakehead, basa, mudskipper, or climbing perch – species iconic to the Mekong waterways.\n\nThe secret to a great pot is the caramel sauce homemade from palm sugar – producing a deep amber color and a complex sweetness no white sugar can match. Fish is marinated with pepper, shallots, chili, and fish sauce, then slow-simmered in clay until the liquid reduces to a glaze and the pepper aroma blooms.\n\nServed with hot white rice and sour-fish soup – this is the authentic Mekong table that any Southerner away from home longs for."
+    },
+    "ingredients": {
+      "vi": "Cá lóc/basa/kèo, đường thốt nốt, nước mắm, tiêu, hành tím, ớt, hành lá, nước dừa",
+      "en": "Snakehead/basa/mudskipper fish, palm sugar, fish sauce, pepper, shallots, chili, scallions, coconut water"
+    },
+    "image": "food-comtam"
+  },
+  {
+    "slug": "banh-canh-ca-loc",
+    "name": { "vi": "Bánh canh cá lóc", "en": "Snakehead Fish Thick Noodle Soup" },
+    "citySlug": "can-tho",
+    "region": "nam",
+    "type": ["savory", "street"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Bánh canh cá lóc – bữa sáng đặc trưng của người Cần Thơ và miền Tây – là sự kết hợp giữa sợi bánh canh dai mềm làm từ bột gạo + bột năng và cá lóc đồng nguyên con luộc rồi gỡ thịt.\n\nNước dùng nấu từ xương cá lóc và đầu cá hầm với hành tím nướng, gừng – cho vị ngọt thanh, không tanh. Cá lóc gỡ xương, ướp nghệ, sả, hành – xào sơ rồi cho lại vào nồi, tạo lớp váng dầu vàng đẹp.\n\nMột tô bánh canh cá lóc đầy đặn có cá, hành lá, hành phi, vài lát ớt, rưới chút tiêu xay – ăn nóng giữa cái mát của buổi sớm miền Tây bên dòng sông Hậu, là khoảnh khắc đáng nhớ cho bất cứ du khách nào.",
+      "en": "Banh canh ca loc – Can Tho and Mekong's signature breakfast – combines chewy thick noodles (made from rice flour + tapioca) with whole snakehead fish, poached and deboned by hand.\n\nThe broth simmers fish bones and head with charred shallots and ginger – yielding a clean, sweet broth with no fishy note. The deboned snakehead is marinated with turmeric, lemongrass, and shallots, lightly stir-fried, then returned to the pot, creating a golden oil sheen.\n\nA full bowl: fish, scallions, fried shallots, chili slices, a sprinkle of black pepper – eaten hot in the cool dawn beside the Hau River, an unforgettable moment for any traveler."
+    },
+    "ingredients": {
+      "vi": "Bột gạo, bột năng, cá lóc đồng, nghệ, sả, hành tím, gừng, hành lá, tiêu, ớt",
+      "en": "Rice flour, tapioca, snakehead fish, turmeric, lemongrass, shallots, ginger, scallions, pepper, chili"
+    },
+    "image": "food-bunbo"
+  },
+  {
+    "slug": "goi-ca-trich",
+    "name": { "vi": "Gỏi cá trích Phú Quốc", "en": "Phu Quoc Herring Salad" },
+    "citySlug": "phu-quoc",
+    "region": "nam",
+    "type": ["savory"],
+    "taste": ["sour", "salty", "umami"],
+    "story": {
+      "vi": "Gỏi cá trích Phú Quốc – đặc sản 'kim cương' của đảo ngọc – là món gỏi tươi sống dành cho người sành ăn. Cá trích vừa đánh bắt ngoài khơi đảo, lọc xương, thái lát mỏng, ngâm nhanh với chanh – giấm để 'chín tái', giữ nguyên độ ngọt và độ săn của thịt cá.\n\nGỏi được trộn với hành tây, dừa nạo sợi (đặc trưng Phú Quốc – cho vị béo nhẹ), đậu phộng rang giã thô, rau thơm. Khi ăn cuốn bánh tráng mỏng cùng hơn 10 loại rau rừng đảo (đinh lăng, đọt khế, rau thơm, lá bứa).\n\nNước chấm là điểm nhấn: nước mắm Phú Quốc 40°N nguyên chất pha chanh + ớt + đường + tỏi – đậm đà nhưng không gắt, bừng lên vị umami sâu. Cuốn một cuốn nhỏ, chấm ngập nước mắm – là vị Phú Quốc thuần khiết nhất.",
+      "en": "Phu Quoc herring salad – the island's 'diamond' specialty – is a raw-fish dish for the discerning palate. Herrings caught in offshore waters are deboned, sliced thin, and quickly cured in lime-vinegar to 'cook' just enough, preserving the natural sweetness and firmness of the flesh.\n\nThe salad is tossed with onion, shredded coconut (Phu Quoc's signature – adding gentle richness), coarsely crushed peanuts, and herbs. To eat, wrap in thin rice paper with 10+ island herbs (dinh lang, star fruit shoots, basil, bứa leaves).\n\nThe sauce is the star: pure 40°N Phu Quoc fish sauce blended with lime, chili, sugar, and garlic – deep but never sharp, bursting with umami. Roll a small parcel, dip generously – the purest taste of Phu Quoc."
+    },
+    "ingredients": {
+      "vi": "Cá trích tươi, chanh, dừa nạo, hành tây, đậu phộng, rau rừng đảo, nước mắm Phú Quốc 40°N",
+      "en": "Fresh herring, lime, shredded coconut, onion, peanuts, island herbs, 40°N Phu Quoc fish sauce"
+    },
+    "image": "food-banhxeo"
+  },
+  {
+    "slug": "bun-quay-phu-quoc",
+    "name": { "vi": "Bún quậy Phú Quốc", "en": "Phu Quoc Bun Quay" },
+    "citySlug": "phu-quoc",
+    "region": "nam",
+    "type": ["savory", "street"],
+    "taste": ["salty", "umami"],
+    "story": {
+      "vi": "Bún quậy là món ăn 'chỉ có ở Phú Quốc' – ra đời tại các quán bình dân ở thị trấn Dương Đông, được du khách gọi vui là 'bún DIY' vì thực khách phải tự pha nước chấm – tự 'quậy' nước chấm trong tô của mình.\n\nMột tô bún quậy đầy đủ gồm bún tươi, chả tôm và chả mực vừa quết tươi tại chỗ, nước dùng cá trong, hành lá, tiêu xay. Trên bàn có sẵn các nguyên liệu: muối tinh, ớt tươi xay, chanh, đường, mì chính, tép tỏi – mỗi người tự pha 'gia vị riêng của mình' theo khẩu vị.\n\nĐiều thú vị là không có 2 tô bún quậy nào giống nhau, vì mỗi người có công thức riêng. Đây cũng là cách 'kết nối' du khách với chủ quán – một trải nghiệm rất đảo, rất Phú Quốc.",
+      "en": "Bun quay is a dish 'found only in Phu Quoc' – born in humble eateries in Duong Dong town. Travelers playfully call it 'DIY bun' because diners must mix their own dipping sauce – literally 'quay' (stir) it themselves in their bowl.\n\nA full serving: fresh vermicelli, freshly pounded shrimp and squid cakes, clear fish broth, scallions, ground pepper. On the table: fine salt, ground fresh chili, lime, sugar, MSG, garlic cloves – each diner mixes 'their own seasoning' to taste.\n\nThe charm: no two bowls are alike, because everyone's formula differs. It is also a 'connection point' between traveler and host – an experience that is unmistakably island, unmistakably Phu Quoc."
+    },
+    "ingredients": {
+      "vi": "Bún tươi, chả tôm, chả mực, nước dùng cá, hành lá, tiêu, muối, ớt, chanh, tỏi",
+      "en": "Fresh vermicelli, shrimp cake, squid cake, fish broth, scallions, pepper, salt, chili, lime, garlic"
+    },
+    "image": "food-bunbo"
   }
 ]

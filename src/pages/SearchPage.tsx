@@ -9,25 +9,7 @@ import { useDishes } from "@/hooks/useDishes";
 import { useTours } from "@/hooks/useTours";
 import { useRecentSearches } from "@/hooks/useRecentSearches";
 import { searchAll, type SearchResultType } from "@/lib/search";
-
-const TAB_CONFIG: { key: SearchResultType | "all"; label: string; icon: typeof MapPin }[] = [
-  { key: "all", label: "Tất cả", icon: Compass },
-  { key: "city", label: "Thành phố", icon: MapPin },
-  { key: "dish", label: "Món ăn", icon: UtensilsCrossed },
-  { key: "tour", label: "Tour", icon: Compass },
-];
-
-const RESULT_PATH: Record<SearchResultType, string> = {
-  city: "/thanh-pho",
-  dish: "/mon-an",
-  tour: "/tour",
-};
-
-const RESULT_LABEL: Record<SearchResultType, string> = {
-  city: "Thành phố",
-  dish: "Món ăn",
-  tour: "Tour",
-};
+import { useLocale } from "@/hooks/useLocale";
 
 const SearchPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -36,6 +18,26 @@ const SearchPage = () => {
 
   const [query, setQuery] = useState(qParam);
   const [activeType, setActiveType] = useState<SearchResultType | "all">(typeParam);
+  const { t, pick, path, locale } = useLocale();
+
+  const TAB_CONFIG: { key: SearchResultType | "all"; label: string; icon: typeof MapPin }[] = [
+    { key: "all", label: t("search.tab_all"), icon: Compass },
+    { key: "city", label: t("nav.cities"), icon: MapPin },
+    { key: "dish", label: t("nav.dishes"), icon: UtensilsCrossed },
+    { key: "tour", label: t("nav.tours"), icon: Compass },
+  ];
+
+  const RESULT_PATH: Record<SearchResultType, string> = {
+    city: path.cityList,
+    dish: path.dishList,
+    tour: path.tourList,
+  };
+
+  const RESULT_LABEL: Record<SearchResultType, string> = {
+    city: t("nav.cities"),
+    dish: t("nav.dishes"),
+    tour: t("nav.tours"),
+  };
 
   const { data: cities, isLoading: citiesLoading } = useCities();
   const { data: dishes, isLoading: dishesLoading } = useDishes();
@@ -45,7 +47,7 @@ const SearchPage = () => {
   const isLoading = citiesLoading || dishesLoading || toursLoading;
 
   const results = !isLoading && qParam.trim()
-    ? searchAll(qParam, cities ?? [], dishes ?? [], tours ?? [], "vi")
+    ? searchAll(qParam, cities ?? [], dishes ?? [], tours ?? [], locale)
     : [];
 
   const filtered = activeType === "all" ? results : results.filter((r) => r.type === activeType);
@@ -98,8 +100,8 @@ const SearchPage = () => {
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Tìm thành phố, món ăn, tour trải nghiệm…"
-              aria-label="Tìm kiếm"
+              placeholder={t("search.placeholder")}
+              aria-label={t("search.placeholder")}
               autoFocus
               className="w-full h-14 pl-12 pr-14 rounded-2xl border border-input bg-background text-base text-foreground placeholder:text-muted-foreground shadow-soft focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
             />
@@ -107,7 +109,7 @@ const SearchPage = () => {
               <button
                 type="button"
                 onClick={() => setQuery("")}
-                aria-label="Xoá tìm kiếm"
+                aria-label={t("search.clear")}
                 className="absolute right-4 top-1/2 -translate-y-1/2 h-7 w-7 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-smooth"
               >
                 <X className="h-3.5 w-3.5 text-muted-foreground" />
@@ -119,13 +121,13 @@ const SearchPage = () => {
             <div className="mb-8">
               <div className="flex items-center justify-between mb-3">
                 <p className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                  <Clock className="h-4 w-4 text-muted-foreground" /> Tìm kiếm gần đây
+                  <Clock className="h-4 w-4 text-muted-foreground" /> {t("search.recent")}
                 </p>
                 <button
                   onClick={clearSearches}
                   className="text-xs text-muted-foreground hover:text-destructive transition-smooth"
                 >
-                  Xoá tất cả
+                  {t("common.clear_all")}
                 </button>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -145,7 +147,7 @@ const SearchPage = () => {
 
           {qParam && (
             <>
-              <div className="flex gap-1 mb-6 overflow-x-auto pb-1" role="tablist" aria-label="Loại kết quả">
+              <div className="flex gap-1 mb-6 overflow-x-auto pb-1" role="tablist" aria-label={t("search.results_label")}>
                 {TAB_CONFIG.map(({ key, label }) => (
                   <button
                     key={key}
@@ -181,26 +183,26 @@ const SearchPage = () => {
               {!isLoading && filtered.length === 0 && (
                 <div className="flex flex-col items-center gap-4 py-16 text-center">
                   <AlertCircle className="h-10 w-10 text-muted-foreground" />
-                  <p className="font-display text-lg font-semibold text-foreground">Không tìm thấy kết quả</p>
+                  <p className="font-display text-lg font-semibold text-foreground">{t("search.no_results")}</p>
                   <p className="text-sm text-muted-foreground max-w-xs">
-                    Không có kết quả nào cho "{qParam}". Thử từ khoá khác hoặc xem tất cả.
+                    {t("search.no_results_desc", { query: qParam })}
                   </p>
                   <div className="flex gap-3">
-                    <Link to="/thanh-pho" className="px-4 py-2 rounded-lg border text-sm hover:border-primary hover:text-primary transition-smooth">
-                      Thành phố
+                    <Link to={path.cityList} className="px-4 py-2 rounded-lg border text-sm hover:border-primary hover:text-primary transition-smooth">
+                      {t("nav.cities")}
                     </Link>
-                    <Link to="/mon-an" className="px-4 py-2 rounded-lg border text-sm hover:border-primary hover:text-primary transition-smooth">
-                      Món ăn
+                    <Link to={path.dishList} className="px-4 py-2 rounded-lg border text-sm hover:border-primary hover:text-primary transition-smooth">
+                      {t("nav.dishes")}
                     </Link>
-                    <Link to="/tour" className="px-4 py-2 rounded-lg border text-sm hover:border-primary hover:text-primary transition-smooth">
-                      Tour
+                    <Link to={path.tourList} className="px-4 py-2 rounded-lg border text-sm hover:border-primary hover:text-primary transition-smooth">
+                      {t("nav.tours")}
                     </Link>
                   </div>
                 </div>
               )}
 
               {!isLoading && filtered.length > 0 && (
-                <div role="list" aria-label="Kết quả tìm kiếm" className="space-y-3">
+                <div role="list" aria-label={t("search.results_label")} className="space-y-3">
                   {filtered.map((result) => (
                     <Link
                       key={`${result.type}-${result.slug}`}

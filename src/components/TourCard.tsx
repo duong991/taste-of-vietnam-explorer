@@ -1,5 +1,6 @@
 import { Star, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLocale } from "@/hooks/useLocale";
 
 interface Props {
   image: string;
@@ -12,9 +13,11 @@ interface Props {
   slug?: string;
 }
 
-const TourCard = ({ image, name, city, duration, price, rating, reviews, slug }: Props) => (
+const TourCard = ({ image, name, city, duration, price, rating, reviews, slug }: Props) => {
+  const { t, path } = useLocale();
+  return (
   <Link
-    to={slug ? `/tour/${slug}` : "/tour"}
+    to={slug ? path.tour(slug) : path.tourList}
     className="group shrink-0 snap-start w-[280px] md:w-[300px] rounded-2xl bg-card overflow-hidden shadow-soft hover:shadow-card transition-smooth"
   >
     <div className="relative aspect-[4/3] overflow-hidden">
@@ -37,7 +40,7 @@ const TourCard = ({ image, name, city, duration, price, rating, reviews, slug }:
       </p>
       <div className="flex items-end justify-between pt-3 border-t border-border">
         <div>
-          <p className="text-xs text-muted-foreground">Từ</p>
+          <p className="text-xs text-muted-foreground">{t("common.from")}</p>
           <p className="font-display text-lg font-bold text-primary">{price}</p>
         </div>
         <span className="flex items-center gap-1 text-xs font-medium text-foreground">
@@ -47,6 +50,7 @@ const TourCard = ({ image, name, city, duration, price, rating, reviews, slug }:
       </div>
     </div>
   </Link>
-);
+  );
+};
 
 export default TourCard;

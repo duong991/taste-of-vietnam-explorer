@@ -197,5 +197,356 @@
     ],
     "highlightDishSlugs": ["com-tam-sai-gon"],
     "image": "tour-mekong"
+  },
+  {
+    "slug": "sapa-am-thuc-vung-cao",
+    "name": {
+      "vi": "Ẩm thực vùng cao Sa Pa",
+      "en": "Sa Pa Highland Cuisine Experience"
+    },
+    "citySlug": "sapa",
+    "partnerId": "vietnam-culinary",
+    "durationHours": 8,
+    "priceVnd": 1650000,
+    "themes": ["ethnic-cuisine", "trekking", "culture", "market"],
+    "itinerary": [
+      {
+        "time": "07:00",
+        "title": { "vi": "Chợ phiên Bắc Hà / Sa Pa", "en": "Bac Ha / Sa Pa Ethnic Market" },
+        "description": {
+          "vi": "Đến chợ phiên cuối tuần, nơi người H'Mông, Dao, Tày từ các bản làng đổ về buôn bán. Khám phá các loại gia vị núi rừng đặc trưng (thảo quả, hạt dổi, sa nhân) và thử rượu ngô Bắc Hà tại chỗ.",
+          "en": "Visit the weekend ethnic market where H'Mong, Dao, and Tay people from surrounding villages gather to trade. Discover signature mountain spices (black cardamom, dổi seed, sand-ginger) and sample Bac Ha corn liquor on the spot."
+        }
+      },
+      {
+        "time": "11:30",
+        "title": { "vi": "Trekking đến bản Tả Phìn", "en": "Trek to Ta Phin Village" },
+        "description": {
+          "vi": "Đi bộ qua các thửa ruộng bậc thang vào bản người Dao đỏ. Học cách dùng lá cây tắm thuốc Dao – một di sản văn hóa của người Dao đỏ Sa Pa.",
+          "en": "Walk through rice terraces into a Red Dao village. Learn the Red Dao herbal-bath tradition – a cultural heritage of the Sa Pa Red Dao people."
+        }
+      },
+      {
+        "time": "13:00",
+        "title": { "vi": "Bữa trưa thắng cố tại nhà người H'Mông", "en": "Thang Co Lunch at a H'Mong Home" },
+        "description": {
+          "vi": "Thưởng thức nồi thắng cố nóng hổi cùng mèn mén, rượu ngô và đậu chao trong căn nhà gỗ truyền thống. Trò chuyện với chủ nhà về cách sống vùng cao.",
+          "en": "Enjoy a steaming pot of thang co with men men, corn liquor, and fermented tofu in a traditional wooden house. Chat with the host about highland life."
+        },
+        "image": "food-bunbo"
+      },
+      {
+        "time": "16:00",
+        "title": { "vi": "Trại cá hồi Bản Khoang", "en": "Ban Khoang Salmon Farm" },
+        "description": {
+          "vi": "Thăm trại cá hồi vân nuôi nước lạnh tại thung lũng Bản Khoang. Thưởng thức gỏi cá hồi tươi và lẩu cá hồi măng chua – đặc sản chỉ Sa Pa mới có.",
+          "en": "Visit the rainbow trout farm in cold-stream Ban Khoang valley. Sample fresh salmon sashimi and sour-bamboo salmon hotpot – a Sa Pa exclusive."
+        }
+      }
+    ],
+    "highlightDishSlugs": ["thang-co-sapa", "ca-hoi-sapa"],
+    "image": "tour-mekong"
+  },
+  {
+    "slug": "am-thuc-cung-dinh-hue",
+    "name": {
+      "vi": "Bữa cỗ cung đình Huế",
+      "en": "Hue Royal Banquet Experience"
+    },
+    "citySlug": "hue",
+    "partnerId": "hue-royal-cuisine",
+    "durationHours": 5,
+    "priceVnd": 2150000,
+    "themes": ["royal-cuisine", "fine-dining", "culture"],
+    "itinerary": [
+      {
+        "time": "16:00",
+        "title": { "vi": "Tham quan Đại Nội", "en": "Imperial City Tour" },
+        "description": {
+          "vi": "Tham quan Hoàng thành Huế cùng hướng dẫn viên am hiểu lịch sử triều Nguyễn. Tìm hiểu về văn hóa ẩm thực cung đình – nơi mỗi món ăn đều có ý nghĩa và quy tắc nghiêm ngặt.",
+          "en": "Tour the Hue Imperial City with a guide versed in Nguyen-dynasty history. Learn about royal culinary culture – where every dish carried meaning and strict protocol."
+        }
+      },
+      {
+        "time": "18:00",
+        "title": { "vi": "Áo dài và nghi thức cung đình", "en": "Royal Attire and Court Etiquette" },
+        "description": {
+          "vi": "Mặc áo ngũ thân/áo dài truyền thống, học các nghi thức tiệc cung đình: cách bưng mâm, thứ tự dâng món, cách thưởng trà – chuẩn bị cho bữa cỗ.",
+          "en": "Don traditional ngu than tunics or ao dai, learn court banquet etiquette: tray-bearing, dish-presenting order, tea-tasting protocol – preparation for the banquet."
+        }
+      },
+      {
+        "time": "19:00",
+        "title": { "vi": "Bữa cỗ vua – 8 món", "en": "Royal 8-Course Banquet" },
+        "description": {
+          "vi": "Thưởng thức 8 món cung đình Huế nguyên bản: súp yến, bánh bèo Huế, nem công – chả phụng, cơm sen, cá vược hấp gừng... mỗi món được trình bày như một tác phẩm nghệ thuật trên mâm chạm vàng.",
+          "en": "Enjoy 8 authentic Hue royal courses: bird's-nest soup, banh beo, peacock-and-phoenix nem and cha, lotus rice, ginger-steamed sea bass... each presented as art on a gilded tray."
+        },
+        "image": "food-banhcuon"
+      },
+      {
+        "time": "21:00",
+        "title": { "vi": "Nhã nhạc cung đình", "en": "Royal Court Music" },
+        "description": {
+          "vi": "Kết thúc bằng buổi biểu diễn Nhã nhạc cung đình Huế – di sản văn hóa phi vật thể của UNESCO – ngay trong khuôn viên nhà rường cổ.",
+          "en": "Conclude with a performance of Nha Nhac (Hue royal court music) – a UNESCO Intangible Cultural Heritage – in a heritage wooden mansion."
+        }
+      }
+    ],
+    "highlightDishSlugs": ["bun-bo-hue", "banh-beo-hue", "com-hen-hue"],
+    "image": "tour-cooking"
+  },
+  {
+    "slug": "hoi-an-den-long-cooking",
+    "name": {
+      "vi": "Hội An: làm đèn lồng & nấu 4 món signature",
+      "en": "Hoi An: Lantern Crafting & 4-Signature-Dish Class"
+    },
+    "citySlug": "hoi-an",
+    "partnerId": "hoian-lantern-tours",
+    "durationHours": 7,
+    "priceVnd": 1850000,
+    "themes": ["cooking-class", "craft", "culture", "evening"],
+    "itinerary": [
+      {
+        "time": "14:00",
+        "title": { "vi": "Chợ Hội An & làng rau Trà Quế", "en": "Hoi An Market & Tra Que Herb Village" },
+        "description": {
+          "vi": "Đi chợ Hội An chọn nguyên liệu cùng đầu bếp, sau đó đạp xe 3km đến làng rau Trà Quế cổ – nơi cung cấp rau thơm cho mọi quán ăn phố cổ.",
+          "en": "Shop at Hoi An Market with the chef, then cycle 3km to the ancient Tra Que herb village – which supplies herbs to every ancient-town eatery."
+        }
+      },
+      {
+        "time": "16:00",
+        "title": { "vi": "Lớp làm đèn lồng truyền thống", "en": "Traditional Lantern-Making Class" },
+        "description": {
+          "vi": "Học cách làm đèn lồng Hội An từ tre và lụa cùng nghệ nhân thế hệ thứ 3. Tự tay làm 1 chiếc đèn lồng để mang về làm kỷ niệm.",
+          "en": "Learn to craft a Hoi An lantern from bamboo and silk with a 3rd-generation artisan. Hand-make one lantern to take home as a souvenir."
+        }
+      },
+      {
+        "time": "18:00",
+        "title": { "vi": "Lớp nấu 4 món signature", "en": "4-Signature-Dish Cooking Class" },
+        "description": {
+          "vi": "Nấu 4 món biểu tượng Hội An: cao lầu, mì Quảng, bánh mì kẹp pate gia truyền, bánh xèo miền Trung. Đầu bếp giải thích vì sao chỉ Hội An mới làm được vị chuẩn.",
+          "en": "Cook 4 Hoi An icons: cao lau, mi quang, banh mi with house pate, Central-style banh xeo. The chef explains why authentic flavors are only possible in Hoi An."
+        },
+        "image": "tour-cooking"
+      },
+      {
+        "time": "20:30",
+        "title": { "vi": "Thuyền hoa đăng sông Hoài", "en": "Hoai River Lantern Boat" },
+        "description": {
+          "vi": "Mang chiếc đèn lồng tự làm xuống thuyền nhỏ trên sông Hoài, thả đèn hoa đăng cầu may – kết thúc một ngày trọn vẹn ở Hội An.",
+          "en": "Bring your handcrafted lantern onto a small boat on the Hoai River, release floating lanterns for good fortune – the perfect close to a Hoi An day."
+        }
+      }
+    ],
+    "highlightDishSlugs": ["cao-lau-hoi-an", "mi-quang", "banh-mi-hoi-an", "banh-xeo"],
+    "image": "tour-cooking"
+  },
+  {
+    "slug": "da-nang-hai-san-tour",
+    "name": {
+      "vi": "Đà Nẵng: chợ cá Thọ Quang & hải sản tươi",
+      "en": "Da Nang: Tho Quang Fish Port & Fresh Seafood"
+    },
+    "citySlug": "da-nang",
+    "partnerId": "danang-seafood-tours",
+    "durationHours": 6,
+    "priceVnd": 1450000,
+    "themes": ["seafood", "market", "early-morning", "boat"],
+    "itinerary": [
+      {
+        "time": "04:00",
+        "title": { "vi": "Đón thuyền tại cảng cá Thọ Quang", "en": "Greet Returning Boats at Tho Quang" },
+        "description": {
+          "vi": "Đến cảng cá lớn nhất Đà Nẵng lúc 4h sáng đón thuyền vừa đánh bắt cập bến. Quan sát cảnh nhộn nhịp 'phiên chợ đêm trên cạn' – nơi hải sản đổi tay từ thuyền lên xe trong vài chục phút.",
+          "en": "Arrive at Da Nang's largest fishing port at 4am to greet boats just back from the catch. Watch the bustling 'land-based night market' – where seafood changes hands from boat to truck within minutes."
+        }
+      },
+      {
+        "time": "05:30",
+        "title": { "vi": "Chọn hải sản tươi cùng người dân", "en": "Pick Fresh Catch with Locals" },
+        "description": {
+          "vi": "Cùng hướng dẫn viên am hiểu chợ cá lựa chọn các loại hải sản tươi nhất: tôm hùm xanh, ghẹ ba chấm, cá mú, mực ống, hàu Lăng Cô...",
+          "en": "Pick the freshest seafood with a market-savvy guide: green lobster, three-spot crab, grouper, squid, Lang Co oysters..."
+        }
+      },
+      {
+        "time": "07:00",
+        "title": { "vi": "Bữa sáng hải sản tại nhà hàng địa phương", "en": "Seafood Breakfast at a Local Restaurant" },
+        "description": {
+          "vi": "Mang hải sản vừa mua đến nhà hàng đối tác, đầu bếp chế biến tại chỗ theo phong cách Đà Nẵng: tôm hùm hấp, ghẹ rang me, mực nướng sa tế, cháo hàu...",
+          "en": "Take the catch to a partner restaurant, where the chef prepares it Da Nang–style on the spot: steamed lobster, tamarind crab, sa tế-grilled squid, oyster congee..."
+        }
+      },
+      {
+        "time": "09:00",
+        "title": { "vi": "Mì Quảng tráng miệng", "en": "Mi Quang for Dessert" },
+        "description": {
+          "vi": "Kết thúc bằng tô mì Quảng 'sáng' tại quán gia truyền – để hiểu vì sao mì Quảng là 'món của trí nhớ' của người Quảng Nam – Đà Nẵng.",
+          "en": "Close with a 'morning' bowl of mi quang at a heritage shop – to understand why mi quang is 'the dish of memory' for Quang Nam–Da Nang locals."
+        },
+        "image": "food-caolau"
+      }
+    ],
+    "highlightDishSlugs": ["mi-quang", "banh-trang-cuon-thit-heo"],
+    "image": "tour-mekong"
+  },
+  {
+    "slug": "da-lat-farm-to-table",
+    "name": {
+      "vi": "Đà Lạt farm-to-table: nông trại & bữa ăn",
+      "en": "Da Lat Farm-to-Table: Farms & Dinner"
+    },
+    "citySlug": "da-lat",
+    "partnerId": "vietnam-culinary",
+    "durationHours": 8,
+    "priceVnd": 1750000,
+    "themes": ["farm-to-table", "vegetarian-friendly", "highland", "culture"],
+    "itinerary": [
+      {
+        "time": "08:00",
+        "title": { "vi": "Vườn dâu tây hữu cơ", "en": "Organic Strawberry Farm" },
+        "description": {
+          "vi": "Thăm vườn dâu hữu cơ trong nhà kính ở Cầu Đất, hái dâu trực tiếp từ cây, nghe câu chuyện về ngành rau quả công nghệ cao Đà Lạt.",
+          "en": "Visit an organic greenhouse strawberry farm in Cau Dat, pick berries straight from the plants, and hear the story of Da Lat's high-tech produce industry."
+        }
+      },
+      {
+        "time": "10:30",
+        "title": { "vi": "Đồi chè Cầu Đất 100 năm tuổi", "en": "Century-Old Cau Dat Tea Hills" },
+        "description": {
+          "vi": "Đi giữa đồi chè cổ thụ trồng từ thời Pháp 1927, thưởng thức trà Oolong Đà Lạt nguyên bản tại nhà máy chế biến.",
+          "en": "Walk through century-old tea hills planted by the French in 1927, taste authentic Da Lat Oolong tea at the original processing plant."
+        }
+      },
+      {
+        "time": "13:00",
+        "title": { "vi": "Bữa trưa farm-to-table", "en": "Farm-to-Table Lunch" },
+        "description": {
+          "vi": "Bữa trưa với rau tươi vừa hái và sản vật cao nguyên: salad atisô, súp bí đỏ, gà đồi nướng lá chanh, cá hồi áp chảo. Đầu bếp giải thích nguồn gốc từng nguyên liệu.",
+          "en": "Lunch featuring just-picked vegetables and highland produce: artichoke salad, pumpkin soup, lime-leaf grilled hill chicken, pan-seared salmon. The chef traces every ingredient's origin."
+        },
+        "image": "tour-cooking"
+      },
+      {
+        "time": "19:00",
+        "title": { "vi": "Phố đêm Đà Lạt: bánh tráng nướng & sữa đậu nành", "en": "Da Lat Night Streets: Grilled Rice Paper & Soy Milk" },
+        "description": {
+          "vi": "Kết thúc ngày tại các quán ăn vặt phố đêm Đà Lạt: thử bánh tráng nướng – 'pizza Đà Lạt' và uống ly sữa đậu nành nóng giữa cái lạnh cao nguyên.",
+          "en": "End the day at Da Lat's night-street snack stalls: try grilled rice paper – 'Da Lat pizza' – and sip hot soy milk in the highland cold."
+        }
+      }
+    ],
+    "highlightDishSlugs": ["banh-trang-nuong-dalat", "sua-dau-nanh-dalat"],
+    "image": "tour-cooking"
+  },
+  {
+    "slug": "sai-gon-street-food-night",
+    "name": {
+      "vi": "Sài Gòn về đêm bằng xe máy",
+      "en": "Saigon by Night on Motorbike"
+    },
+    "citySlug": "sai-gon",
+    "partnerId": "saigon-street-food",
+    "durationHours": 5,
+    "priceVnd": 1550000,
+    "themes": ["street-food", "motorbike", "night", "adventure"],
+    "itinerary": [
+      {
+        "time": "18:00",
+        "title": { "vi": "Khởi hành tại Quận 1", "en": "Depart from District 1" },
+        "description": {
+          "vi": "Tập hợp tại trung tâm Quận 1, mỗi du khách 1 xe máy ngồi sau guide. Mũ bảo hiểm, áo gile phản quang an toàn. Hành trình bắt đầu khi Sài Gòn lên đèn.",
+          "en": "Gather in central District 1, each traveler rides pillion behind a guide. Helmets and reflective vests provided. The journey begins as Saigon lights up."
+        }
+      },
+      {
+        "time": "18:30",
+        "title": { "vi": "Bánh mì Sài Gòn nguyên bản", "en": "Authentic Saigon Banh Mi" },
+        "description": {
+          "vi": "Dừng tại 1 trong 3 tiệm bánh mì gia truyền lâu đời nhất Sài Gòn. Thử ổ bánh mì pate gia truyền – giải mã vì sao thế giới gọi đây là 'sandwich ngon nhất'.",
+          "en": "Stop at one of Saigon's three oldest heritage banh mi shops. Try a house-pate banh mi – decoding why the world calls this 'the best sandwich.'"
+        }
+      },
+      {
+        "time": "19:30",
+        "title": { "vi": "Cơm tấm sườn bì chả", "en": "Com Tam with Grilled Ribs" },
+        "description": {
+          "vi": "Đi vào con hẻm Quận 4, dừng ở quán cơm tấm hơn 30 năm tuổi. Thưởng thức đĩa cơm tấm signature: sườn nướng cháy cạnh, bì, chả, trứng ốp la.",
+          "en": "Slip into a District 4 alley, stop at a 30-year-old com tam shop. Enjoy the signature plate: char-edged grilled ribs, pork skin, steamed pork cake, fried egg."
+        },
+        "image": "food-comtam"
+      },
+      {
+        "time": "21:00",
+        "title": { "vi": "Hủ tiếu Nam Vang khu Chợ Lớn", "en": "Hu Tieu Nam Vang in Cho Lon" },
+        "description": {
+          "vi": "Vượt qua sông Sài Gòn vào Chợ Lớn – khu phố Hoa lâu đời. Ăn tô hủ tiếu Nam Vang tại quán Triều Châu gia truyền, nghe câu chuyện di cư của cộng đồng người Hoa.",
+          "en": "Cross the Saigon River into Cho Lon – the old Chinatown. Eat hu tieu Nam Vang at a Teochew heritage shop, hear the story of Chinese immigrant communities."
+        }
+      },
+      {
+        "time": "22:30",
+        "title": { "vi": "Tráng miệng: chè và sinh tố", "en": "Dessert: Che and Smoothies" },
+        "description": {
+          "vi": "Kết thúc tại con phố chè nổi tiếng Cô Giang – chọn 1 trong 20 loại chè hoặc ly sinh tố trái cây nhiệt đới Việt Nam.",
+          "en": "Conclude on the famous Co Giang chè street – pick from 20 sweet-soup varieties or a tropical fruit smoothie."
+        }
+      }
+    ],
+    "highlightDishSlugs": ["banh-mi-sai-gon", "com-tam-sai-gon", "hu-tieu-nam-vang"],
+    "image": "tour-motorbike"
+  },
+  {
+    "slug": "phu-quoc-nuoc-mam-tour",
+    "name": {
+      "vi": "Phú Quốc: hành trình nước mắm",
+      "en": "Phu Quoc: The Fish Sauce Journey"
+    },
+    "citySlug": "phu-quoc",
+    "partnerId": "mekong-delta-food",
+    "durationHours": 6,
+    "priceVnd": 1450000,
+    "themes": ["fish-sauce", "island", "heritage", "tasting"],
+    "itinerary": [
+      {
+        "time": "08:30",
+        "title": { "vi": "Nhà thùng nước mắm Khải Hoàn", "en": "Khai Hoan Fish Sauce Distillery" },
+        "description": {
+          "vi": "Tham quan nhà thùng nước mắm truyền thống – nơi có hàng trăm thùng gỗ bời lời cao 4–5m chứa cá cơm than ủ 12–15 tháng. Tìm hiểu chỉ dẫn địa lý EU bảo hộ của Phú Quốc.",
+          "en": "Visit a traditional fish sauce distillery – with hundreds of 4–5m boi loi wooden vats fermenting black anchovies for 12–15 months. Learn about Phu Quoc's EU geographical indication."
+        }
+      },
+      {
+        "time": "10:00",
+        "title": { "vi": "Tasting nước mắm 5 độ đạm", "en": "5-Grade Fish Sauce Tasting" },
+        "description": {
+          "vi": "Tasting có hướng dẫn 5 cấp độ đạm: 25°N – 30°N – 35°N – 40°N – 43°N. Học cách phân biệt nước mắm cốt nhỉ thật và sản phẩm công nghiệp.",
+          "en": "Guided tasting of 5 protein grades: 25°N – 30°N – 35°N – 40°N – 43°N. Learn to distinguish premium first-press fish sauce from industrial products."
+        }
+      },
+      {
+        "time": "11:30",
+        "title": { "vi": "Bữa trưa hải sản với nước mắm 40°N", "en": "Seafood Lunch with 40°N Fish Sauce" },
+        "description": {
+          "vi": "Bữa trưa với gỏi cá trích, ghẹ Hàm Ninh hấp bia, nhum biển nướng mỡ hành, bún quậy 'DIY' – tất cả với nước mắm 40°N nguyên chất.",
+          "en": "Lunch featuring herring salad, beer-steamed Ham Ninh crab, scallion-grilled sea urchin, 'DIY' bun quay – all with pure 40°N fish sauce."
+        },
+        "image": "food-banhxeo"
+      },
+      {
+        "time": "13:30",
+        "title": { "vi": "Đi thuyền câu cá cơm", "en": "Anchovy Fishing Boat Trip" },
+        "description": {
+          "vi": "Lên thuyền nhỏ ra ngư trường gần bờ, theo dõi quá trình đánh bắt cá cơm than – nguyên liệu duy nhất làm nên nước mắm Phú Quốc thật.",
+          "en": "Board a small boat to nearshore fishing grounds, observe the black anchovy harvest – the only ingredient behind authentic Phu Quoc fish sauce."
+        }
+      }
+    ],
+    "highlightDishSlugs": ["goi-ca-trich", "bun-quay-phu-quoc"],
+    "image": "tour-mekong"
   }
 ]
