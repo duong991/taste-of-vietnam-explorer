@@ -165,7 +165,7 @@ const CityPage = () => {
                 {t("city_detail.see_all_dishes")}
               </Link>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5">
               {featuredDishes.map((dish) => (
                 <FoodCard
                   key={dish.slug}
@@ -173,6 +173,7 @@ const CityPage = () => {
                   image={dish.image}
                   name={pick(dish.name)}
                   city={pick(city.name)}
+                  className="w-full"
                 />
               ))}
             </div>
@@ -189,7 +190,7 @@ const CityPage = () => {
                 {t("city_detail.see_all_tours")}
               </Link>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
               {featuredTours.map((tour) => (
                 <TourCard
                   key={tour.slug}
@@ -199,6 +200,7 @@ const CityPage = () => {
                   city={pick(city.name)}
                   duration={`${tour.durationHours} ${t("common.hour")}`}
                   price={formatPrice(tour.priceVnd)}
+                  className="w-full"
                 />
               ))}
             </div>

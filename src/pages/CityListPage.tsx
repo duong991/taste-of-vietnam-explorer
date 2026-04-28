@@ -120,7 +120,7 @@ const CityListPage = () => {
 
           {!isLoading && sorted.length > 0 && (
             <>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
                 {visible.map((city) => (
                   <CityCard
                     key={city.slug}
@@ -128,6 +128,7 @@ const CityListPage = () => {
                     name={pick(city.name)}
                     tagline={pick(city.shortDescription)}
                     slug={city.slug}
+                    className="w-full"
                   />
                 ))}
               </div>

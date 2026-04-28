@@ -141,7 +141,7 @@ const DishListPage = () => {
 
               {!isLoading && visible.length > 0 && (
                 <>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5">
                     {visible.map((dish) => (
                       <FoodCard
                         key={dish.slug}
@@ -149,6 +149,7 @@ const DishListPage = () => {
                         image={dish.image}
                         name={pick(dish.name)}
                         city={(() => { const c = cities?.find((c) => c.slug === dish.citySlug); return c ? pick(c.name) : dish.citySlug; })()}
+                        className="w-full"
                       />
                     ))}
                   </div>

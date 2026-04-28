@@ -1,6 +1,7 @@
 import { Star, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLocale } from "@/hooks/useLocale";
+import { cn } from "@/lib/utils";
 
 interface Props {
   image: string;
@@ -11,14 +12,18 @@ interface Props {
   rating?: number;
   reviews?: number;
   slug?: string;
+  className?: string;
 }
 
-const TourCard = ({ image, name, city, duration, price, rating, reviews, slug }: Props) => {
+const TourCard = ({ image, name, city, duration, price, rating, reviews, slug, className }: Props) => {
   const { t, path } = useLocale();
   return (
   <Link
     to={slug ? path.tour(slug) : path.tourList}
-    className="group shrink-0 snap-start w-[280px] md:w-[300px] rounded-2xl bg-card overflow-hidden shadow-soft hover:shadow-card transition-smooth"
+    className={cn(
+      "group shrink-0 snap-start w-[280px] md:w-[300px] rounded-2xl bg-card overflow-hidden shadow-soft hover:shadow-card transition-smooth",
+      className
+    )}
   >
     <div className="relative aspect-[4/3] overflow-hidden">
       <img

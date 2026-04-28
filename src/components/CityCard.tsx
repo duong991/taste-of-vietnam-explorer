@@ -1,20 +1,25 @@
 import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLocale } from "@/hooks/useLocale";
+import { cn } from "@/lib/utils";
 
 interface Props {
   image: string;
   name: string;
   tagline: string;
   slug?: string;
+  className?: string;
 }
 
-const CityCard = ({ image, name, tagline, slug }: Props) => {
+const CityCard = ({ image, name, tagline, slug, className }: Props) => {
   const { path } = useLocale();
   return (
   <Link
     to={path.city(slug ?? name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/\s+/g, "-"))}
-    className="group relative shrink-0 snap-start w-[260px] md:w-[280px] aspect-[3/4] rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-smooth"
+    className={cn(
+      "group relative shrink-0 snap-start w-[260px] md:w-[280px] aspect-[3/4] rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-smooth",
+      className
+    )}
   >
     <img
       src={image}

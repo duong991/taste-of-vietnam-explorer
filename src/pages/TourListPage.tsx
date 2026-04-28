@@ -143,7 +143,7 @@ const TourListPage = () => {
 
               {!isLoading && visible.length > 0 && (
                 <>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6">
                     {visible.map((tour) => (
                       <TourCard
                         key={tour.slug}
@@ -153,6 +153,7 @@ const TourListPage = () => {
                         city={(() => { const c = cities?.find((c) => c.slug === tour.citySlug); return c ? pick(c.name) : tour.citySlug; })()}
                         duration={`${tour.durationHours} ${t("common.hour")}`}
                         price={formatPrice(tour.priceVnd)}
+                        className="w-full"
                       />
                     ))}
                   </div>

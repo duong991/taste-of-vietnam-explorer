@@ -172,7 +172,7 @@ const TourDetailPage = () => {
         {highlightDishes.length > 0 && (
           <section className="container mt-8">
             <h2 className="font-display text-2xl font-semibold text-foreground mb-6">{t("tour_detail.highlight_dishes")}</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5">
               {highlightDishes.map((d) => (
                 <FoodCard
                   key={d.slug}
@@ -180,6 +180,7 @@ const TourDetailPage = () => {
                   image={d.image}
                   name={pick(d.name)}
                   city={(() => { const c = cities?.find((c) => c.slug === d.citySlug); return c ? pick(c.name) : d.citySlug; })()}
+                  className="w-full"
                 />
               ))}
             </div>
@@ -191,7 +192,7 @@ const TourDetailPage = () => {
             <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
               {t("tour_detail.related_tours", { name: city ? pick(city.name) : "" })}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6">
               {relatedTours.map((tr) => (
                 <TourCard
                   key={tr.slug}
@@ -201,6 +202,7 @@ const TourDetailPage = () => {
                   city={(() => { const c = cities?.find((c) => c.slug === tr.citySlug); return c ? pick(c.name) : tr.citySlug; })()}
                   duration={`${tr.durationHours} ${t("common.hour")}`}
                   price={formatPrice(tr.priceVnd)}
+                  className="w-full"
                 />
               ))}
             </div>
