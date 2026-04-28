@@ -26,7 +26,7 @@
     "lang_switch": "EN",
     "open_menu": "Mở menu",
     "close_menu": "Đóng menu",
-    "logo_label": "Tinh hoa Hương vị Việt — Trang chủ"
+    "logo_label": "Dấu ấn Hương vị Việt — Trang chủ"
   },
   "hero": {
     "tagline": "Dấu ấn hương vị Việt",
@@ -188,7 +188,7 @@
   "chatbot": {
     "title": "Tinh",
     "subtitle": "Trợ lý ẩm thực Việt Nam",
-    "welcome": "Xin chào! 👋\nTôi là Tinh – trợ lý ẩm thực của Tinh hoa Hương vị Việt.\nTôi có thể gợi ý món ăn, tour khám phá, và điểm đến cho bạn. Hỏi tôi bất cứ điều gì!",
+    "welcome": "Xin chào! 👋\nTôi là Tinh – trợ lý ẩm thực của Dấu ấn Hương vị Việt.\nTôi có thể gợi ý món ăn, tour khám phá, và điểm đến cho bạn. Hỏi tôi bất cứ điều gì!",
     "placeholder": "Hỏi về món ăn, tour, thành phố…",
     "send_aria": "Gửi",
     "open_aria": "Mở chatbot",
@@ -231,7 +231,7 @@
     "link_partners": "Đối tác",
     "link_jobs": "Tuyển dụng",
     "link_press": "Báo chí",
-    "copyright": "© {{year}} Tinh hoa Hương vị Việt. All rights reserved.",
+    "copyright": "© {{year}} Dấu ấn Hương vị Việt. All rights reserved.",
     "policy": "Chính sách",
     "terms": "Điều khoản",
     "search": "Tìm kiếm"
