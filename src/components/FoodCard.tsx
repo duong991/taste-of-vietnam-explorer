@@ -20,7 +20,8 @@ const FoodCard = ({ image, name, city, rating, michelin, slug, className }: Prop
   <Link
     to={slug ? path.dish(slug) : path.dishList}
     className={cn(
-      "group shrink-0 snap-start w-[220px] md:w-[240px] rounded-2xl bg-card overflow-hidden shadow-soft hover:shadow-card transition-smooth",
+      "group rounded-2xl bg-card overflow-hidden shadow-soft hover:shadow-card transition-smooth",
+      !className && "shrink-0 snap-start w-[220px] md:w-[240px]",
       className
     )}
   >

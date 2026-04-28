@@ -18,7 +18,8 @@ const CityCard = ({ image, name, tagline, slug, className }: Props) => {
   <Link
     to={path.city(slug ?? name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/\s+/g, "-"))}
     className={cn(
-      "group relative shrink-0 snap-start w-[260px] md:w-[280px] aspect-[3/4] rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-smooth",
+      "group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-smooth",
+      !className && "shrink-0 snap-start w-[260px] md:w-[280px]",
       className
     )}
   >

@@ -22,7 +22,8 @@ const TourCard = ({ image, name, city, duration, price, rating, reviews, slug, c
   <Link
     to={slug ? path.tour(slug) : path.tourList}
     className={cn(
-      "group shrink-0 snap-start w-[280px] md:w-[300px] rounded-2xl bg-card overflow-hidden shadow-soft hover:shadow-card transition-smooth",
+      "group rounded-2xl bg-card overflow-hidden shadow-soft hover:shadow-card transition-smooth",
+      !className && "shrink-0 snap-start w-[280px] md:w-[300px]",
       className
     )}
   >
