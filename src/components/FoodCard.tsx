@@ -2,6 +2,7 @@ import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLocale } from "@/hooks/useLocale";
 import { cn } from "@/lib/utils";
+import { LazyImage } from "@/components/ui/lazy-image";
 
 interface Props {
   image: string;
@@ -24,7 +25,7 @@ const FoodCard = ({ image, name, city, rating, michelin, slug, className }: Prop
     )}
   >
     <div className="relative aspect-square overflow-hidden">
-      <img
+      <LazyImage
         src={image}
         alt={name}
         loading="lazy"

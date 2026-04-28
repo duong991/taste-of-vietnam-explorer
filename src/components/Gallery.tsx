@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { LazyImage } from "@/components/ui/lazy-image";
 
 interface GalleryProps {
   images: string[];
@@ -43,7 +44,7 @@ const Gallery = ({ images, alt = "" }: GalleryProps) => {
             className="relative aspect-[4/3] rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-ring group"
             aria-label={`Xem ảnh ${idx + 1}`}
           >
-            <img
+            <LazyImage
               src={src}
               alt={`${alt} — ảnh ${idx + 1}`}
               loading="lazy"

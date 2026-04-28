@@ -13,6 +13,7 @@ import { useCities } from "@/hooks/useCities";
 import { useTours } from "@/hooks/useTours";
 import { Markdown } from "@/lib/markdown";
 import { useLocale } from "@/hooks/useLocale";
+import { LazyImage } from "@/components/ui/lazy-image";
 
 const DetailSkeleton = () => (
   <div className="animate-pulse space-y-6">
@@ -99,7 +100,7 @@ const DishDetailPage = () => {
           </nav>
 
           <div className="relative aspect-[16/8] md:aspect-[16/7] rounded-2xl overflow-hidden mb-8 shadow-elegant">
-            <img
+            <LazyImage
               src={dish.image}
               alt={pick(dish.name)}
               className="h-full w-full object-cover"

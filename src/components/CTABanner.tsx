@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { resolveImage } from "@/lib/imageMap";
 import { useLocale } from "@/hooks/useLocale";
+import { LazyImage } from "@/components/ui/lazy-image";
 
 const ctaImg = resolveImage("cta-banner");
 
@@ -10,7 +11,7 @@ const CTABanner = () => {
   return (
   <section className="container pb-20">
     <div className="relative overflow-hidden rounded-2xl shadow-elegant">
-      <img
+      <LazyImage
         src={ctaImg}
         alt={t("cta.img_alt")}
         loading="lazy"

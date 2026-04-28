@@ -2,6 +2,7 @@ import { Star, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLocale } from "@/hooks/useLocale";
 import { cn } from "@/lib/utils";
+import { LazyImage } from "@/components/ui/lazy-image";
 
 interface Props {
   image: string;
@@ -26,7 +27,7 @@ const TourCard = ({ image, name, city, duration, price, rating, reviews, slug, c
     )}
   >
     <div className="relative aspect-[4/3] overflow-hidden">
-      <img
+      <LazyImage
         src={image}
         alt={name}
         loading="lazy"

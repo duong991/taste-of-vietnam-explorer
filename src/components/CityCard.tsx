@@ -2,6 +2,7 @@ import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLocale } from "@/hooks/useLocale";
 import { cn } from "@/lib/utils";
+import { LazyImage } from "@/components/ui/lazy-image";
 
 interface Props {
   image: string;
@@ -21,7 +22,7 @@ const CityCard = ({ image, name, tagline, slug, className }: Props) => {
       className
     )}
   >
-    <img
+    <LazyImage
       src={image}
       alt={name}
       loading="lazy"
