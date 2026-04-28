@@ -233,7 +233,7 @@
           "vi": "Thưởng thức nồi thắng cố nóng hổi cùng mèn mén, rượu ngô và đậu chao trong căn nhà gỗ truyền thống. Trò chuyện với chủ nhà về cách sống vùng cao.",
           "en": "Enjoy a steaming pot of thang co with men men, corn liquor, and fermented tofu in a traditional wooden house. Chat with the host about highland life."
         },
-        "image": "food-bunbo"
+        "image": "food-thangco-sapa"
       },
       {
         "time": "16:00",
@@ -245,7 +245,7 @@
       }
     ],
     "highlightDishSlugs": ["thang-co-sapa", "ca-hoi-sapa"],
-    "image": "tour-mekong"
+    "image": "tour-sapa-vungcao"
   },
   {
     "slug": "am-thuc-cung-dinh-hue",
@@ -282,7 +282,7 @@
           "vi": "Thưởng thức 8 món cung đình Huế nguyên bản: súp yến, bánh bèo Huế, nem công – chả phụng, cơm sen, cá vược hấp gừng... mỗi món được trình bày như một tác phẩm nghệ thuật trên mâm chạm vàng.",
           "en": "Enjoy 8 authentic Hue royal courses: bird's-nest soup, banh beo, peacock-and-phoenix nem and cha, lotus rice, ginger-steamed sea bass... each presented as art on a gilded tray."
         },
-        "image": "food-banhcuon"
+        "image": "food-banhbeo-hue"
       },
       {
         "time": "21:00",
@@ -294,7 +294,7 @@
       }
     ],
     "highlightDishSlugs": ["bun-bo-hue", "banh-beo-hue", "com-hen-hue"],
-    "image": "tour-cooking"
+    "image": "tour-hue-cungdinh"
   },
   {
     "slug": "hoi-an-den-long-cooking",
@@ -331,7 +331,7 @@
           "vi": "Nấu 4 món biểu tượng Hội An: cao lầu, mì Quảng, bánh mì kẹp pate gia truyền, bánh xèo miền Trung. Đầu bếp giải thích vì sao chỉ Hội An mới làm được vị chuẩn.",
           "en": "Cook 4 Hoi An icons: cao lau, mi quang, banh mi with house pate, Central-style banh xeo. The chef explains why authentic flavors are only possible in Hoi An."
         },
-        "image": "tour-cooking"
+        "image": "food-caolau"
       },
       {
         "time": "20:30",
@@ -343,7 +343,7 @@
       }
     ],
     "highlightDishSlugs": ["cao-lau-hoi-an", "mi-quang", "banh-mi-hoi-an", "banh-xeo"],
-    "image": "tour-cooking"
+    "image": "tour-hoian-denlong"
   },
   {
     "slug": "da-nang-hai-san-tour",
@@ -388,11 +388,11 @@
           "vi": "Kết thúc bằng tô mì Quảng 'sáng' tại quán gia truyền – để hiểu vì sao mì Quảng là 'món của trí nhớ' của người Quảng Nam – Đà Nẵng.",
           "en": "Close with a 'morning' bowl of mi quang at a heritage shop – to understand why mi quang is 'the dish of memory' for Quang Nam–Da Nang locals."
         },
-        "image": "food-caolau"
+        "image": "food-miquang"
       }
     ],
     "highlightDishSlugs": ["mi-quang", "banh-trang-cuon-thit-heo"],
-    "image": "tour-mekong"
+    "image": "tour-danang-haisan"
   },
   {
     "slug": "da-lat-farm-to-table",
@@ -429,7 +429,7 @@
           "vi": "Bữa trưa với rau tươi vừa hái và sản vật cao nguyên: salad atisô, súp bí đỏ, gà đồi nướng lá chanh, cá hồi áp chảo. Đầu bếp giải thích nguồn gốc từng nguyên liệu.",
           "en": "Lunch featuring just-picked vegetables and highland produce: artichoke salad, pumpkin soup, lime-leaf grilled hill chicken, pan-seared salmon. The chef traces every ingredient's origin."
         },
-        "image": "tour-cooking"
+        "image": "tour-dalat-farmtotable"
       },
       {
         "time": "19:00",
@@ -441,7 +441,7 @@
       }
     ],
     "highlightDishSlugs": ["banh-trang-nuong-dalat", "sua-dau-nanh-dalat"],
-    "image": "tour-cooking"
+    "image": "tour-dalat-farmtotable"
   },
   {
     "slug": "sai-gon-street-food-night",
@@ -498,7 +498,7 @@
       }
     ],
     "highlightDishSlugs": ["banh-mi-sai-gon", "com-tam-sai-gon", "hu-tieu-nam-vang"],
-    "image": "tour-motorbike"
+    "image": "tour-saigon-streetfood"
   },
   {
     "slug": "phu-quoc-nuoc-mam-tour",
@@ -535,7 +535,7 @@
           "vi": "Bữa trưa với gỏi cá trích, ghẹ Hàm Ninh hấp bia, nhum biển nướng mỡ hành, bún quậy 'DIY' – tất cả với nước mắm 40°N nguyên chất.",
           "en": "Lunch featuring herring salad, beer-steamed Ham Ninh crab, scallion-grilled sea urchin, 'DIY' bun quay – all with pure 40°N fish sauce."
         },
-        "image": "food-banhxeo"
+        "image": "food-goicatrich"
       },
       {
         "time": "13:30",
@@ -547,6 +547,6 @@
       }
     ],
     "highlightDishSlugs": ["goi-ca-trich", "bun-quay-phu-quoc"],
-    "image": "tour-mekong"
+    "image": "tour-phuquoc-nuocmam"
   }
 ]

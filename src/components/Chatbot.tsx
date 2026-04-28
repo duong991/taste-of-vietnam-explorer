@@ -1,28 +1,15 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { MessageCircle, X, Send, Minus, Trash2, RefreshCw, AlertCircle } from "lucide-react";
+import { MessageCircle, X, Send, Minus, Trash2, RefreshCw, AlertCircle, Settings, KeyRound, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { callLLM, LLMError, type LLMMessage } from "@/lib/llm";
-import { SYSTEM_PROMPT, parseResponse, type ChatSuggestion } from "@/lib/chatPrompt";
+import { getSystemPrompt, parseResponse, type ChatSuggestion } from "@/lib/chatPrompt";
 import { Markdown } from "@/lib/markdown";
+import { useLocale } from "@/hooks/useLocale";
+import { getUserApiKey, setUserApiKey, clearUserApiKey } from "@/lib/apiKey";
 
 const SESSION_KEY = "chatbot_history";
-
-function loadHistory(): ChatMsg[] {
-  try {
-    const raw = sessionStorage.getItem(SESSION_KEY);
-    return raw ? (JSON.parse(raw) as ChatMsg[]) : [WELCOME];
-  } catch {
-    return [WELCOME];
-  }
-}
-
+const LOCALE_KEY = "chatbot_locale";
 const RATE_LIMIT_MS = 2000;
-const QUICK_PROMPTS = [
-  "Gợi ý món ăn ngon ở Hà Nội",
-  "Tour ẩm thực đáng trải nghiệm",
-  "Món ăn miền Trung nổi tiếng",
-  "Tour nào phù hợp cho gia đình?",
-];
 
 interface ChatMsg {
   id: string;
@@ -32,11 +19,35 @@ interface ChatMsg {
   isError?: boolean;
 }
 
-const WELCOME: ChatMsg = {
-  id: "welcome",
-  role: "bot",
-  text: "Xin chào! 👋\nTôi là Tinh – trợ lý ẩm thực của Tinh hoa Hương vị Việt.\nTôi có thể gợi ý món ăn, tour khám phá, và điểm đến cho bạn. Hỏi tôi bất cứ điều gì!",
-};
+function makeWelcome(t: (k: string) => string): ChatMsg {
+  return {
+    id: "welcome",
+    role: "bot",
+    text: t("chatbot.welcome"),
+  };
+}
+
+function getQuickPrompts(t: (k: string) => string): string[] {
+  return [
+    t("chatbot.quick_prompt_1"),
+    t("chatbot.quick_prompt_2"),
+    t("chatbot.quick_prompt_3"),
+    t("chatbot.quick_prompt_4"),
+  ];
+}
+
+function loadHistory(t: (k: string) => string, locale: string): ChatMsg[] {
+  try {
+    const storedLocale = sessionStorage.getItem(LOCALE_KEY);
+    const raw = sessionStorage.getItem(SESSION_KEY);
+    if (storedLocale === locale && raw) {
+      return JSON.parse(raw) as ChatMsg[];
+    }
+  } catch {
+    /* ignore */
+  }
+  return [makeWelcome(t)];
+}
 
 function toAPIMessages(msgs: ChatMsg[]): LLMMessage[] {
   return msgs
@@ -69,18 +80,31 @@ const TypingIndicator = () => (
 );
 
 const Chatbot = () => {
+  const { t, locale } = useLocale();
+  const quickPrompts = getQuickPrompts(t);
   const [open, setOpen] = useState(false);
   const [minimized, setMinimized] = useState(false);
-  const [messages, setMessages] = useState<ChatMsg[]>(loadHistory);
+  const [showSettings, setShowSettings] = useState(false);
+  const [messages, setMessages] = useState<ChatMsg[]>(() => loadHistory(t, locale));
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [lastSentAt, setLastSentAt] = useState(0);
+  const [apiKeyInput, setApiKeyInput] = useState(() => getUserApiKey() ?? "");
+  const [apiKeySaved, setApiKeySaved] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const settingsInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    try { sessionStorage.setItem(SESSION_KEY, JSON.stringify(messages)); } catch { /* ignore */ }
-  }, [messages]);
+    setMessages(loadHistory(t, locale));
+  }, [locale, t]);
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem(SESSION_KEY, JSON.stringify(messages));
+      sessionStorage.setItem(LOCALE_KEY, locale);
+    } catch { /* ignore */ }
+  }, [messages, locale]);
 
   useEffect(() => {
     if (open && !minimized) {
@@ -90,9 +114,15 @@ const Chatbot = () => {
 
   useEffect(() => {
     if (open && !minimized) {
-      setTimeout(() => inputRef.current?.focus(), 50);
+      setTimeout(() => {
+        if (showSettings) {
+          settingsInputRef.current?.focus();
+        } else {
+          inputRef.current?.focus();
+        }
+      }, 50);
     }
-  }, [open, minimized]);
+  }, [open, minimized, showSettings]);
 
   const send = useCallback(
     async (text: string) => {
@@ -112,7 +142,8 @@ const Chatbot = () => {
       try {
         const apiHistory = toAPIMessages(nextMessages);
         const raw = await callLLM(
-          [{ role: "system", content: SYSTEM_PROMPT }, ...apiHistory],
+          [{ role: "system", content: getSystemPrompt(locale) }, ...apiHistory],
+          t,
         );
         const { text: botText, suggestions } = parseResponse(raw);
         setMessages((prev) => [
@@ -123,7 +154,7 @@ const Chatbot = () => {
         const msg =
           err instanceof LLMError
             ? err.message
-            : "Đã có lỗi xảy ra. Vui lòng thử lại.";
+            : t("chatbot.error_generic");
         setMessages((prev) => [
           ...prev,
           { id: crypto.randomUUID(), role: "bot", text: msg, isError: true },
@@ -132,19 +163,20 @@ const Chatbot = () => {
         setLoading(false);
       }
     },
-    [messages, loading, lastSentAt],
+    [messages, loading, lastSentAt, locale, t],
   );
 
   const clearHistory = () => {
-    setMessages([WELCOME]);
+    setMessages([makeWelcome(t)]);
     sessionStorage.removeItem(SESSION_KEY);
+    sessionStorage.removeItem(LOCALE_KEY);
   };
 
   if (!open) {
     return (
       <button
         onClick={() => { setOpen(true); setMinimized(false); }}
-        aria-label="Mở chatbot"
+        aria-label={t("chatbot.open_aria")}
         className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-float flex items-center justify-center hover:scale-105 transition-smooth animate-pop-in"
       >
         <MessageCircle className="h-6 w-6" />
@@ -165,30 +197,38 @@ const Chatbot = () => {
               🌿
             </div>
             <div>
-              <p className="font-display text-sm font-semibold leading-none">Tinh</p>
-              <p className="text-[10px] text-primary-foreground/70 mt-0.5">Trợ lý ẩm thực Việt Nam</p>
+              <p className="font-display text-sm font-semibold leading-none">{t("chatbot.title")}</p>
+              <p className="text-[10px] text-primary-foreground/70 mt-0.5">{t("chatbot.subtitle")}</p>
             </div>
           </div>
           <div className="flex gap-1">
             <button
+              onClick={() => { setShowSettings((v) => !v); setMinimized(false); }}
+              title={t("chatbot.settings_title")}
+              className={`p-1.5 rounded transition-smooth ${showSettings ? "bg-primary-foreground/20" : "hover:bg-primary-foreground/10"}`}
+              aria-label={t("chatbot.settings_aria")}
+            >
+              <Settings className="h-3.5 w-3.5" />
+            </button>
+            <button
               onClick={clearHistory}
-              title="Xoá lịch sử"
+              title={t("chatbot.clear_history_title")}
               className="p-1.5 hover:bg-primary-foreground/10 rounded transition-smooth"
-              aria-label="Xoá lịch sử hội thoại"
+              aria-label={t("chatbot.clear_history_aria")}
             >
               <Trash2 className="h-3.5 w-3.5" />
             </button>
             <button
               onClick={() => setMinimized((v) => !v)}
               className="p-1.5 hover:bg-primary-foreground/10 rounded transition-smooth"
-              aria-label={minimized ? "Mở rộng" : "Thu nhỏ"}
+              aria-label={minimized ? t("chatbot.expand_aria") : t("chatbot.minimize_aria")}
             >
               <Minus className="h-3.5 w-3.5" />
             </button>
             <button
               onClick={() => setOpen(false)}
               className="p-1.5 hover:bg-primary-foreground/10 rounded transition-smooth"
-              aria-label="Đóng chatbot"
+              aria-label={t("chatbot.close_aria")}
             >
               <X className="h-3.5 w-3.5" />
             </button>
@@ -197,6 +237,52 @@ const Chatbot = () => {
 
         {!minimized && (
           <>
+            {showSettings && (
+              <div className="px-4 py-3 bg-secondary/60 border-b border-border shrink-0 space-y-3">
+                <div className="flex items-center gap-2 text-xs font-semibold text-foreground">
+                  <KeyRound className="h-3.5 w-3.5" />
+                  {t("chatbot.api_key_label")}
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    ref={settingsInputRef}
+                    type="password"
+                    value={apiKeyInput}
+                    onChange={(e) => { setApiKeyInput(e.target.value); setApiKeySaved(false); }}
+                    placeholder={t("chatbot.api_key_placeholder")}
+                    className="flex-1 bg-background rounded-lg px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-primary/30 border border-border"
+                  />
+                  <button
+                    onClick={() => {
+                      setUserApiKey(apiKeyInput);
+                      setApiKeySaved(true);
+                      setTimeout(() => {
+                        setApiKeySaved(false);
+                        setShowSettings(false);
+                      }, 800);
+                    }}
+                    disabled={!apiKeyInput.trim()}
+                    className="h-8 w-8 rounded-lg bg-primary text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-smooth disabled:opacity-40"
+                    aria-label={t("chatbot.api_key_save")}
+                  >
+                    {apiKeySaved ? <Check className="h-3.5 w-3.5" /> : <Settings className="h-3.5 w-3.5" />}
+                  </button>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] text-muted-foreground">
+                    {apiKeyInput.trim() ? t("chatbot.api_key_status_set") : t("chatbot.api_key_status_empty")}
+                  </span>
+                  {apiKeyInput.trim() && (
+                    <button
+                      onClick={() => { clearUserApiKey(); setApiKeyInput(""); setApiKeySaved(false); }}
+                      className="text-[10px] text-destructive hover:underline"
+                    >
+                      {t("chatbot.api_key_clear")}
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-secondary/30">
               {messages.map((m, i) => (
@@ -237,7 +323,7 @@ const Chatbot = () => {
                                     {s.name}
                                   </p>
                                   <p className="text-[10px] text-muted-foreground capitalize">
-                                    {s.type === "dish" ? "Món ăn" : s.type === "tour" ? "Tour ẩm thực" : "Thành phố"}
+                                    {s.type === "dish" ? t("chatbot.label_dish") : s.type === "tour" ? t("chatbot.label_tour") : t("chatbot.label_city")}
                                   </p>
                                 </div>
                                 <span className="text-muted-foreground group-hover:text-primary text-xs transition-smooth">→</span>
@@ -248,7 +334,7 @@ const Chatbot = () => {
 
                         {i === 0 && (
                           <div className="flex flex-col gap-1.5 pt-1">
-                            {QUICK_PROMPTS.map((s) => (
+                            {quickPrompts.map((s) => (
                               <button
                                 key={s}
                                 onClick={() => send(s)}
@@ -283,13 +369,13 @@ const Chatbot = () => {
                 ref={inputRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Hỏi về món ăn, tour, thành phố…"
+                placeholder={t("chatbot.placeholder")}
                 disabled={loading}
                 className="flex-1 bg-secondary rounded-full px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
               />
               <button
                 type="submit"
-                aria-label="Gửi"
+                aria-label={t("chatbot.send_aria")}
                 disabled={loading || !input.trim()}
                 className="h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:bg-primary/90 transition-smooth disabled:opacity-40"
               >
