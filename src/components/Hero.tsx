@@ -1,8 +1,10 @@
 import { useState, FormEvent } from "react";
 import { Search, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import heroImage from "@/assets/hero-hoian.jpg";
+import { resolveImage } from "@/lib/imageMap";
 import { useLocale } from "@/hooks/useLocale";
+
+const heroImage = resolveImage("hero-hoian");
 
 const Hero = () => {
   const [query, setQuery] = useState("");

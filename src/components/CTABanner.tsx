@@ -1,7 +1,9 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ctaImg from "@/assets/cta-banner.jpg";
+import { resolveImage } from "@/lib/imageMap";
 import { useLocale } from "@/hooks/useLocale";
+
+const ctaImg = resolveImage("cta-banner");
 
 const CTABanner = () => {
   const { t } = useLocale();
