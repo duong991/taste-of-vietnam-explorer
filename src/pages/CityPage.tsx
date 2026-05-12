@@ -28,7 +28,7 @@ const DetailSkeleton = () => (
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const { t, pick, path, locale } = useLocale();
+  const { t, pick, path } = useLocale();
 
   const { data: city, isLoading, isError, refetch } = useCity(slug);
   const { data: dishes } = useDishes();
@@ -40,9 +40,6 @@ const CityPage = () => {
 
   const featuredDishes = dishes?.filter((d) => city?.featuredDishSlugs.includes(d.slug)) ?? [];
   const featuredTours = tours?.filter((tr) => city?.featuredTourSlugs.includes(tr.slug)) ?? [];
-  const formatPrice = (vnd: number) =>
-    new Intl.NumberFormat(locale === "en" ? "en-US" : "vi-VN").format(vnd) + (locale === "en" ? " VND" : " đ");
-
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background">
@@ -199,7 +196,6 @@ const CityPage = () => {
                   name={pick(tour.name)}
                   city={pick(city.name)}
                   duration={`${tour.durationHours} ${t("common.hour")}`}
-                  price={formatPrice(tour.priceVnd)}
                   className="w-full"
                 />
               ))}

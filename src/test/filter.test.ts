@@ -116,24 +116,6 @@ describe("filterTours", () => {
     expect(filterTours(tours, { citySlug: "ha-noi" })).toHaveLength(2);
   });
 
-  it("filters by priceMin", () => {
-    const result = filterTours(tours, { priceMin: 600_000 });
-    expect(result).toHaveLength(1);
-    expect(result[0].slug).toBe("t2");
-  });
-
-  it("filters by priceMax", () => {
-    const result = filterTours(tours, { priceMax: 400_000 });
-    expect(result).toHaveLength(1);
-    expect(result[0].slug).toBe("t1");
-  });
-
-  it("filters by priceMin and priceMax range", () => {
-    const result = filterTours(tours, { priceMin: 400_000, priceMax: 600_000 });
-    expect(result).toHaveLength(1);
-    expect(result[0].slug).toBe("t3");
-  });
-
   it("filters by durationMax", () => {
     const result = filterTours(tours, { durationMax: 3 });
     expect(result).toHaveLength(2);
@@ -210,17 +192,6 @@ describe("sortTours", () => {
     expect(sortTours(tours, "default").map((t) => t.slug)).toEqual(["mid", "hi", "lo"]);
   });
 
-  it("price-asc sorts cheapest first", () => {
-    const result = sortTours(tours, "price-asc");
-    expect(result[0].priceVnd).toBeLessThanOrEqual(result[1].priceVnd);
-    expect(result[1].priceVnd).toBeLessThanOrEqual(result[2].priceVnd);
-  });
-
-  it("price-desc sorts most expensive first", () => {
-    const result = sortTours(tours, "price-desc");
-    expect(result[0].priceVnd).toBeGreaterThanOrEqual(result[1].priceVnd);
-  });
-
   it("duration-asc sorts shortest first", () => {
     const result = sortTours(tours, "duration-asc");
     expect(result[0].durationHours).toBe(1);
@@ -228,7 +199,7 @@ describe("sortTours", () => {
 
   it("does not mutate input array", () => {
     const slugs = tours.map((t) => t.slug);
-    sortTours(tours, "price-asc");
+    sortTours(tours, "duration-asc");
     expect(tours.map((t) => t.slug)).toEqual(slugs);
   });
 });

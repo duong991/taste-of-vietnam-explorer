@@ -30,7 +30,7 @@ const DetailSkeleton = () => (
 const DishDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const { t, pick, path, locale } = useLocale();
+  const { t, pick, path } = useLocale();
 
   const { data: dish, isLoading, isError, refetch } = useDish(slug);
   const { data: allDishes } = useDishes();
@@ -46,9 +46,6 @@ const DishDetailPage = () => {
   const city = cities?.find((c) => c.slug === dish?.citySlug);
   const relatedDishes = allDishes?.filter((d) => d.citySlug === dish?.citySlug && d.slug !== dish?.slug).slice(0, 4) ?? [];
   const relatedTours = tours?.filter((tour) => tour.highlightDishSlugs.includes(slug ?? "")).slice(0, 4) ?? [];
-  const formatPrice = (vnd: number) =>
-    new Intl.NumberFormat(locale === "en" ? "en-US" : "vi-VN").format(vnd) + (locale === "en" ? " VND" : " đ");
-
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background">
@@ -184,7 +181,6 @@ const DishDetailPage = () => {
                   name={pick(tour.name)}
                   city={(() => { const c = cities?.find((c) => c.slug === tour.citySlug); return c ? pick(c.name) : tour.citySlug; })()}
                   duration={`${tour.durationHours} ${t("common.hour")}`}
-                  price={formatPrice(tour.priceVnd)}
                   className="w-full"
                 />
               ))}

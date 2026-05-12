@@ -32,12 +32,10 @@ const TourListPage = () => {
   const [citySlug, setCitySlug] = useState(searchParams.get("city") ?? "");
   const [sort, setSort] = useState<TourSortKey>("default");
   const [page, setPage] = useState(1);
-  const { t, pick, locale } = useLocale();
+  const { t, pick } = useLocale();
 
   const SORT_OPTIONS = [
     { value: "default", label: t("tour_list.sort_default") },
-    { value: "price-asc", label: t("tour_list.sort_price_asc") },
-    { value: "price-desc", label: t("tour_list.sort_price_desc") },
     { value: "duration-asc", label: t("tour_list.sort_duration_asc") },
   ];
 
@@ -55,8 +53,6 @@ const TourListPage = () => {
   const filtered = filterTours(tours ?? [], {
     citySlug: citySlug || undefined,
     themes: filters.themes,
-    priceMin: filters.priceRange?.[0],
-    priceMax: filters.priceRange?.[1],
   });
 
   const sorted = sortTours(filtered, sort);
@@ -64,9 +60,6 @@ const TourListPage = () => {
   const hasMore = visible.length < sorted.length;
 
   const cityOptions = (cities ?? []).map((c) => ({ value: c.slug, label: pick(c.name) }));
-
-  const formatPrice = (vnd: number) =>
-    new Intl.NumberFormat(locale === "en" ? "en-US" : "vi-VN").format(vnd) + (locale === "en" ? " VND" : " đ");
 
   const handleReset = () => {
     setFilters(EMPTY_FILTERS);
@@ -152,7 +145,6 @@ const TourListPage = () => {
                         name={pick(tour.name)}
                         city={(() => { const c = cities?.find((c) => c.slug === tour.citySlug); return c ? pick(c.name) : tour.citySlug; })()}
                         duration={`${tour.durationHours} ${t("common.hour")}`}
-                        price={formatPrice(tour.priceVnd)}
                         className="w-full"
                       />
                     ))}

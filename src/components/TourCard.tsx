@@ -9,7 +9,7 @@ interface Props {
   name: string;
   city: string;
   duration: string;
-  price: string;
+  price?: string;
   rating?: number;
   reviews?: number;
   slug?: string;
@@ -46,10 +46,12 @@ const TourCard = ({ image, name, city, duration, price, rating, reviews, slug, c
         <MapPin className="h-3.5 w-3.5" /> {city}
       </p>
       <div className="flex items-end justify-between pt-3 border-t border-border">
-        <div>
-          <p className="text-xs text-muted-foreground">{t("common.from")}</p>
-          <p className="font-display text-lg font-bold text-primary">{price}</p>
-        </div>
+        {price && (
+          <div>
+            <p className="text-xs text-muted-foreground">{t("common.from")}</p>
+            <p className="font-display text-lg font-bold text-primary">{price}</p>
+          </div>
+        )}
         <span className="flex items-center gap-1 text-xs font-medium text-foreground">
           <Star className="h-3.5 w-3.5 fill-accent text-accent" />
           {rating} <span className="text-muted-foreground">({reviews})</span>

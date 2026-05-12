@@ -1,6 +1,6 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { Home, ChevronRight, AlertCircle, RefreshCw, Clock, Wallet, Users } from "lucide-react";
+import { Home, ChevronRight, AlertCircle, RefreshCw, Clock, Users } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ShareBar from "@/components/ShareBar";
@@ -47,9 +47,6 @@ const TourDetailPage = () => {
   const city = cities?.find((c) => c.slug === tour?.citySlug);
   const highlightDishes = dishes?.filter((d) => tour?.highlightDishSlugs.includes(d.slug)).slice(0, 4) ?? [];
   const relatedTours = tours?.filter((tr) => tr.citySlug === tour?.citySlug && tr.slug !== tour?.slug).slice(0, 3) ?? [];
-  const formatPrice = (vnd: number) =>
-    new Intl.NumberFormat(locale === "en" ? "en-US" : "vi-VN").format(vnd) + (locale === "en" ? " VND" : " đ");
-
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background">
@@ -124,7 +121,7 @@ const TourDetailPage = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
             <div className="flex items-center gap-3 p-4 rounded-xl bg-secondary border border-border">
               <Clock className="h-5 w-5 text-primary shrink-0" />
               <div>
@@ -133,13 +130,6 @@ const TourDetailPage = () => {
               </div>
             </div>
             <div className="flex items-center gap-3 p-4 rounded-xl bg-secondary border border-border">
-              <Wallet className="h-5 w-5 text-primary shrink-0" />
-              <div>
-                <p className="text-xs text-muted-foreground">{t("tour_detail.price_from")}</p>
-                <p className="font-semibold text-primary">{formatPrice(tour.priceVnd)}</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 p-4 rounded-xl bg-secondary border border-border col-span-2 sm:col-span-1">
               <Users className="h-5 w-5 text-primary shrink-0" />
               <div>
                 <p className="text-xs text-muted-foreground">{t("tour_detail.partner")}</p>
@@ -201,7 +191,6 @@ const TourDetailPage = () => {
                   name={pick(tr.name)}
                   city={(() => { const c = cities?.find((c) => c.slug === tr.citySlug); return c ? pick(c.name) : tr.citySlug; })()}
                   duration={`${tr.durationHours} ${t("common.hour")}`}
-                  price={formatPrice(tr.priceVnd)}
                   className="w-full"
                 />
               ))}

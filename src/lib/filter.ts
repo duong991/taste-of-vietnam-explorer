@@ -10,8 +10,6 @@ export interface DishFilterQuery {
 
 export interface TourFilterQuery {
   citySlug?: string;
-  priceMin?: number;
-  priceMax?: number;
   durationMax?: number;
   themes?: string[];
   q?: string;
@@ -38,8 +36,6 @@ export function filterDishes(dishes: Dish[], query: DishFilterQuery): Dish[] {
 export function filterTours(tours: Tour[], query: TourFilterQuery): Tour[] {
   return tours.filter((tour) => {
     if (query.citySlug && tour.citySlug !== query.citySlug) return false;
-    if (query.priceMin !== undefined && tour.priceVnd < query.priceMin) return false;
-    if (query.priceMax !== undefined && tour.priceVnd > query.priceMax) return false;
     if (query.durationMax !== undefined && tour.durationHours > query.durationMax) return false;
     if (query.themes?.length && !query.themes.some((t) => tour.themes.includes(t))) return false;
     if (query.q) {
@@ -56,7 +52,7 @@ export function filterCities(cities: City[], region?: Region): City[] {
 }
 
 export type DishSortKey = 'name-asc' | 'name-desc' | 'default';
-export type TourSortKey = 'price-asc' | 'price-desc' | 'duration-asc' | 'default';
+export type TourSortKey = 'duration-asc' | 'default';
 
 export function sortDishes(dishes: Dish[], sort: DishSortKey): Dish[] {
   const copy = [...dishes];
@@ -67,8 +63,6 @@ export function sortDishes(dishes: Dish[], sort: DishSortKey): Dish[] {
 
 export function sortTours(tours: Tour[], sort: TourSortKey): Tour[] {
   const copy = [...tours];
-  if (sort === 'price-asc') return copy.sort((a, b) => a.priceVnd - b.priceVnd);
-  if (sort === 'price-desc') return copy.sort((a, b) => b.priceVnd - a.priceVnd);
   if (sort === 'duration-asc') return copy.sort((a, b) => a.durationHours - b.durationHours);
   return copy;
 }

@@ -35,10 +35,7 @@ const Index = () => {
   const { data: cities, isLoading: citiesLoading, isError: citiesError } = useCities();
   const { data: dishes, isLoading: dishesLoading, isError: dishesError } = useDishes();
   const { data: tours, isLoading: toursLoading, isError: toursError } = useTours();
-  const { t, pick, path, locale } = useLocale();
-
-  const formatPrice = (vnd: number) =>
-    new Intl.NumberFormat(locale === "en" ? "en-US" : "vi-VN").format(vnd) + (locale === "en" ? " VND" : " đ");
+  const { t, pick, path } = useLocale();
 
   return (
     <div className="min-h-screen bg-background">
@@ -130,7 +127,6 @@ const Index = () => {
                   name={pick(tour.name)}
                   city={(() => { const c = cities?.find((c) => c.slug === tour.citySlug); return c ? pick(c.name) : tour.citySlug; })()}
                   duration={`${tour.durationHours} ${t("common.hour")}`}
-                  price={formatPrice(tour.priceVnd)}
                 />
               ))}
             </Carousel>
