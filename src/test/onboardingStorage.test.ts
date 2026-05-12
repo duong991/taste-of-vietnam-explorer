@@ -21,10 +21,11 @@ describe("onboardingStorage", () => {
   });
 
   it("returns false if localStorage getItem throws", () => {
+    const key = `${HOME_ONBOARDING_KEY}.throws`;
     vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => {
       throw new Error("blocked");
     });
-    expect(readOnboardingCompleted(HOME_ONBOARDING_KEY)).toBe(false);
+    expect(readOnboardingCompleted(key)).toBe(false);
   });
 
   it("does not throw if localStorage setItem throws", () => {
@@ -32,5 +33,18 @@ describe("onboardingStorage", () => {
       throw new Error("blocked");
     });
     expect(() => writeOnboardingCompleted(HOME_ONBOARDING_KEY, true)).not.toThrow();
+  });
+
+  it("writes and reads via in-memory fallback when localStorage is unavailable", () => {
+    const key = `${HOME_ONBOARDING_KEY}.fallback`;
+    vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => {
+      throw new Error("blocked");
+    });
+    vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => {
+      throw new Error("blocked");
+    });
+
+    writeOnboardingCompleted(key, true);
+    expect(readOnboardingCompleted(key)).toBe(true);
   });
 });
