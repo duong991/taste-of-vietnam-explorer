@@ -5,11 +5,19 @@ import { HOME_ONBOARDING_KEY } from "@/lib/onboardingStorage";
 
 vi.mock("react-joyride", () => ({
   default: (props: any) => (
-    <div
-      data-testid="joyride"
-      data-run={String(props.run)}
-      data-steps={String(props.steps?.length ?? 0)}
-    />
+    <>
+      <div
+        data-testid="joyride"
+        data-run={String(props.run)}
+        data-steps={String(props.steps?.length ?? 0)}
+      />
+      <button type="button" onClick={() => props.callback({ status: "finished" })}>
+        finish tour
+      </button>
+      <button type="button" onClick={() => props.callback({ status: "skipped" })}>
+        skip tour
+      </button>
+    </>
   ),
   STATUS: { FINISHED: "finished", SKIPPED: "skipped" },
 }));
@@ -45,6 +53,26 @@ describe("HomeTour", () => {
 
     await waitFor(() => {
       expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
+    });
+  });
+
+  it("persists completion when joyride finishes", async () => {
+    render(<HomeTour />);
+
+    fireEvent.click(screen.getByRole("button", { name: /finish tour/i }));
+
+    await waitFor(() => {
+      expect(window.localStorage.getItem(HOME_ONBOARDING_KEY)).toBe("1");
+    });
+  });
+
+  it("persists completion when joyride is skipped", async () => {
+    render(<HomeTour />);
+
+    fireEvent.click(screen.getByRole("button", { name: /skip tour/i }));
+
+    await waitFor(() => {
+      expect(window.localStorage.getItem(HOME_ONBOARDING_KEY)).toBe("1");
     });
   });
 });
