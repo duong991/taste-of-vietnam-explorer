@@ -45,14 +45,14 @@ interface HFResponse {
     choices: { message: { content: string } }[];
 }
 
-import { getUserApiKey } from "./apiKey";
+import { getResolvedApiKey } from "./apiKey";
 
 export async function callLLM(
     messages: LLMMessage[],
     t?: (key: string, opts?: Record<string, string | number>) => string,
 ): Promise<string> {
     const model = resolveModel();
-    const apiKey = getUserApiKey() ?? (import.meta.env.VITE_HF_API_KEY as string | undefined) ?? "";
+    const apiKey = getResolvedApiKey() ?? (import.meta.env.VITE_HF_API_KEY as string | undefined) ?? "";
 
     const _t =
         t ??
