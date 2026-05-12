@@ -29,14 +29,12 @@ vi.mock("@/components/onboarding/HomeTour", () => ({
 }));
 
 vi.mock("@/components/Header", () => ({ default: () => <div /> }));
-vi.mock("@/components/Hero", () => ({ default: () => <section data-tour="home-hero" /> }));
 vi.mock("@/components/SectionHeader", () => ({ default: () => <div /> }));
 vi.mock("@/components/Carousel", () => ({ default: ({ children }: { children: ReactNode }) => <div>{children}</div> }));
 vi.mock("@/components/CityCard", () => ({ default: () => <div /> }));
 vi.mock("@/components/FoodCard", () => ({ default: () => <div /> }));
 vi.mock("@/components/TourCard", () => ({ default: () => <div /> }));
 vi.mock("@/components/Features", () => ({ default: () => <div /> }));
-vi.mock("@/components/CTABanner", () => ({ default: () => <section data-tour="home-cta" /> }));
 vi.mock("@/components/Footer", () => ({ default: () => <div /> }));
 vi.mock("@/components/Chatbot", () => ({ default: () => <div /> }));
 
