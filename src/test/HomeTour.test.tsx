@@ -8,7 +8,7 @@ vi.mock("react-joyride", () => ({
   Joyride: (props: {
     run?: boolean;
     steps?: unknown[];
-    callback: (data: { status?: string }) => void;
+    callback: (data: { status?: string; action?: string; type?: string }) => void;
   }) => (
     <>
       <div
@@ -28,8 +28,16 @@ vi.mock("react-joyride", () => ({
       <button type="button" onClick={() => props.callback({ status: "mystery_status" })}>
         unknown status callback
       </button>
+      <button type="button" onClick={() => props.callback({ action: "close" })}>
+        close tour
+      </button>
+      <button type="button" onClick={() => props.callback({ type: "error:target_not_found" })}>
+        missing target callback
+      </button>
     </>
   ),
+  ACTIONS: { CLOSE: "close" },
+  EVENTS: { TARGET_NOT_FOUND: "error:target_not_found" },
   STATUS: { FINISHED: "finished", SKIPPED: "skipped" },
 }));
 
@@ -129,7 +137,7 @@ describe("HomeTour", () => {
     });
   });
 
-  it("stops running when callback status is missing", async () => {
+  it("keeps running when callback status is missing", async () => {
     render(
       <MemoryRouter initialEntries={["/"]}>
         <HomeTour />
@@ -143,11 +151,11 @@ describe("HomeTour", () => {
     fireEvent.click(screen.getByRole("button", { name: /invalid callback/i }));
 
     await waitFor(() => {
-      expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "false");
+      expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
     });
   });
 
-  it("stops running when callback status is unknown", async () => {
+  it("keeps running when callback status is unknown", async () => {
     render(
       <MemoryRouter initialEntries={["/"]}>
         <HomeTour />
@@ -161,7 +169,40 @@ describe("HomeTour", () => {
     fireEvent.click(screen.getByRole("button", { name: /unknown status callback/i }));
 
     await waitFor(() => {
+      expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
+    });
+  });
+
+  it("persists completion when joyride is closed", async () => {
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <HomeTour />
+      </MemoryRouter>
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: /close tour/i }));
+
+    await waitFor(() => {
+      expect(window.localStorage.getItem(HOME_ONBOARDING_KEY)).toBe("1");
       expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "false");
+    });
+  });
+
+  it("keeps running when a target is missing", async () => {
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <HomeTour />
+      </MemoryRouter>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
+    });
+
+    fireEvent.click(screen.getByRole("button", { name: /missing target callback/i }));
+
+    await waitFor(() => {
+      expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
     });
   });
 });

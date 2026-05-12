@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Joyride, type CallBackProps, STATUS } from "react-joyride";
+import { ACTIONS, EVENTS, Joyride, type CallBackProps, STATUS } from "react-joyride";
 import { useLocation } from "react-router-dom";
 import {
   HOME_ONBOARDING_KEY,
@@ -34,14 +34,18 @@ const HomeTour = () => {
   );
 
   const onJoyrideCallback = (data: CallBackProps) => {
-    if (data.status === STATUS.FINISHED || data.status === STATUS.SKIPPED) {
+    if (
+      data.status === STATUS.FINISHED ||
+      data.status === STATUS.SKIPPED ||
+      data.action === ACTIONS.CLOSE
+    ) {
       writeOnboardingCompleted(HOME_ONBOARDING_KEY, true);
       setIsRunning(false);
       return;
     }
 
-    if (!data.status || (data.status !== STATUS.FINISHED && data.status !== STATUS.SKIPPED)) {
-      setIsRunning(false);
+    if (data.type === EVENTS.TARGET_NOT_FOUND) {
+      return;
     }
   };
 
@@ -55,7 +59,11 @@ const HomeTour = () => {
         showSkipButton
         disableScrolling
       />
-      <button type="button" onClick={() => setIsRunning(true)}>
+      <button
+        type="button"
+        onClick={() => setIsRunning(true)}
+        className="fixed bottom-6 right-6 z-40 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-float transition-smooth hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+      >
         Xem huong dan
       </button>
     </>
