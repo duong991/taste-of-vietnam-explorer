@@ -9,7 +9,7 @@ const ctaImg = resolveImage("cta-banner");
 const CTABanner = () => {
   const { t } = useLocale();
   return (
-  <section className="container pb-20">
+  <section data-tour="home-cta" className="container pb-20">
     <div className="relative overflow-hidden rounded-2xl shadow-elegant">
       <LazyImage
         src={ctaImg}

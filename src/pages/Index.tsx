@@ -42,9 +42,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <div data-tour="home-hero">
-          <Hero />
-        </div>
+        <Hero />
 
         <section id="section-cities" data-tour="home-search" className="container py-16 md:py-20">
           <SectionHeader
@@ -137,9 +135,7 @@ const Index = () => {
         </section>
 
         <Features />
-        <div data-tour="home-cta">
-          <CTABanner />
-        </div>
+        <CTABanner />
       </main>
       <Footer />
       <Chatbot />

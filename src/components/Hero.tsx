@@ -23,7 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[760px] w-full overflow-hidden">
+    <section data-tour="home-hero" className="relative min-h-[760px] w-full overflow-hidden">
       <img
         src={heroImage}
         alt={t("hero.img_alt")}
