@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Joyride, { CallBackProps, STATUS } from "react-joyride";
+import { useLocation } from "react-router-dom";
 import {
   HOME_ONBOARDING_KEY,
   readOnboardingCompleted,
@@ -8,11 +9,18 @@ import {
 
 const HomeTour = () => {
   const [isRunning, setIsRunning] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const completed = readOnboardingCompleted(HOME_ONBOARDING_KEY);
     setIsRunning(!completed);
   }, []);
+
+  useEffect(() => {
+    if (pathname !== "/") {
+      setIsRunning(false);
+    }
+  }, [pathname]);
 
   const steps = useMemo(
     () => [
@@ -28,6 +36,11 @@ const HomeTour = () => {
   const onJoyrideCallback = (data: CallBackProps) => {
     if (data.status === STATUS.FINISHED || data.status === STATUS.SKIPPED) {
       writeOnboardingCompleted(HOME_ONBOARDING_KEY, true);
+      setIsRunning(false);
+      return;
+    }
+
+    if (!data.status) {
       setIsRunning(false);
     }
   };
