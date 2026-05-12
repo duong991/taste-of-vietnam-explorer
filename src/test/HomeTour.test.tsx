@@ -5,7 +5,11 @@ import HomeTour from "@/components/onboarding/HomeTour";
 import { HOME_ONBOARDING_KEY } from "@/lib/onboardingStorage";
 
 vi.mock("react-joyride", () => ({
-  default: (props: any) => (
+  Joyride: (props: {
+    run?: boolean;
+    steps?: unknown[];
+    callback: (data: { status?: string }) => void;
+  }) => (
     <>
       <div
         data-testid="joyride"
