@@ -21,6 +21,9 @@ vi.mock("react-joyride", () => ({
       <button type="button" onClick={() => props.callback({})}>
         invalid callback
       </button>
+      <button type="button" onClick={() => props.callback({ status: "mystery_status" })}>
+        unknown status callback
+      </button>
     </>
   ),
   STATUS: { FINISHED: "finished", SKIPPED: "skipped" },
@@ -134,6 +137,24 @@ describe("HomeTour", () => {
     });
 
     fireEvent.click(screen.getByRole("button", { name: /invalid callback/i }));
+
+    await waitFor(() => {
+      expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "false");
+    });
+  });
+
+  it("stops running when callback status is unknown", async () => {
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <HomeTour />
+      </MemoryRouter>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
+    });
+
+    fireEvent.click(screen.getByRole("button", { name: /unknown status callback/i }));
 
     await waitFor(() => {
       expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "false");

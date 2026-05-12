@@ -40,7 +40,7 @@ const HomeTour = () => {
       return;
     }
 
-    if (!data.status) {
+    if (!data.status || (data.status !== STATUS.FINISHED && data.status !== STATUS.SKIPPED)) {
       setIsRunning(false);
     }
   };
