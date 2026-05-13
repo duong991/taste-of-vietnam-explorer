@@ -119,6 +119,25 @@
 }
 .animate-pop-in { animation: pop-in 0.3s ease-out both; }
 
+@keyframes tour-step-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.96); filter: blur(6px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+.animate-tour-step { animation: tour-step-in 0.38s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@keyframes tour-orb {
+  0%, 100% { transform: translateY(0); box-shadow: 0 0 0 rgba(47, 107, 79, 0); }
+  50% { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(47, 107, 79, 0.16); }
+}
+.animate-tour-orb { animation: tour-orb 2.8s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tour-step,
+  .animate-tour-orb {
+    animation: none;
+  }
+}
+
 /* PriceRangeSlider cross-browser thumb */
 .price-range-thumb::-webkit-slider-thumb {
   -webkit-appearance: none;

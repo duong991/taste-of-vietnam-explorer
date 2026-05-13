@@ -23,14 +23,13 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[760px] w-full overflow-hidden">
+    <section data-tour="home-hero" className="relative min-h-[760px] w-full overflow-hidden">
       <img
         src={heroImage}
         alt={t("hero.img_alt")}
         className="absolute inset-0 h-full w-full object-cover"
         width={1920}
         height={1088}
-        fetchPriority="high"
       />
       <div className="absolute inset-0 gradient-hero-overlay" />
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/30 via-transparent to-foreground/60" />
@@ -50,12 +49,15 @@ const Hero = () => {
           </p>
         </div>
 
-        <form
-          onSubmit={handleSearch}
+        <div
+          data-tour="home-search"
           className="relative mt-10 animate-fade-up"
           style={{ animationDelay: "0.15s" }}
-          role="search"
         >
+          <form
+            onSubmit={handleSearch}
+            role="search"
+          >
           <div className="rounded-2xl bg-background/95 backdrop-blur shadow-elegant p-2">
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-3 px-4 py-3 flex-1 min-w-0">
@@ -77,7 +79,8 @@ const Hero = () => {
               </button>
             </div>
           </div>
-        </form>
+          </form>
+        </div>
 
         <div className="mt-10 animate-fade-up" style={{ animationDelay: "0.3s" }}>
           <button

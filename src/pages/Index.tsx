@@ -12,6 +12,7 @@ import Features from "@/components/Features";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import HomeTour from "@/components/onboarding/HomeTour";
 import { useCities } from "@/hooks/useCities";
 import { useDishes } from "@/hooks/useDishes";
 import { useTours } from "@/hooks/useTours";
@@ -71,7 +72,7 @@ const Index = () => {
           )}
         </section>
 
-        <section id="mon-an" className="container py-12 md:py-16">
+        <section id="mon-an" data-tour="home-featured-dishes" className="container py-12 md:py-16">
           <SectionHeader
             eyebrow={t("home.dishes_eyebrow")}
             title={t("home.dishes_title")}
@@ -99,7 +100,7 @@ const Index = () => {
           )}
         </section>
 
-        <section id="tour" className="container py-12 md:py-16">
+        <section id="tour" data-tour="home-featured-tours" className="container py-12 md:py-16">
           <SectionHeader
             eyebrow={t("home.tours_eyebrow")}
             title={t("home.tours_title")}
@@ -138,6 +139,7 @@ const Index = () => {
       </main>
       <Footer />
       <Chatbot />
+      <HomeTour />
     </div>
   );
 };

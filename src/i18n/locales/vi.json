@@ -185,6 +185,34 @@
     "desc": "Khám phá, trải nghiệm và lưu giữ hương vị Việt Nam.",
     "btn": "Bắt đầu khám phá"
   },
+  "onboarding": {
+    "home": {
+      "badge": "Lối tắt khám phá",
+      "replay": "Xem hướng dẫn",
+      "replay_hint": "Đi một vòng ngắn để thấy rõ nên bắt đầu từ đâu, ăn gì và khám phá theo hành trình nào.",
+      "eyebrow_hero": "Chạm nhịp mở đầu",
+      "title_hero": "Khởi đầu bằng cảm hứng",
+      "eyebrow_search": "Đi nhanh hơn",
+      "title_search": "Tìm đúng điều bạn muốn",
+      "eyebrow_tours": "Hành trình có dẫn lối",
+      "title_tours": "Theo một tour trọn vẹn",
+      "eyebrow_dishes": "Bắt đầu từ hương vị",
+      "title_dishes": "Đi sâu qua từng món ăn",
+      "eyebrow_cta": "Sẵn sàng bước tiếp",
+      "title_cta": "Chuyển từ xem sang khám phá",
+      "step_hero": "Đây là nhịp mở đầu của cả website: một khung cảnh đủ gợi để bạn bước vào hành trình ẩm thực Việt bằng cảm xúc, không phải bằng một danh sách khô cứng.",
+      "step_search": "Khi đã có một cái tên trong đầu, bạn có thể tìm thẳng thành phố, món ăn hay tour để đi nhanh đến đúng điều mình muốn khám phá.",
+      "step_tours": "Khu tour nổi bật dành cho lúc bạn muốn được dẫn đường trọn vẹn: từ chợ, bếp, bàn ăn đến những câu chuyện địa phương phía sau mỗi hương vị.",
+      "step_dishes": "Nếu thích bắt đầu từ món ăn, hãy đi từ đây. Mỗi món là một cánh cửa nhỏ dẫn sang vùng đất, con người và trải nghiệm liên quan.",
+      "step_cta": "Khi cảm hứng đã đủ đầy, đây là điểm chạm để bạn rời phần ngắm nhìn và thật sự bước vào hành trình khám phá tiếp theo.",
+      "back": "Quay lại",
+      "close": "Đóng",
+      "done": "Hoàn tất",
+      "next": "Tiếp theo",
+      "open": "Mở tour",
+      "skip": "Bỏ qua"
+    }
+  },
   "chatbot": {
     "title": "Tinh",
     "subtitle": "Trợ lý ẩm thực Việt Nam",
