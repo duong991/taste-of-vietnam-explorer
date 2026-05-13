@@ -185,6 +185,34 @@
     "desc": "Explore, experience, and savour the flavours of Vietnam.",
     "btn": "Start exploring"
   },
+  "onboarding": {
+    "home": {
+      "badge": "Quick orientation",
+      "replay": "View guide",
+      "replay_hint": "Take a short pass through the page to see where to start, what to taste, and which journey to follow next.",
+      "eyebrow_hero": "Set the tone",
+      "title_hero": "Begin with atmosphere",
+      "eyebrow_search": "Move with intent",
+      "title_search": "Jump to the right place",
+      "eyebrow_tours": "Guided path",
+      "title_tours": "Follow a full journey",
+      "eyebrow_dishes": "Start from flavour",
+      "title_dishes": "Explore through dishes",
+      "eyebrow_cta": "Ready for the next step",
+      "title_cta": "Turn browsing into action",
+      "step_hero": "This is the opening note of the experience: a cinematic entrance into Vietnamese food culture, designed to spark appetite before you zoom into details.",
+      "step_search": "If you already have a place, dish, or tour in mind, this is the fastest way to jump straight into it.",
+      "step_tours": "Featured tours are for the moments when you want the story fully guided, from markets and kitchens to the table and the people behind each flavour.",
+      "step_dishes": "Prefer to begin with taste itself? Start here. Every dish opens a path into the region, culture, and travel experiences connected to it.",
+      "step_cta": "Once the page has done its job and the curiosity is there, this is the clean handoff from browsing into real exploration.",
+      "back": "Back",
+      "close": "Close",
+      "done": "Done",
+      "next": "Next",
+      "open": "Open tour",
+      "skip": "Skip"
+    }
+  },
   "chatbot": {
     "title": "Tinh",
     "subtitle": "Vietnamese Food Assistant",

@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { resolveImage } from "@/lib/imageMap";
 import { useLocale } from "@/hooks/useLocale";
@@ -7,7 +8,7 @@ import { LazyImage } from "@/components/ui/lazy-image";
 const ctaImg = resolveImage("cta-banner");
 
 const CTABanner = () => {
-  const { t } = useLocale();
+  const { t, path } = useLocale();
   return (
   <section data-tour="home-cta" className="container pb-20">
     <div className="relative overflow-hidden rounded-2xl shadow-elegant">
@@ -27,8 +28,10 @@ const CTABanner = () => {
             {t("cta.desc")}
           </p>
         </div>
-        <Button size="lg" variant="secondary" className="gap-2 self-start md:self-auto rounded-full px-7">
-          {t("cta.btn")} <ArrowRight className="h-4 w-4" />
+        <Button asChild size="lg" variant="secondary" className="gap-2 self-start md:self-auto rounded-full px-7">
+          <Link to={path.cityList}>
+            {t("cta.btn")} <ArrowRight className="h-4 w-4" />
+          </Link>
         </Button>
       </div>
     </div>

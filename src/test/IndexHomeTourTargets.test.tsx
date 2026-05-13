@@ -20,7 +20,7 @@ vi.mock("@/hooks/useLocale", () => ({
   useLocale: () => ({
     t: (key: string) => key,
     pick: () => "",
-    path: { tourList: "/tour" },
+    path: { tourList: "/tour", cityList: "/thanh-pho" },
   }),
 }));
 
@@ -66,6 +66,7 @@ describe("Index home tour integration", () => {
 
     expect(ctaTarget).toBeInTheDocument();
     expect(document.querySelectorAll('[data-tour="home-cta"]')).toHaveLength(1);
+    expect(screen.getByRole("link", { name: /cta.btn/i })).toHaveAttribute("href", "/thanh-pho");
 
     expect(screen.getByTestId("home-tour")).toBeInTheDocument();
   });

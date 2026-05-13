@@ -1,8 +1,32 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { createMemoryRouter, MemoryRouter, RouterProvider } from "react-router-dom";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import HomeTour from "@/components/onboarding/HomeTour";
 import { HOME_ONBOARDING_KEY } from "@/lib/onboardingStorage";
+
+vi.mock("@/hooks/useLocale", () => ({
+  useLocale: () => ({
+    t: (key: string) =>
+      (
+        {
+          "onboarding.home.replay": "Xem hướng dẫn",
+          "onboarding.home.badge": "Lối tắt khám phá",
+          "onboarding.home.replay_hint": "Đi một vòng thật nhanh qua homepage.",
+          "onboarding.home.step_hero": "hero",
+          "onboarding.home.step_search": "search",
+          "onboarding.home.step_tours": "tours",
+          "onboarding.home.step_dishes": "dishes",
+          "onboarding.home.step_cta": "cta",
+          "onboarding.home.back": "Quay lại",
+          "onboarding.home.close": "Đóng",
+          "onboarding.home.done": "Hoàn tất",
+          "onboarding.home.next": "Tiếp theo",
+          "onboarding.home.open": "Mở tour",
+          "onboarding.home.skip": "Bỏ qua",
+        } as Record<string, string>
+      )[key] ?? key,
+  }),
+}));
 
 vi.mock("react-joyride", () => ({
   Joyride: (props: {
@@ -34,6 +58,12 @@ vi.mock("react-joyride", () => ({
       <button type="button" onClick={() => props.callback({ type: "error:target_not_found" })}>
         missing target callback
       </button>
+      <button
+        type="button"
+        onClick={() => props.callback({ status: "skipped", type: "error:target_not_found" })}
+      >
+        skipped missing target callback
+      </button>
     </>
   ),
   ACTIONS: { CLOSE: "close" },
@@ -44,6 +74,13 @@ vi.mock("react-joyride", () => ({
 describe("HomeTour", () => {
   beforeEach(() => {
     window.localStorage.clear();
+    document.body.innerHTML = `
+      <div data-tour="home-hero"></div>
+      <div data-tour="home-search"></div>
+      <div data-tour="home-featured-tours"></div>
+      <div data-tour="home-featured-dishes"></div>
+      <div data-tour="home-cta"></div>
+    `;
   });
 
   it("auto-runs on first visit", async () => {
@@ -80,7 +117,7 @@ describe("HomeTour", () => {
       </MemoryRouter>
     );
 
-    fireEvent.click(screen.getByRole("button", { name: /xem huong dan/i }));
+    fireEvent.click(screen.getByRole("button", { name: /xem hướng dẫn/i }));
 
     await waitFor(() => {
       expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
@@ -130,7 +167,9 @@ describe("HomeTour", () => {
       expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
     });
 
-    await router.navigate("/tour");
+    await act(async () => {
+      await router.navigate("/tour");
+    });
 
     await waitFor(() => {
       expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "false");
@@ -199,9 +238,28 @@ describe("HomeTour", () => {
       expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
     });
 
-    fireEvent.click(screen.getByRole("button", { name: /missing target callback/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^missing target callback$/i }));
 
     await waitFor(() => {
+      expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
+    });
+  });
+
+  it("does not persist completion when skipped is caused by missing target", async () => {
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <HomeTour />
+      </MemoryRouter>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
+    });
+
+    fireEvent.click(screen.getByRole("button", { name: /skipped missing target callback/i }));
+
+    await waitFor(() => {
+      expect(window.localStorage.getItem(HOME_ONBOARDING_KEY)).toBeNull();
       expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
     });
   });

@@ -44,7 +44,7 @@ const Index = () => {
       <main>
         <Hero />
 
-        <section id="section-cities" data-tour="home-search" className="container py-16 md:py-20">
+        <section id="section-cities" className="container py-16 md:py-20">
           <SectionHeader
             eyebrow={t("home.cities_eyebrow")}
             title={t("home.cities_title")}

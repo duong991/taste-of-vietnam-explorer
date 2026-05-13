@@ -1,4 +1,4 @@
-export const HOME_ONBOARDING_KEY = "onboarding.home.v1.completed";
+export const HOME_ONBOARDING_KEY = "onboarding.home.v2.completed";
 
 const fallbackStorage = new Map<string, string>();
 
