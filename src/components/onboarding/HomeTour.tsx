@@ -159,7 +159,7 @@ const HomeTour = () => {
   const areTargetsReady = () =>
     TOUR_TARGETS.every((selector) => document.querySelector(selector));
 
-  const queueTourStart = (reset = false) => {
+  const queueTourStart = (reset = false, persistCompletion = false) => {
     clearAutoStartTimer();
     let attempts = 0;
 
@@ -167,6 +167,9 @@ const HomeTour = () => {
       if (areTargetsReady()) {
         if (reset) {
           setTourKey((current) => current + 1);
+        }
+        if (persistCompletion) {
+          writeOnboardingCompleted(HOME_ONBOARDING_KEY, true);
         }
         setIsRunning(true);
         autoStartTimerRef.current = null;
@@ -196,7 +199,7 @@ const HomeTour = () => {
 
     const completed = readOnboardingCompleted(HOME_ONBOARDING_KEY);
     if (!completed) {
-      queueTourStart();
+      queueTourStart(false, true);
       return () => {
         clearAutoStartTimer();
       };
@@ -256,7 +259,7 @@ const HomeTour = () => {
   );
 
   const startTour = () => {
-    queueTourStart(true);
+    queueTourStart(true, false);
   };
 
   const onJoyrideCallback = (data: CallBackProps) => {

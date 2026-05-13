@@ -96,6 +96,19 @@ describe("HomeTour", () => {
     });
   });
 
+  it("marks onboarding as seen as soon as auto-tour starts", async () => {
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <HomeTour />
+      </MemoryRouter>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
+      expect(window.localStorage.getItem(HOME_ONBOARDING_KEY)).toBe("1");
+    });
+  });
+
   it("does not auto-run when completed", async () => {
     window.localStorage.setItem(HOME_ONBOARDING_KEY, "1");
     render(
@@ -245,7 +258,7 @@ describe("HomeTour", () => {
     });
   });
 
-  it("does not persist completion when skipped is caused by missing target", async () => {
+  it("keeps the seen flag when skipped is caused by missing target", async () => {
     render(
       <MemoryRouter initialEntries={["/"]}>
         <HomeTour />
@@ -259,7 +272,7 @@ describe("HomeTour", () => {
     fireEvent.click(screen.getByRole("button", { name: /skipped missing target callback/i }));
 
     await waitFor(() => {
-      expect(window.localStorage.getItem(HOME_ONBOARDING_KEY)).toBeNull();
+      expect(window.localStorage.getItem(HOME_ONBOARDING_KEY)).toBe("1");
       expect(screen.getByTestId("joyride")).toHaveAttribute("data-run", "true");
     });
   });
