@@ -50,7 +50,6 @@ const Hero = () => {
         </div>
 
         <div
-          data-tour="home-search"
           className="relative mt-10 animate-fade-up"
           style={{ animationDelay: "0.15s" }}
         >
@@ -58,7 +57,7 @@ const Hero = () => {
             onSubmit={handleSearch}
             role="search"
           >
-          <div className="rounded-2xl bg-background/95 backdrop-blur shadow-elegant p-2">
+          <div data-tour="home-search" className="rounded-2xl bg-background/95 backdrop-blur shadow-elegant p-2">
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-3 px-4 py-3 flex-1 min-w-0">
                 <Search className="h-5 w-5 text-muted-foreground shrink-0" />

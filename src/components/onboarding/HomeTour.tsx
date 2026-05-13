@@ -22,6 +22,7 @@ import { useLocation } from "react-router-dom";
 import { useLocale } from "@/hooks/useLocale";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 import {
   HOME_ONBOARDING_KEY,
   readOnboardingCompleted,
@@ -41,7 +42,7 @@ type TourStepData = {
   icon: LucideIcon;
 };
 
-const HomeTourTooltip = ({ backProps, closeProps, index, isLastStep, primaryProps, skipProps, step, tooltipProps }: TooltipRenderProps) => {
+const HomeTourDesktopTooltip = ({ backProps, closeProps, index, isLastStep, primaryProps, skipProps, step, tooltipProps }: TooltipRenderProps) => {
   const data = (step.data ?? {}) as Partial<TourStepData>;
   const Icon = data.icon ?? Compass;
   const content = step.content as ReactNode;
@@ -138,9 +139,133 @@ const HomeTourTooltip = ({ backProps, closeProps, index, isLastStep, primaryProp
   );
 };
 
+const HomeTourMobileTooltip = ({ backProps, closeProps, index, isLastStep, primaryProps, skipProps, step, tooltipProps }: TooltipRenderProps) => {
+  const isMobile = useIsMobile();
+  const data = (step.data ?? {}) as Partial<TourStepData>;
+  const Icon = data.icon ?? Compass;
+  const content = step.content as ReactNode;
+  const isMobileHeroStep = isMobile && index === 0;
+
+  return (
+    <div
+      key={`home-tour-step-${index}`}
+      className="react-joyride__tooltip"
+      data-joyride-step={index}
+      {...tooltipProps}
+      style={
+        isMobileHeroStep
+          ? {
+              ...(tooltipProps.style ?? {}),
+              position: "fixed",
+              top: "92px",
+              left: "50%",
+              bottom: "auto",
+              transform: "translateX(-50%)",
+              width: "min(calc(100vw - 32px), 17rem)",
+              maxWidth: "17rem",
+            }
+          : tooltipProps.style
+      }
+      aria-labelledby="home-tour-title"
+      aria-describedby="home-tour-content"
+    >
+      <div
+        className={cn(
+          "animate-tour-step relative overflow-hidden border border-border bg-[hsl(var(--background))] text-foreground",
+          "w-[min(calc(100vw-48px),17rem)] rounded-[18px] p-3 shadow-[0_16px_36px_rgba(15,23,42,0.2)]",
+          "max-h-[min(46vh,22rem)] overflow-y-auto overscroll-contain",
+          "sm:w-[420px] sm:max-h-none sm:rounded-[26px] sm:p-5 sm:shadow-[0_24px_80px_rgba(15,23,42,0.28)]",
+        )}
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(247,243,237,0.98)_0%,rgba(247,243,237,0.96)_100%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-primary/12 via-accent/6 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-4 bottom-0 h-px bg-border/80 sm:inset-x-6" />
+        <button
+          type="button"
+          {...closeProps}
+          className={cn(
+            buttonVariants({ variant: "ghost", size: "icon" }),
+            "absolute right-2 top-2 z-10 h-8 w-8 rounded-full text-muted-foreground hover:bg-secondary sm:right-3 sm:top-3 sm:h-9 sm:w-9",
+          )}
+        >
+          <X className="h-4 w-4" />
+        </button>
+
+        <div className="relative">
+          <div className="mb-1.5 text-[10px] font-medium tracking-[0.14em] text-muted-foreground/80 sm:hidden">
+            Bước {index + 1}
+          </div>
+          <div className="mb-2 flex items-center gap-2 sm:mb-4 sm:gap-3">
+            <div className="animate-tour-orb flex h-8 w-8 shrink-0 items-center justify-center rounded-2xl bg-primary/12 text-primary shadow-inner sm:h-12 sm:w-12">
+              <Icon className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-accent sm:text-[11px] sm:tracking-[0.24em]">
+                {data.eyebrow}
+              </p>
+              <h3 id="home-tour-title" className="mt-0.5 font-display text-[1rem] leading-[1.05] text-foreground sm:mt-1 sm:text-2xl">
+                {step.title}
+              </h3>
+            </div>
+          </div>
+
+          <div
+            id="home-tour-content"
+            className="text-[12px] leading-[1.45] text-foreground/92 sm:text-[15px] sm:leading-7"
+          >
+            {content}
+          </div>
+
+          <div className="mt-3 flex items-center justify-between gap-2 border-t border-border/80 pt-2.5 sm:mt-5 sm:gap-3 sm:pt-4">
+            <button
+              type="button"
+              {...skipProps}
+              className={cn(
+                buttonVariants({ variant: "ghost", size: "sm" }),
+                "h-9 rounded-full px-3 text-[12px] text-muted-foreground hover:bg-secondary/80 sm:h-10 sm:w-auto sm:px-4 sm:text-sm",
+                isLastStep && "invisible",
+              )}
+            >
+              {skipProps.title}
+            </button>
+
+            <div className="flex items-center gap-2 sm:justify-end">
+              {index > 0 && (
+                <button
+                  type="button"
+                  {...backProps}
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "sm" }),
+                    "h-9 rounded-full border-primary/20 bg-background px-3 text-[12px] text-foreground hover:bg-primary/5 sm:h-10 sm:px-4 sm:text-sm",
+                  )}
+                >
+                  {backProps.title}
+                </button>
+              )}
+
+              <button
+                type="button"
+                {...primaryProps}
+                className={cn(
+                  buttonVariants({ variant: "default", size: "sm" }),
+                    "h-9 rounded-full px-4 text-[12px] shadow-sm sm:h-10 sm:px-5 sm:text-sm",
+                  )}
+              >
+                <span>{primaryProps.title}</span>
+                {!isLastStep && <ArrowRight className="h-4 w-4" />}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const HomeTour = () => {
   const { pathname } = useLocation();
   const { t } = useLocale();
+  const isMobile = useIsMobile();
   const [isRunning, setIsRunning] = useState(false);
   const [tourKey, setTourKey] = useState(0);
   const autoStartTimerRef = useRef<number | null>(null);
@@ -212,7 +337,7 @@ const HomeTour = () => {
     };
   }, [pathname]);
 
-  const steps = useMemo(
+  const desktopSteps = useMemo(
     () => [
       {
         id: "hero",
@@ -220,6 +345,7 @@ const HomeTour = () => {
         title: t("onboarding.home.title_hero"),
         content: t("onboarding.home.step_hero"),
         skipBeacon: true,
+        disableScrolling: true,
         data: { eyebrow: t("onboarding.home.eyebrow_hero"), icon: Sparkles },
       },
       {
@@ -228,6 +354,7 @@ const HomeTour = () => {
         title: t("onboarding.home.title_search"),
         content: t("onboarding.home.step_search"),
         skipBeacon: true,
+        disableScrolling: true,
         data: { eyebrow: t("onboarding.home.eyebrow_search"), icon: Search },
       },
       {
@@ -258,7 +385,64 @@ const HomeTour = () => {
     [t],
   );
 
+  const mobileSteps = useMemo(
+    () => [
+      {
+        id: "hero",
+        target: TOUR_TARGETS[0],
+        title: t("onboarding.home.title_hero"),
+        content: t("onboarding.home.step_hero"),
+        skipBeacon: true,
+        placement: "top" as const,
+        disableScrolling: true,
+        data: { eyebrow: t("onboarding.home.eyebrow_hero"), icon: Sparkles },
+      },
+      {
+        id: "search",
+        target: TOUR_TARGETS[1],
+        title: t("onboarding.home.title_search"),
+        content: t("onboarding.home.step_search"),
+        skipBeacon: true,
+        placement: "bottom" as const,
+        disableScrolling: true,
+        data: { eyebrow: t("onboarding.home.eyebrow_search"), icon: Search },
+      },
+      {
+        id: "tours",
+        target: TOUR_TARGETS[2],
+        title: t("onboarding.home.title_tours"),
+        content: t("onboarding.home.step_tours"),
+        skipBeacon: true,
+        placement: "top" as const,
+        data: { eyebrow: t("onboarding.home.eyebrow_tours"), icon: MapPinned },
+      },
+      {
+        id: "dishes",
+        target: TOUR_TARGETS[3],
+        title: t("onboarding.home.title_dishes"),
+        content: t("onboarding.home.step_dishes"),
+        skipBeacon: true,
+        placement: "top" as const,
+        data: { eyebrow: t("onboarding.home.eyebrow_dishes"), icon: Soup },
+      },
+      {
+        id: "cta",
+        target: TOUR_TARGETS[4],
+        title: t("onboarding.home.title_cta"),
+        content: t("onboarding.home.step_cta"),
+        skipBeacon: true,
+        placement: "top" as const,
+        data: { eyebrow: t("onboarding.home.eyebrow_cta"), icon: ArrowRight },
+      },
+    ],
+    [t],
+  );
+
   const startTour = () => {
+    if (!isMobile) {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
     queueTourStart(true, false);
   };
 
@@ -283,20 +467,24 @@ const HomeTour = () => {
     <>
       <Joyride
         key={tourKey}
-        steps={steps}
+        steps={isMobile ? mobileSteps : desktopSteps}
         run={isRunning}
         callback={onJoyrideCallback}
         continuous
         showProgress
         showSkipButton
         scrollToFirstStep
-        tooltipComponent={HomeTourTooltip as ComponentType<TooltipRenderProps>}
+        tooltipComponent={
+          isMobile
+            ? (HomeTourMobileTooltip as ComponentType<TooltipRenderProps>)
+            : (HomeTourDesktopTooltip as ComponentType<TooltipRenderProps>)
+        }
         hideCloseButton={false}
         disableCloseOnEsc={false}
         disableOverlayClose={false}
         disableScrolling={false}
         spotlightClicks
-        scrollOffset={96}
+        scrollOffset={isMobile ? 20 : 96}
         styles={{
           options: {
             arrowColor: "hsl(var(--card))",
