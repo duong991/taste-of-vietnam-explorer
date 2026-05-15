@@ -1,4 +1,4 @@
-import { Star, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLocale } from "@/hooks/useLocale";
 import { cn } from "@/lib/utils";
@@ -16,7 +16,7 @@ interface Props {
   className?: string;
 }
 
-const TourCard = ({ image, name, city, duration, price, rating, reviews, slug, className }: Props) => {
+const TourCard = ({ image, name, city, duration, price, slug, className }: Props) => {
   const { t, path } = useLocale();
   return (
   <Link
@@ -45,18 +45,12 @@ const TourCard = ({ image, name, city, duration, price, rating, reviews, slug, c
       <p className="flex items-center gap-1 text-xs text-muted-foreground mb-3">
         <MapPin className="h-3.5 w-3.5" /> {city}
       </p>
-      <div className="flex items-end justify-between pt-3 border-t border-border">
-        {price && (
-          <div>
-            <p className="text-xs text-muted-foreground">{t("common.from")}</p>
-            <p className="font-display text-lg font-bold text-primary">{price}</p>
-          </div>
-        )}
-        <span className="flex items-center gap-1 text-xs font-medium text-foreground">
-          <Star className="h-3.5 w-3.5 fill-accent text-accent" />
-          {rating} <span className="text-muted-foreground">({reviews})</span>
-        </span>
-      </div>
+      {price && (
+        <div className="pt-3 border-t border-border">
+          <p className="text-xs text-muted-foreground">{t("common.from")}</p>
+          <p className="font-display text-lg font-bold text-primary">{price}</p>
+        </div>
+      )}
     </div>
   </Link>
   );

@@ -7,10 +7,11 @@ interface Props {
 
 const LanguageSwitcher = ({ className }: Props) => {
   const { t, i18n, locale } = useLocale();
+  const nextLocale = locale === "vi" ? "en" : "vi";
+  const currentLocaleLabel = locale.toUpperCase();
 
   const toggle = () => {
-    const next = locale === "vi" ? "en" : "vi";
-    i18n.changeLanguage(next);
+    i18n.changeLanguage(nextLocale);
   };
 
   return (
@@ -23,7 +24,7 @@ const LanguageSwitcher = ({ className }: Props) => {
       }
     >
       <Globe className="h-3.5 w-3.5" />
-      {t("nav.lang_switch")}
+      {currentLocaleLabel}
     </button>
   );
 };
